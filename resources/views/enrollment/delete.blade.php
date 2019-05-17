@@ -1,5 +1,5 @@
-<?php
-$section->appendInnerHTML('
+@extends('layout')
+@section('content')
         <div class="container">
             <div class="card card-profile shadow mt--300">
                 <div class="px-4">
@@ -354,4 +354,5 @@ $section->appendInnerHTML('
                     </div>
                 </div>
             </div>
-        </div>');
+        </div>
+    @endsection
