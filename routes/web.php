@@ -33,3 +33,5 @@ Route::get('/users/{id}','UserController@show')
 ;
 
 Route::get('/saludo/{name}/{nickname?}','WelcomeUserController');
+
+
