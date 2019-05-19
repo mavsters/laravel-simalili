@@ -17,11 +17,6 @@ class ForeignKeys extends Migration
             $table->foreign('id_grado')->references('id')->on('grado');
         });
 
-        Schema::table('tipousuario',function($table){
-            $table->unsignedInteger('id_user');
-            $table->foreign('id_user')->references('id')->on('users');
-        });
-
         Schema::table('asignaturacurso',function($table){
             $table->foreign('id_curso')->references('id')->on('curso');
             $table->foreign('id_asignatura')->references('id')->on('asignatura');
@@ -38,8 +33,8 @@ class ForeignKeys extends Migration
         });
 
         Schema::table('users',function($table){
-            $table->unsignedInteger('id_docente')->nullable();
-            $table->foreign('id_docente')->references('id')->on('docente');
+            $table->unsignedInteger('id_tipousuario')->default('3');
+            $table->foreign('id_tipousuario')->references('id')->on('tipousuario');
         });
 
         Schema::table('requisito',function($table){

@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
+use Illuminate\Contracts\Support\Renderable;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 
 class UserController extends Controller
 {
@@ -13,15 +15,51 @@ class UserController extends Controller
     /**
      * UserController constructor.
      */
+    /**
+     * Create a new controller instance.
+     *
+     * @return void
+     */
     public function __construct()
     {
         // Flag
         //$this->withoutExceptionHandling();
 
+        $this->middleware('auth');
     }
 
+    /**
+     * Show the application dashboard.
+     *
+     * @return Renderable
+     */
     public function index()
     {
+        // Usuario - Tipo de Usuario
+        $typeUserID = DB::table('users')->select('id_tipousuario')->where(
+            'email', 'like', '%' . (Auth::user()->email) . '%'
+        )->first()->id_tipousuario;
+
+        // Tipo de Usuario
+        $typeUser = DB::table('tipousuario')->select('tipo_usuario')->where(
+            'id', '=', $typeUserID
+        )->first()->tipo_usuario;
+
+        // Values View
+        $title = "Bienvenido - $typeUser";
+        $nameView = 'login.';
+        switch ($typeUser) {
+            case 'Directivo':
+                $nameView .= 'executive';
+                break;
+            case 'Secretaría':
+                $nameView .= 'secretary';
+                break;
+            default:
+                $nameView = 'home';
+                break;
+        }
+
         if(request()->has('empty')){
             $users = [];
         }else {
@@ -33,22 +71,10 @@ class UserController extends Controller
                 "<script>alert('hola');</script>",
             ];
         }
-        $title = 'Listado de usuarios';
-        /*return view('users',[
-            'users'=>$users,
-            'title'=>'Listado de usuarios'
-        ]);//"Usuarios";*/
 
-        /*return view('users')
-            ->with('users',$users)
-            ->with('title','Listado de usuarios');
-        */
-
-        // var_dump(compact....); die();
-        // dd(compact('users','title'));
-
-        return view('users',
-        compact('users','title'));
+        return
+            view($nameView,
+                compact('users', 'title', 'typeUser'));
     }
 
     public function login(){

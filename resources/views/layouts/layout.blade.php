@@ -96,15 +96,51 @@
         </div>
     </nav>
 </header>
-<main>
-    <section class="section section-shaped section-lg">
-        <div class="shape shape-style-1 bg-gradient-default">
-            <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+<main class="profile-page">
+    @if (isset($typeUser))
+        <div class="position-relative">
+            <!-- shape Hero -->
+            <section class="section section-lg section-shaped pb-250">
+                <div class="shape shape-style-1 shape-primary alpha-4">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+                <div class="container py-lg-md d-flex">
+                    <div class="col px-0">
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <h1 class="display-3  text-white">Bienvenido
+                                    <span>{{$typeUser}}</span>
+                                </h1>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- 1st Hero Variation -->
         </div>
+        <section class="section">
         <div class="container">
             @yield('content')
         </div>
     </section>
+    @else
+    <!-- shape Hero -->
+        <section class="section section-shaped section-lg">
+            <div class="shape shape-style-1 bg-gradient-default">
+                <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+            </div>
+            <!-- Content -->
+            @yield('content')
+        </section>
+    @endif
 </main>
 <!-- Scripts -->
 <!-- Core -->

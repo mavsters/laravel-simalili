@@ -16,7 +16,7 @@ Auth::routes();
 
 // Home
 Route::get('/', 'UserController@index')->middleware('auth');
-
+Route::get('/home', 'UserController@index')->name('home');
 
 /*
 Route::get('/login', 'UserController@login');
@@ -93,4 +93,4 @@ Route::get('/executive/user', 'ExecutiveController@search');
 */
 
 
-Route::get('/home', 'HomeController@index')->name('home');
+

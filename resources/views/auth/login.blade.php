@@ -1,4 +1,4 @@
-@extends('layout')
+@extends('layouts.layout')
 @section('content')
     <div class="container pt-lg-md">
         <div class="row justify-content-center">
@@ -30,12 +30,12 @@
                                                    placeholder="{{ __('E-Mail Address') }}"
                                                    value="{{ old('email') }}" required autocomplete="email" autofocus>
 
-                                        </div>
-                                        @error('email')
-                                        <span class="invalid-feedback" role="alert">
+                                            @error('email')
+                                            <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>
-                                        @enderror
+                                            @enderror
+                                        </div>
                                     </div>
 
                                     <div class="form-group">
@@ -49,12 +49,12 @@
                                                    name="password"
                                                    placeholder="{{ __('Password') }}"
                                                    required autocomplete="current-password">
-                                        </div>
-                                        @error('password')
-                                        <span class="invalid-feedback" role="alert">
+                                            @error('password')
+                                            <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>
-                                        @enderror
+                                            @enderror
+                                        </div>
                                     </div>
 
                                     <div class="form-group row">
@@ -84,8 +84,8 @@
                                         <label class="form-check-label" for="remember">
                                             {{ __('Remember Me') }}
                                         </label>
+                                    </div>
                                 </div>
-                            </div>
                             </div>
 
                         </div>

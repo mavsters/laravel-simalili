@@ -1,6 +1,4 @@
-
-
-@extends('layout')
+@extends('layouts.layout')
 @section('content')
         <div class="container">
             <div class="card card-profile shadow mt--300">
@@ -178,7 +176,9 @@
                                     </tbody>
                                 </table>
                                 <hr/>
-                                <input type="button" onclick="this.disabled=true;this.value=\'Sending, please wait...\';this.form.submit();" class="btn btn-warning btn-lg" value="Eliminar">
+                                <input type="button"
+                                       onclick="this.disabled=true;this.value=;\'Sending, please wait...\';this.form.submit();"
+                                       class="btn btn-warning btn-lg" value="Eliminar">
                                 <a href="' . (!isset($_POST) ? getActualURL() : (URLWEB_FULL . $pathMain)) . '" class="btn btn-danger btn-lg">Cancelar</a>
                             </div>
                         </div>
