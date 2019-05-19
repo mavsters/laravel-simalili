@@ -2,72 +2,52 @@
 
 namespace Tests\Feature;
 
-    use Tests\TestCase;
+use App\User;
     use Illuminate\Foundation\Testing\RefreshDatabase;
+use Tests\TestCase;
 
 class UsersModule extends TestCase
 {
-    /**
-     * A basic test example.
-     * @test
-     * @return void
-     */
-    function testBasicTest()
+
+    use RefreshDatabase;
+
+    /** @test * */
+    function listUsers()
     {
+
+        // Normal
+        factory(User::class)->create([
+            'name' => 'Andres'
+        ]);
+        factory(User::class)->create([
+            'name' => 'isabel'
+        ]);
+
         $this->get('/users')
-        ->assertStatus(200)
+            ->assertStatus(200)
             ->assertSee('Andres')
             ->assertSee('isabel')
         ;
-        ;
 
     }
 
-    /**
-     * A basic test example.
-     * @test
-     * @return void
-     */
-    function listUsers()
+    /** @test */
+    function it_shows_a_default_message_if_the_users_list_is_empty()
     {
-        $this->get('/users?empty')
-            ->assertStatus(200)
-            ->assertSee('No hay usuarios registrados')
-        ;
-        ;
+//        DB::table('users')->truncate();
 
+        $this->get('/users')
+            ->assertStatus(200)
+            ->assertSee('No hay usuarios registrados');
     }
 
-    /** @test **/
-    function loginIndex(){
-        $this->get('login')
+    /**  @test * */
+    function show_details_user()
+    {
+
+        $this->get('/users/2')
             ->assertStatus(200)
-            ->assertSee('Bienvenido');
+            ->assertSee('isabela')
         ;
     }
-
-    /** @test **/
-    function detailsUser(){
-        $this->get('users/5')
-            ->assertStatus(200)
-            ->assertSee('Mostrando detalles del usuario: 5');
-        ;
-    }
-
-    /** @test **/
-    function notnickname(){
-        $this->get('saludo/miguel')
-            ->assertStatus(200)
-            ->assertSee('No tiene usuario');
-        ;
-    }
-
-    /** @test **/
-    function nickname(){
-        $this->get('saludo/miguel/mavs')
-            ->assertStatus(200)
-            ->assertSee('Miguel Tu usario: mavs');
-        ;
-    }
-
 }

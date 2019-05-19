@@ -20,6 +20,15 @@ class FixErrors extends Migration
      */
     public function down()
     {
-        //
+        /*/
+
+        Schema::dropIfExists('persona');
+        Schema::dropIfExists('estudiante');
+        Schema::dropIfExists('matricula');
+        Schema::dropIfExists('requisito');
+        Schema::dropIfExists('users');
+        Schema::dropIfExists('asignatura');
+        Schema::dropIfExists('directorcurso');
+        Schema::dropIfExists('curso');*/
     }
 }

@@ -2,10 +2,11 @@
 
 @section('content')
     <h1>{{$title}}</h1>
+
     @forelse($users as $user)
-        <li>{{ $user }}</li>
+        <li>{{ $user->name }} <a href="{{ url("/users/{$user->id}") }}">Ver detalles</a></li>
     @empty
-        <li>No hay datos, perdon</li>
+        <li>No hay usuarios registrados.</li>
     @endforelse
 
     <!-- Other Check -->

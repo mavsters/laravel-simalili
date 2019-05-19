@@ -9,8 +9,6 @@ use Illuminate\Support\Facades\Auth;
 class UserController extends Controller
 {
 
-    protected $typeUser = "";
-
     //pubf
     /**
      * UserController constructor.
@@ -25,7 +23,7 @@ class UserController extends Controller
         // Flag
         //$this->withoutExceptionHandling();
 
-        $this->middleware('auth');
+        // $this->middleware('auth');
     }
 
     /**
@@ -37,24 +35,37 @@ class UserController extends Controller
     {
         self::getDataBasic();
         // Values View
-        $typeUser = $this->typeUser['name'];
+        $typeUser = self::getDataBasic()['typeUser'];
         $title = "Bienvenido - " . $typeUser;
-        $nameView = "login." . $this->typeUser['typeUser'];
+        $nameView = "login." . self::getDataBasic()['name'];
 
+        $users = User::all();
 
         return
             view($nameView,
-                compact('title', 'typeUser'));
+                compact('title', 'users', 'typeUser'));
     }
 
     function dashboard()
     {
         $title = 'User';
         self::getDataBasic();
-        $typeUser = $this->typeUser['name'];
-        return view($this->typeUser['typeUser'] . '.user',
+        $typeUser = self::getDataBasic()['typeUser'];
+
+
+        return view(self::getDataBasic()['name'] . '.user',
             compact('users', 'title', 'typeUser'));
 
+    }
+
+    function list()
+    {
+        $title = 'Listado de usuarios';
+        $users = User::all();
+
+        return
+            view('users',
+                compact('title', 'users'));
     }
 
     public function login(){
@@ -69,10 +80,22 @@ class UserController extends Controller
         return view('login.executive',compact('title'));
     }
 
-    public function show($id){
-        return "Mostrando detalles del usuario: {$id}";
+    public function show(User $user)
+    {
+        $title = 'Listado de usuarios';
+        return view('show', compact('title', 'user'));
     }
 
+
+    public function create()
+    {
+        return view('user.create');
+    }
+
+    public function store()
+    {
+        return "procesando";
+    }
 
     protected function getDataBasic()
     {
@@ -85,22 +108,22 @@ class UserController extends Controller
 
         $typeUser = $typeUserID->tipo_usuario;
 
-        $type = '';
+        $name = '';
         switch ($typeUser) {
             case 'Directivo':
-                $type = 'executive';
+                $name = 'executive';
                 break;
             case 'Secretaría':
-                $type = 'secretary';
+                $name = 'secretary';
                 break;
             default:
-                $type = 'home';
+                $name = 'home';
                 break;
         }
 
-        $this->typeUser = [
-            "typeUser" => $type,
-            "name" => $typeUser
+        return [
+            "name" => $name,
+            "typeUser" => $typeUser
         ];
 
 

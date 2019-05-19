@@ -13,7 +13,11 @@ class ForeignKeys extends Migration
      */
     public function up()
     {
-        Schema::table('curso', function (Blueprint $table) {
+        Schema::table('users', function ($table) {
+            $table->unsignedInteger('id_tipousuario')->default('3');
+            $table->foreign('id_tipousuario')->references('id')->on('tipousuario');
+        });
+        /*Schema::table('curso', function (Blueprint $table) {
             $table->foreign('id_grado')->references('id')->on('grado');
         });
 
@@ -32,10 +36,7 @@ class ForeignKeys extends Migration
             $table->foreign('id_docente')->references('id')->on('docente');
         });
 
-        Schema::table('users',function($table){
-            $table->unsignedInteger('id_tipousuario')->default('3');
-            $table->foreign('id_tipousuario')->references('id')->on('tipousuario');
-        });
+
 
         Schema::table('requisito',function($table){
             $table->unsignedInteger('id_grado');
@@ -67,7 +68,7 @@ class ForeignKeys extends Migration
             $table->unsignedInteger('id_tipopersona');
             $table->foreign('id_tipopersona')->references('id')->on('tipopersona');
         });
-
+*/
     }
 
     /**
@@ -78,5 +79,9 @@ class ForeignKeys extends Migration
     public function down()
     {
         //
+        Schema::table('users', function (Blueprint $table) {
+            $table->dropForeign(['id_tipousuario']);
+            $table->dropColumn('id_tipousuario');
+        });
     }
 }
