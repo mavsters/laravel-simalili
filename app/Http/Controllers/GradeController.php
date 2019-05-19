@@ -4,16 +4,18 @@ namespace App\Http\Controllers;
 
 use App\Models\Grado;
 
-class GradesController extends Controller
+class GradeController extends Controller
 {
     //
-
-    function grades()
+    public function grades()
     {
+        $grades = Grado::all();
         $typeUser = self::getDataBasic()['typeUser'];
         $nameView = self::getDataBasic()['name'] . ".grades";
         return
-            view($nameView, compact('typeUser'));
+            view($nameView,
+                compact('title', 'grades', 'typeUser'));
+
     }
 
     function create()
@@ -36,11 +38,10 @@ class GradesController extends Controller
         return redirect()->back();
     }
 
-    public function search()
+    public function edit(Grado $grade)
     {
         $crud = true;
-        $grades = Grado::all();
-        return view('grades.search', compact('crud', 'grades'));
+        return view('grades.edit', ['grade' => $grade], compact('crud'));
     }
 
     public function show(Grado $grade)
@@ -49,10 +50,11 @@ class GradesController extends Controller
         return view('grades.show', compact('crud', 'grade'));
     }
 
-    public function edit(Grado $grade)
+    public function search()
     {
         $crud = true;
-        return view('grades.edit', ['grade' => $grade], compact('crud'));
+        $grades = Grado::all();
+        return view('grades.search', compact('crud', 'grades'));
     }
 
     public function update(Grado $grade)

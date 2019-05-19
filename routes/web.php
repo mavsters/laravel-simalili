@@ -44,26 +44,26 @@ Route::post('/users', 'UserController@store');
 
 # Grade
 // Index
-Route::get('/grades', 'GradesController@grades')->name('grades.grades');
+Route::get('/grades', 'GradeController@grades')->name('grades.grades');
 
 // New
-Route::get('/grades/new', 'GradesController@create')->name('grades.create');
-Route::post('/grades', 'GradesController@store');
+Route::get('/grades/new', 'GradeController@create')->name('grades.create');
+Route::post('/grades', 'GradeController@store');
 
 // Search
-Route::get('/grades/search', 'GradesController@search')->name('grades.search');
-// Show
-Route::get('/grades/{grade}', 'GradesController@show')
+Route::get('/grades/search', 'GradeController@search')->name('grades.search');
+// Show grade
+Route::get('/grades/{grade}', 'GradeController@show')
     ->where('grade', '[0-9]+')
     ->name('grades.show');
 
 // Edit
-Route::get('/grades/{grades}/edit', 'GradesController@edit')->name('grades.edit');
-Route::put('/grades/{grades}', 'GradesController@update');
+Route::get('/grades/{grade}/edit', 'GradeController@edit')->name('grades.edit');
+Route::put('/grades/{grade}', 'GradeController@update');
 
 // Delete
-Route::delete('/grades/{grades}', 'GradesController@destroy')->name('grades.destroy');
-Route::post('/grades', 'GradesController@store');
+Route::delete('/grades/{grade}', 'GradeController@destroy')->name('grades.destroy');
+Route::post('/grades', 'GradeController@store');
 
 
 # Docent

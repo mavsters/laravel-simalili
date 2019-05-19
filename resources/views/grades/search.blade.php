@@ -1,6 +1,6 @@
 @extends('layouts.layout')
 
-@section('title', "Crear usuario")
+@section('title', "Buscar Grado")
 
 @section('content')
     <div class="container">
@@ -9,8 +9,8 @@
                 <div class="row justify-content-center">
                     <div class="col-lg-3 order-lg-2">
                         <div class="card-profile-image">
-                            <a href="{{ url('/users') }}">
-                                <img class="rounded-circle" src="{{asset('img/icons/Usuario.png')}}">
+                            <a href="{{ url('/grades') }}">
+                                <img class="rounded-circle" src="{{asset('img/icons/Grado.png')}}">
                             </a>
                         </div>
                     </div>
@@ -24,36 +24,37 @@
                     </div>
                 </div>
                 <div class="text-center mt-5">
-                    <h1>Usuario</h1>
+                    <h1>Grado</h1>
                     <div class="h6 font-weight-300"><i class="ni location_pin mr-2"></i></div>
                 </div>
-                <form method="POST" action="{{ url('users') }}">
+                <form method="POST" action="{{ url('grades') }}">
                     <div class="mt-3 py-5 border-top text-center">
                         <div class="row justify-content-center">
                             <div class="col-lg-12">
-                                @if ($users->isNotEmpty())
+                                @if ($grades->isNotEmpty())
                                     <table class="table">
                                         <thead>
                                         <tr>
                                             <th scope="col">#</th>
                                             <th scope="col">Nombre</th>
-                                            <th scope="col">Correo</th>
                                             <th scope="col">Acciones</th>
                                         </tr>
                                         </thead>
                                         <tbody>
-                                        @foreach($users as $user)
+                                        @foreach($grades as $grade)
                                             <tr>
-                                                <th scope="row">{{ $user->id }}</th>
-                                                <td>{{ $user->name }}</td>
-                                                <td>{{ $user->email }}</td>
+                                                <th scope="row">{{ $grade->id }}</th>
+                                                <td>{{ $grade->nombre }}</td>
                                                 <td>
-                                                    <form action="{{ route('users.destroy', $user) }}" method="POST">
+                                                    <form action="{{ route('grades.destroy', $grade) }}"
+                                                          method="POST">
                                                         {{ csrf_field() }}
                                                         {{ method_field('DELETE') }}
-                                                        <a href="{{ route('users.show', $user) }}" class="btn btn-link"><span
+                                                        <a href="{{ route('grades.show', $grade) }}"
+                                                           class="btn btn-link"><span
                                                                 class="fa fa-eye"></span></a>
-                                                        <a href="{{ route('users.edit', $user) }}" class="btn btn-link"><span
+                                                        <a href="{{ route('grades.edit', $grade) }}"
+                                                           class="btn btn-link"><span
                                                                 class="fa fa-edit"></span></a>
                                                         <button type="submit" class="btn btn-link"><span
                                                                 class="fa fa-trash"></span>
@@ -68,8 +69,7 @@
                                     <p>No hay usuarios registrados.</p>
                                 @endif
                                 <hr/>
-                                <a href="{{ url('/users') }}" class="btn btn-danger btn-lg">Regresar al listado de
-                                    usuarios</a>
+                                <a href="{{ url('/grades') }}" class="btn btn-danger btn-lg">Regresar</a>
                             </div>
                         </div>
                     </div>

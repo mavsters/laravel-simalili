@@ -45,9 +45,9 @@
                             <div class="col-lg-12">
 
                                 {{ csrf_field() }}
-
+                                <h2>Datos del Grado:</h2>
                                 <div class="form-group">
-                                    <label for="nombre">Nombre del Grado:</label>
+                                    <label for="name">Nombre:</label>
                                     <input type="text" class="form-control" name="nombre" id="nombre"
                                            placeholder="Primero..."
                                            value="{{ old('nombre') }}">
@@ -55,7 +55,8 @@
                                 <hr/>
                                 <div class="text-center">
                                     <a href="{{ url('/grades') }}" class="btn btn-danger btn-lg">Regresar al listado de
-                                        grado</a>
+                                        los
+                                        grados</a>
                                     <button type="submit" class="btn btn-success btn-lg">Crear Grado</button>
                                 </div>
                             </div>

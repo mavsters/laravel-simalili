@@ -48,22 +48,23 @@
                                 {{ method_field('PUT') }}
                                 {{ csrf_field() }}
                                 <h2>Datos del Grado:</h2>
-                                @if(!xisset($grade))
+
+                                @if(isset($grade))
                                     <div class="form-group">
                                         <label for="name">Nombre:</label>
                                         <input type="text" class="form-control" name="nombre" id="nombre"
-                                               placeholder="Primero..."
-                                               value="{{ old('nombre', $grade->nombre) }}">
+                                               placeholder="Primaria.."
+                                               value="{{ old('name', $grade->nombre) }}">
                                     </div>
-
                                 @else
-                                    <b>No existe un Grado con el identificador {{$grade->id}}</b>
+                                    <b>No existe un grade para este usuario</b> Por favor cree este usuario con el
+                                    mismo <b>Nombre</b> y <b>Correo</b>
                                     <a href="{{ url('/grades/new') }}" class="btn btn-warning btn-lg">Crear</a>
                                 @endif
+
                                 <hr/>
                                 <div class="text-center">
-                                    <a href="{{ url('/grades') }}" class="btn btn-danger btn-lg">Regresar al listado de
-                                        usuarios</a>
+                                    <a href="{{ url('/grades') }}" class="btn btn-danger btn-lg">Regresar</a>
                                     <button type="submit" class="btn btn-primary btn-lg">Actualizar Datos</button>
                                 </div>
                             </div>

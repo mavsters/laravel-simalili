@@ -79,31 +79,25 @@ class DocentController extends Controller
 
     public function update(Docente $docent)
     {
-        $docent = Docente::where(
-            'nombre_completo', 'like', '%' . ($docent->name) . '%'
-        )->first();
-
-        if (isset($docent)) {
-            // Docent
-            $data = request()->validate([
-                'name' => 'required',
-                'lugar_nac' => 'required',
-                'edad' => 'required',
-                'religion' => 'required',
-                'titulo_prof' => 'required',
-                'tipo_documento' => 'required',
-                'number_id' => 'required',
-            ], [
-                'name.required' => 'El campo nombre es obligatorio',
-                'lugar_nac.required' => 'El Lugar de Nacimiento es Obligatorio',
-                'edad.required' => 'La edad es Obligatorio',
-                'religion.required' => 'La Religión es Obligatoria',
-                'titulo_prof.required' => 'El titulo de profesión es Obligatorio',
-                'tipo_documento.required' => 'El tipo de documento es Obligatorio',
-                'number_id.required' => 'El número de Identificación es Obligatorio',
-            ]);
-            $docent->update($data);
-        }
+        // Docent
+        $data = request()->validate([
+            'name' => 'required',
+            'lugar_nac' => 'required',
+            'edad' => 'required',
+            'religion' => 'required',
+            'titulo_prof' => 'required',
+            'tipo_documento' => 'required',
+            'number_id' => 'required',
+        ], [
+            'name.required' => 'El campo nombre es obligatorio',
+            'lugar_nac.required' => 'El Lugar de Nacimiento es Obligatorio',
+            'edad.required' => 'La edad es Obligatorio',
+            'religion.required' => 'La Religión es Obligatoria',
+            'titulo_prof.required' => 'El titulo de profesión es Obligatorio',
+            'tipo_documento.required' => 'El tipo de documento es Obligatorio',
+            'number_id.required' => 'El número de Identificación es Obligatorio',
+        ]);
+        $docent->update($data);
 
         return redirect()->route('docents.show', ['docent' => $docent]);
     }

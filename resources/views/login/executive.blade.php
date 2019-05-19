@@ -1,7 +1,7 @@
 @extends('layouts.layout')
 @section('content')
 <div class="row justify-content-center mt--300">
-    <div class="col-lg-12">S
+    <div class="col-lg-12">
         <div class="row row-grid">
             <div class="col-lg-4">
                 <div class="card card-lift--hover shadow border-0">
