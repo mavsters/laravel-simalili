@@ -9,7 +9,7 @@
                         <div class="icon icon-shape icon-shape-primary rounded-circle m-4">
                             <img height="100" src="{{asset('img/icons/Usuario.png')}}">
                         </div>
-                        <a class="btn btn-default mt-3" href="../executive-user"
+                        <a class="btn btn-default mt-3" href="{{url('/user')}}"
                            style="right: 11px;">Usuario</a>
                     </div>
                 </div>

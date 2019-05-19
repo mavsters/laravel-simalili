@@ -127,10 +127,10 @@
             <!-- 1st Hero Variation -->
         </div>
         <section class="section">
-        <div class="container">
-            @yield('content')
-        </div>
-    </section>
+            <div class="container">
+                @yield('content')
+            </div>
+        </section>
     @else
     <!-- shape Hero -->
         <section class="section section-shaped section-lg">

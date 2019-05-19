@@ -2,14 +2,14 @@
 
 namespace App\Http\Controllers;
 
+use App\User;
 use Illuminate\Contracts\Support\Renderable;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\DB;
 
 class UserController extends Controller
 {
 
-
+    protected $typeUser = "";
 
     //pubf
     /**
@@ -35,46 +35,26 @@ class UserController extends Controller
      */
     public function index()
     {
-        // Usuario - Tipo de Usuario
-        $typeUserID = DB::table('users')->select('id_tipousuario')->where(
-            'email', 'like', '%' . (Auth::user()->email) . '%'
-        )->first()->id_tipousuario;
-
-        // Tipo de Usuario
-        $typeUser = DB::table('tipousuario')->select('tipo_usuario')->where(
-            'id', '=', $typeUserID
-        )->first()->tipo_usuario;
-
+        self::getDataBasic();
         // Values View
-        $title = "Bienvenido - $typeUser";
-        $nameView = 'login.';
-        switch ($typeUser) {
-            case 'Directivo':
-                $nameView .= 'executive';
-                break;
-            case 'Secretaría':
-                $nameView .= 'secretary';
-                break;
-            default:
-                $nameView = 'home';
-                break;
-        }
+        $typeUser = $this->typeUser['name'];
+        $title = "Bienvenido - " . $typeUser;
+        $nameView = "login." . $this->typeUser['typeUser'];
 
-        if(request()->has('empty')){
-            $users = [];
-        }else {
-
-            $users = [
-                "Andres",
-                "juana",
-                "isabel",
-                "<script>alert('hola');</script>",
-            ];
-        }
 
         return
             view($nameView,
-                compact('users', 'title', 'typeUser'));
+                compact('title', 'typeUser'));
+    }
+
+    function dashboard()
+    {
+        $title = 'User';
+        self::getDataBasic();
+        $typeUser = $this->typeUser['name'];
+        return view($this->typeUser['typeUser'] . '.user',
+            compact('users', 'title', 'typeUser'));
+
     }
 
     public function login(){
@@ -93,5 +73,37 @@ class UserController extends Controller
         return "Mostrando detalles del usuario: {$id}";
     }
 
+
+    protected function getDataBasic()
+    {
+        // Globals
+        // Usuario - Tipo de Usuario
+
+        $typeUserID = User::where(
+            'email', 'like', '%' . (Auth::user()->email) . '%'
+        )->first()->tipousuario;
+
+        $typeUser = $typeUserID->tipo_usuario;
+
+        $type = '';
+        switch ($typeUser) {
+            case 'Directivo':
+                $type = 'executive';
+                break;
+            case 'Secretaría':
+                $type = 'secretary';
+                break;
+            default:
+                $type = 'home';
+                break;
+        }
+
+        $this->typeUser = [
+            "typeUser" => $type,
+            "name" => $typeUser
+        ];
+
+
+    }
 
 }

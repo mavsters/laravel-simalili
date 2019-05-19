@@ -63,9 +63,9 @@ class ForeignKeys extends Migration
             $table->foreign('id_persona')->references('id')->on('persona');
         });
 
-        Schema::table('tipopersona',function ($table){
-            $table->unsignedInteger('id_persona');
-            $table->foreign('id_persona')->references('id')->on('persona');
+        Schema::table('persona', function ($table) {
+            $table->unsignedInteger('id_tipopersona');
+            $table->foreign('id_tipopersona')->references('id')->on('tipopersona');
         });
 
     }

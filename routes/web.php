@@ -18,7 +18,14 @@ Auth::routes();
 Route::get('/', 'UserController@index')->middleware('auth');
 Route::get('/home', 'UserController@index')->name('home');
 
-/*
+# User
+Route::get('/user', 'UserController@dashboard');
+/*Route::get('/user/new', 'UserController@new');
+Route::get('/user/modify', 'UserController@modify');
+Route::get('/user/delete', 'UserController@delete');
+Route::get('/user/search', 'UserController@search');
+
+
 Route::get('/login', 'UserController@login');
 
 Route::get('/login/executive', 'UserController@executive');
@@ -62,11 +69,7 @@ Route::get('/subject/new', 'SubjectController@new');
 Route::get('/subject/modify', 'SubjectController@modify');
 Route::get('/subject/delete', 'SubjectController@delete');
 Route::get('/subject/search', 'SubjectController@search');
-# User
-Route::get('/user/new', 'UserController@new');
-Route::get('/user/modify', 'UserController@modify');
-Route::get('/user/delete', 'UserController@delete');
-Route::get('/user/search', 'UserController@search');
+
 # Secretary
 Route::get('/secretary/new', 'SecretaryController@new');
 Route::get('/secretary/modify', 'SecretaryController@modify');
