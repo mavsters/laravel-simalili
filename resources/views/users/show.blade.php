@@ -44,7 +44,16 @@
                     <div class="mt-3 py-5 border-top text-center">
                         <div class="row justify-content-center">
                             <div class="col-lg-12">
-                                <p>Nombre del usuario: {{ $user->name }}</p>
+                                <h2>Datos del Docente:</h2>
+                                <p>Nombre del usuario: {{ $docent->nombre_completo }}</p>
+                                <p>Lugar de nacimiento: {{ $docent->lugar_nac }}</p>
+                                <p>Edad: {{ $docent->edad }}</p>
+                                <p>Religión: {{ $docent->religion }}</p>
+                                <p>Título Profesional: {{ $docent->titulo_prof }}</p>
+                                <p>Tipo de Identificación: {{ $docent->tipo_documento }}</p>
+                                <p>Número de Identificación: {{ $docent->number_id }}</p>
+                                <h2>Datos del usuario</h2>
+                                <p>Nombre: {{$user->name}}</p>
                                 <p>Correo electrónico: {{ $user->email }}</p>
                                 <hr/>
                                 <a href="{{ url('/users') }}" class="btn btn-danger btn-lg">Regresar al listado de

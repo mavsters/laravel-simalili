@@ -55,40 +55,41 @@
                                            value="{{ old('name', $user->name) }}">
                                 </div>
 
+                                @if(isset($docent))
                                 <div class="form-group">
                                     <label for="lugar_nac">Lugar de nacimiento:</label>
                                     <input type="text" class="form-control" name="lugar_nac" id="lugar_nac"
                                            placeholder="Tunja"
-                                           value="{{ old('lugar_nac') }}">
+                                           value="{{ old('lugar_nac', $docent->lugar_nac) }}">
                                 </div>
 
                                 <div class="form-group">
                                     <label for="edad">Edad:</label>
                                     <input type="text" class="form-control" name="edad" id="edad" placeholder="20"
-                                           value="{{ old('edad') }}">
+                                           value="{{ old('edad', $docent->edad) }}">
                                 </div>
 
                                 <div class="form-group">
                                     <label for="religion">Religión:</label>
                                     <input type="text" class="form-control" name="religion" id="religion"
                                            placeholder="Catolico"
-                                           value="{{ old('religion') }}">
+                                           value="{{ old('religion', $docent->religion) }}">
                                 </div>
 
                                 <div class="form-group">
                                     <label for="titulo_prof">Título Profesional:</label>
                                     <input type="text" class="form-control" name="titulo_prof" id="titulo_prof"
                                            placeholder="Ing..."
-                                           value="{{ old('titulo_prof') }}">
+                                           value="{{ old('titulo_prof', $docent->titulo_prof) }}">
                                 </div>
 
                                 <div class="form-group">
                                     <label for="tipo_documento">Título Profesional:</label>
                                     <div class="dropdown">
                                         <select id="tipo_documento" name="tipo_documento"
-                                                class="btn btn-secondary dropdown-toggle"
-                                                value="{{ old('tipo_documento') }}">
-                                            <option class="dropdown-item" selected>Seleccione...</option>
+                                                class="btn btn-secondary dropdown-toggle">
+                                            <option class="dropdown-item"
+                                                    selected>{{ old('tipo_documento', $docent->tipo_documento) }}</option>
                                             <option class="dropdown-item">Cedula de Ciudadania</option>
                                             <option class="dropdown-item">Pasaporte</option>
                                             <option class="dropdown-item">Cedula Extranjera</option>
@@ -101,9 +102,13 @@
                                     <label for="number_id">Número de Identificación:</label>
                                     <input type="text" class="form-control" name="number_id" id="number_id"
                                            placeholder="10...." autocomplete="off"
-                                           value="{{ old('number_id') }}">
+                                           value="{{ old('number_id', $docent->number_id) }}">
                                 </div>
-
+                                @else
+                                    <b>No existe un Docente para este usuario</b> Por favor cree este usuario con el
+                                    mismo <b>Nombre</b> y <b>Correo</b>
+                                    <a href="{{ url('/users/new') }}" class="btn btn-warning btn-lg">Crear</a>
+                                @endif
                                 <hr/>
 
                                 <h2>Datos del usuario:</h2>
