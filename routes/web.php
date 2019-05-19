@@ -1,4 +1,4 @@
-<?php
+n<?php
 
 /*
 |--------------------------------------------------------------------------
@@ -18,8 +18,7 @@ Route::get('/', function () {
 Route::get('/login','UserController@login');
 
 Route::get('/login/executive','UserController@executive');
-
-/** Routes Administrator */
+/** Routes Administratorh */
 Route::get('/users','UserController@index');
 
 // Prioridad
