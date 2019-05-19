@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\User;
 use Illuminate\Contracts\Support\Renderable;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Validation\Rule;
+
 
 class UserController extends Controller
 {
@@ -20,8 +22,7 @@ class UserController extends Controller
      */
     public function __construct()
     {
-        // Flag
-        //$this->withoutExceptionHandling();
+
 
         // $this->middleware('auth');
     }
@@ -40,61 +41,68 @@ class UserController extends Controller
         $nameView = "login." . self::getDataBasic()['name'];
 
         $users = User::all();
-
+        $nameView = 'users.index';
         return
             view($nameView,
                 compact('title', 'users', 'typeUser'));
     }
 
-    function dashboard()
-    {
-        $title = 'User';
-        self::getDataBasic();
-        $typeUser = self::getDataBasic()['typeUser'];
-
-
-        return view(self::getDataBasic()['name'] . '.user',
-            compact('users', 'title', 'typeUser'));
-
-    }
-
-    function list()
-    {
-        $title = 'Listado de usuarios';
-        $users = User::all();
-
-        return
-            view('users',
-                compact('title', 'users'));
-    }
-
-    public function login(){
-        $title = 'Listado de usuarios';
-
-        return view('login.index',compact('title'));
-    }
-
-    public function executive(){
-        $title = 'Listado de usuarios';
-
-        return view('login.executive',compact('title'));
-    }
-
     public function show(User $user)
     {
-        $title = 'Listado de usuarios';
-        return view('show', compact('title', 'user'));
+        return view('users.show', compact('user'));
     }
-
 
     public function create()
     {
-        return view('user.create');
+        return view('users.create');
     }
 
     public function store()
     {
-        return "procesando";
+        $data = request()->validate([
+            'name' => 'required',
+            'email' => ['required', 'email', 'unique:users,email'],
+            'password' => 'required',
+        ], [
+            'name.required' => 'El campo nombre es obligatorio'
+        ]);
+        User::create([
+            'name' => $data['name'],
+            'email' => $data['email'],
+            'password' => bcrypt($data['password'])
+        ]);
+        return redirect()->route('users.index');
+    }
+
+    public function edit(User $user)
+    {
+        return view('users.edit', ['user' => $user]);
+    }
+
+    public function update(User $user)
+    {
+        $data = request()->validate([
+            'name' => 'required',
+            'email' => ['required', 'email', Rule::unique('users')->ignore($user->id)],
+            'password' => '',
+        ]);
+
+        if ($data['password'] != null) {
+            $data['password'] = bcrypt($data['password']);
+        } else {
+            unset($data['password']);
+        }
+
+        $user->update($data);
+
+        return redirect()->route('users.show', ['user' => $user]);
+    }
+
+    function destroy(User $user)
+    {
+        $user->delete();
+
+        return redirect()->route('users.index');
     }
 
     protected function getDataBasic()

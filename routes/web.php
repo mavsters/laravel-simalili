@@ -19,16 +19,22 @@ Route::get('/', 'UserController@index')->middleware('auth');
 Route::get('/home', 'UserController@index')->name('home');
 
 # User
-Route::get('/user', 'UserController@dashboard');
-Route::get('/users', 'UserController@list');
-// Usuario [0-9]
-Route::get('/users/{user}', 'UserController@show');
-/*Route::get('/users/{id}', 'UserController@show')
-    ->where('id', '[0-9]+') // Condicion y expreson regular (Solo números y Más de un numero O \w+ (Letras y Numeros)
-;*/
 
-Route::get('/user/new', 'UserController@create')->name('user.create');
-Route::post('/user/crear', 'UserController@store');
+Route::get('/users', 'UserController@index')
+    ->name('users.index');
+Route::get('/users/{user}', 'UserController@show')
+    ->where('user', '[0-9]+')
+    ->name('users.show');
+Route::get('/users/new', 'UserController@create')->name('users.create');
+Route::post('/users', 'UserController@store');
+Route::get('/users/{user}/edit', 'UserController@edit')->name('users.edit');
+Route::put('/users/{user}', 'UserController@update');
+Route::delete('/users/{user}', 'UserController@destroy')->name('users.destroy');
+Route::post('/users', 'UserController@store');
+
+Route::get('/saludo/{name}/{nickname?}', 'WelcomeUserController');
+
+
 /*Route::get('/user/new', 'UserController@new');
 Route::get('/user/modify', 'UserController@modify');
 Route::get('/user/delete', 'UserController@delete');
@@ -43,7 +49,7 @@ Route::get('/users', 'UserController@index');
 
 // Prioridad
 Route::get('/users/new', function () {
-    return "Crear nuevo usuario";
+    return "Crear new user";
 });
 
 
