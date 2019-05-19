@@ -20,7 +20,7 @@
                         <div class="icon icon-shape icon-shape-warning rounded-circle m-4">
                             <img height="100" src="{{asset('img/icons/Matricula.png')}}">
                         </div>
-                        <a class="btn btn-warning mt-3" href="../executive-enrollment"
+                        <a class="btn btn-warning mt-3" href="{{url('/enrollment')}}"
                            style="right: 11px;">Matrícula</a>
                     </div>
                 </div>
@@ -31,7 +31,7 @@
                         <div class="icon icon-shape icon-shape-info rounded-circle m-4">
                             <img height="100" src="{{asset('img/icons/Grado.png')}}">
                         </div>
-                        <a class="btn btn-info mt-4" href="../executive-grade"
+                        <a class="btn btn-info mt-4" href="{{url('grades')}}"
                            style="right: 5px;">Grado</a>
                     </div>
                 </div>
@@ -49,7 +49,7 @@
                         <div class="icon icon-shape icon-shape-success rounded-circle m-4">
                             <img height="100" src="{{asset('img/icons/Asignatura.png')}}">
                         </div>
-                        <a class="btn btn-success mt-3" href="../executive-subject"
+                        <a class="btn btn-success mt-3" href="{{url('/subject')}}"
                            style="right: 11px;">Asignatura</a>
                     </div>
                 </div>
@@ -60,7 +60,7 @@
                         <div class="icon icon-shape icon-shape-primary rounded-circle m-4">
                             <img height="100" src="{{asset('img/icons/Docente.png')}}">
                         </div>
-                        <a class="btn btn-primary mt-3" href="../executive-docent"
+                        <a class="btn btn-primary mt-3" href="{{url('/docent')}}"
                            style="right: 11px;">Docente</a>
                     </div>
                 </div>
@@ -71,7 +71,7 @@
                         <div class="icon icon-shape icon-shape-secondary rounded-circle m-4">
                             <img height="100" src="{{asset('img/icons/Listas.png')}}">
                         </div>
-                        <a class="btn btn-secondary mt-4" href="../executive-list"
+                        <a class="btn btn-secondary mt-4" href="{{url('/lists')}}"
                            style="right: 5px;">Lista</a>
                     </div>
                 </div>

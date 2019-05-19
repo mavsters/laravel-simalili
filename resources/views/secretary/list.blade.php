@@ -30,7 +30,7 @@ $section->appendInnerHTML('
               <div class="row justify-content-center">
                 <div class="col-lg-12">
                     <a class="btn btn-outline-default" href="../list-docent">Listado de Docentes</a>
-                    <a class="btn btn-outline-default" href="../list-grade">Listado por Grados</a>
+                    <a class="btn btn-outline-default" href="../list-grades">Listado por Grados</a>
                     <a class="btn btn-outline-default" href="../list-preschool">Listado de Preescolar</a>
                     <a class="btn btn-outline-default" href="../list-student-primary">Listado de Primaria</a>
                 </div>

@@ -1,7 +1,7 @@
 <?php
 /** Grade Actions **/
 // Show grades registers
-$gradeNames = self::getConnection()->db_exec("fetch_array", 'SELECT `nameGrade` FROM `grade`');
+$gradeNames = self::getConnection()->db_exec("fetch_array", 'SELECT `nameGrade` FROM `grades`');
 $names = "<option class=\"dropdown-item\" selected>Seleccione...</option>";
 foreach ($gradeNames as $keys => $values) {
     $names .= '<option class="dropdown-item" >' . $values[0] . '</option>';
