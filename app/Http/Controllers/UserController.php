@@ -39,20 +39,42 @@ class UserController extends Controller
         $nameView = "login." . self::getDataBasic()['name'];
 
         $users = User::all();
-        $nameView = 'users.index';
+        //  $nameView = 'users.index';
         return
             view($nameView,
                 compact('title', 'users', 'typeUser'));
     }
 
+    public function users()
+    {
+        $title = "Usuarios";
+        $users = User::all();
+        $typeUser = self::getDataBasic()['typeUser'];
+        $nameView = self::getDataBasic()['name'] . ".user";
+        return
+            view($nameView,
+                compact('title', 'users', 'typeUser'));
+
+    }
+
     public function show(User $user)
     {
-        return view('users.show', compact('user'));
+        $crud = true;
+        return view('users.show', compact('crud', 'user'));
+    }
+
+    public function search()
+    {
+        $crud = true;
+        $users = User::all();
+        return view('users.search', compact('crud', 'users'));
     }
 
     public function create()
     {
-        return view('users.create');
+        $crud = true;
+        $users = User::all();
+        return view('users.create', compact('crud', 'users'));
     }
 
     public function store()
@@ -69,12 +91,13 @@ class UserController extends Controller
             'email' => $data['email'],
             'password' => bcrypt($data['password'])
         ]);
-        return redirect()->route('users.index');
+        return redirect()->back();
     }
 
     public function edit(User $user)
     {
-        return view('users.edit', ['user' => $user]);
+        $crud = true;
+        return view('users.edit', ['user' => $user], compact('crud'));
     }
 
     public function update(User $user)
@@ -99,8 +122,7 @@ class UserController extends Controller
     function destroy(User $user)
     {
         $user->delete();
-
-        return redirect()->route('users.index');
+        return redirect()->back();
     }
 
     protected function getDataBasic()

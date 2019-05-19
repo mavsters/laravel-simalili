@@ -19,20 +19,24 @@ Route::get('/', 'UserController@index')->middleware('auth');
 Route::get('/home', 'UserController@index')->name('home');
 
 # User
-
-Route::get('/users', 'UserController@index')
-    ->name('users.index');
+// Index
+Route::get('/users', 'UserController@users')->name('users.users');
+// Show User
 Route::get('/users/{user}', 'UserController@show')
     ->where('user', '[0-9]+')
     ->name('users.show');
+// New User
 Route::get('/users/new', 'UserController@create')->name('users.create');
 Route::post('/users', 'UserController@store');
+// Edit User
 Route::get('/users/{user}/edit', 'UserController@edit')->name('users.edit');
 Route::put('/users/{user}', 'UserController@update');
+// Delete User
 Route::delete('/users/{user}', 'UserController@destroy')->name('users.destroy');
 Route::post('/users', 'UserController@store');
 
-Route::get('/saludo/{name}/{nickname?}', 'WelcomeUserController');
+// Search User
+Route::get('/users/search', 'UserController@search')->name('users.search');
 
 
 /*Route::get('/user/new', 'UserController@new');
@@ -104,7 +108,6 @@ Route::get('/executive/list', 'ExecutiveController@delete');
 Route::get('/executive/secretary-student', 'ExecutiveController@search');
 Route::get('/executive/student', 'ExecutiveController@search');
 Route::get('/executive/subject', 'ExecutiveController@search');
-Route::get('/executive/user', 'ExecutiveController@search');
 */
 
 

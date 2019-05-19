@@ -1,12 +1,7 @@
 @extends('layouts.layout')
 @section('content')
 <div class="row justify-content-center mt--300">
-    <div class="col-lg-12">
-        @forelse($users as $user)
-            <li>{{ $user->name }}</li>
-        @empty
-            <li>No hay usuarios registrados.</li>
-        @endforelse
+    <div class="col-lg-12">S
         <div class="row row-grid">
             <div class="col-lg-4">
                 <div class="card card-lift--hover shadow border-0">
@@ -14,7 +9,7 @@
                         <div class="icon icon-shape icon-shape-primary rounded-circle m-4">
                             <img height="100" src="{{asset('img/icons/Usuario.png')}}">
                         </div>
-                        <a class="btn btn-default mt-3" href="{{url('/user')}}"
+                        <a class="btn btn-default mt-3" href="{{url('/users')}}"
                            style="right: 11px;">Usuario</a>
                     </div>
                 </div>
