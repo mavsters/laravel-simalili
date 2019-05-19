@@ -11,11 +11,12 @@
 |
 */
 
-Route::get('/', function () {
-    return view('home');
-})->middleware('auth');
+// Add Authentication
+Auth::routes();
 
-Route::get('/home', 'HomeController@index');
+// Home
+Route::get('/', 'UserController@index')->middleware('auth');
+
 
 /*
 Route::get('/login', 'UserController@login');
@@ -91,6 +92,5 @@ Route::get('/executive/subject', 'ExecutiveController@search');
 Route::get('/executive/user', 'ExecutiveController@search');
 */
 
-Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');

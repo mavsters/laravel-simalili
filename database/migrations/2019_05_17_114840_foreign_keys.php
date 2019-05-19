@@ -1,8 +1,8 @@
 <?php
 
-use Illuminate\Support\Facades\Schema;
-use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
 
 class ForeignKeys extends Migration
 {
@@ -38,7 +38,7 @@ class ForeignKeys extends Migration
         });
 
         Schema::table('users',function($table){
-            $table->unsignedInteger('id_docente');
+            $table->unsignedInteger('id_docente')->nullable();
             $table->foreign('id_docente')->references('id')->on('docente');
         });
 
