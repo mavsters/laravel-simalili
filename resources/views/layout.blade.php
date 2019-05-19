@@ -1,7 +1,7 @@
 <!DOCTYPE html>
-<html view-source="no" viewsource="no" lang="es" xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:b="//www.google.com/2005/gml/b" xmlns:data="//www.google.com/2005/gml/data"
-      xmlns:expr="//www.google.com/2005/gml/expr" prefix="og: http://ogp.me/ns#" class="perfect-scrollbar-on">
+<html view-source="no" viewsource="no" lang="{{ str_replace('_', '-', app()->getLocale()) }}"
+      xmlns="http://www.w3.org/1999/xhtml"
+      prefix="og: http://ogp.me/ns#" class="perfect-scrollbar-on">
 <head>
     <title>{{$title}}</title>
     <meta charset="utf-8">
@@ -78,7 +78,7 @@
             <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
         </div>
         <div class="container">
-                    @yield('content')
+            @yield('content')
         </div>
     </section>
 </main>
@@ -92,4 +92,5 @@
 <!-- Optional JS -->
 <script src="{{asset('vendor/bootstrap-datepicker/js/bootstrap-datepicker.min.js')}}"></script>
 </body>
-<!-- /BODY --></html>
+<!-- /BODY -->
+</html>
