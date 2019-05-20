@@ -104,6 +104,7 @@ class UserController extends Controller
             'tipo_usiaro.required' => 'Tipo de usuario Requerido'
         ]);
 
+
         $tipo_usuario = 0;
         switch ($data['tipo_usiaro']) {
             case 'Directivo':
@@ -112,17 +113,20 @@ class UserController extends Controller
             case 'Secretaría':
                 $tipo_usuario = 2;
                 break;
-            default:
+            case 'Normal':
                 $tipo_usuario = 3;
                 break;
         }
 
-        User::create([
+        $user = User::create([
             'name' => $data['name'],
             'email' => $data['email'],
             'password' => bcrypt($data['password']),
             'id_tipousuario' => $tipo_usuario
         ]);
+
+        dd($user);
+
         return redirect()->back();
     }
 
@@ -190,6 +194,7 @@ class UserController extends Controller
         ]);
 
         $tipo_usuario = 0;
+
         switch ($data['tipo_usiaro']) {
             case 'Directivo':
                 $tipo_usuario = 1;
@@ -197,7 +202,7 @@ class UserController extends Controller
             case 'Secretaría':
                 $tipo_usuario = 2;
                 break;
-            default:
+            case 'Normal':
                 $tipo_usuario = 3;
                 break;
         }
