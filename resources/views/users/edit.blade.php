@@ -113,6 +113,20 @@
 
                                 <h2>Datos del usuario:</h2>
                                 <div class="form-group">
+                                    <label for="tipo_usiaro">Tipo de Usuario:</label>
+                                    <div class="dropdown">
+                                        <select id="tipo_usiaro" name="tipo_usiaro"
+                                                class="btn btn-secondary dropdown-toggle">
+                                            <option class="dropdown-item"
+                                                    selected>{{ old('email', $user->id_tipousuario) }}</option>
+                                            <option class="dropdown-item">Directivo</option>
+                                            <option class="dropdown-item">Secretaría</option>
+                                            <option class="dropdown-item">Normal</option>
+
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="form-group">
                                     <label for="email">Correo electrónico:</label>
                                     <input type="email" class="form-control" name="email" id="email" autocomplete="on"
                                            placeholder="pedro@example.com"
