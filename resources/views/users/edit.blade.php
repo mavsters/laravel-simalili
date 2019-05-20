@@ -118,7 +118,11 @@
                                         <select id="tipo_usiaro" name="tipo_usiaro"
                                                 class="btn btn-secondary dropdown-toggle">
                                             <option class="dropdown-item"
-                                                    selected>{{ old('email', $user->id_tipousuario) }}</option>
+                                                    selected>
+                                                {{
+                                 old('tipo_usiaro',($user->id_tipousuario == 1)?'Directivo':(($user->id_tipousuario == 2)?'Secretaría':'Normal'))
+                                }}
+                                            </option>
                                             <option class="dropdown-item">Directivo</option>
                                             <option class="dropdown-item">Secretaría</option>
                                             <option class="dropdown-item">Normal</option>
@@ -140,8 +144,7 @@
                                 </div>
                                 <hr/>
                                 <div class="text-center">
-                                    <a href="{{ url('/users') }}" class="btn btn-danger btn-lg">Regresar al listado de
-                                        usuarios</a>
+                                    <a href="{{ url('/users') }}" class="btn btn-danger btn-lg">Regresar</a>
                                     <button type="submit" class="btn btn-primary btn-lg">Actualizar Datos</button>
                                 </div>
                             </div>
