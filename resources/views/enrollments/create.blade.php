@@ -68,12 +68,107 @@
                                                 class="btn btn-secondary dropdown-toggle"
                                                 value="{{ old('id_grado') }}">
                                             <option class="dropdown-item" selected>Seleccione...</option>
+                                            @foreach($grade as $value)
+                                                <option class="dropdown-item">{{$value->nombre}}</option>
+                                            @endforeach
 
                                         </select>
                                     </div>
                                 </div>
 
-                                id_requjisito
+                                <label for="requisito">Requisitos</label>
+                                <div class="row">
+                                    <div class="col-4">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" value="" id="requisito[0]">
+                                            <label class="form-check-label" for="requisito[0]">
+                                                Pago inscripción
+                                            </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" value="" id="requisito[1]">
+                                            <label class="form-check-label" for="requisito[1]">
+                                                Paz y Salvo
+                                            </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" value="" id="requisito[2]">
+                                            <label class="form-check-label" for="requisito[2]">
+                                                SIMAT
+                                            </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" value="" id="requisito[3]">
+                                            <label class="form-check-label" for="requisito[3]">
+                                                Formulario de Inscripción
+                                            </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" value="" id="requisito[4]">
+                                            <label class="form-check-label" for="requisito[4]">
+                                                Aprovación Entrevista
+                                            </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" value="" id="requisito[5]">
+                                            <label class="form-check-label" for="requisito[5]">
+                                                EPS
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="col-4">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" value="" id="requisito[7]">
+                                            <label class="form-check-label" for="requisito[7]">
+                                                Acta Matricula
+                                            </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" value="" id="requisito[8]">
+                                            <label class="form-check-label" for="requisito[8]">
+                                                Contrato Matricula
+                                            </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" value="" id="requisito[9]">
+                                            <label class="form-check-label" for="requisito[9]">
+                                                Notas (Año pasado)
+                                            </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" value="" id="requisito[10]">
+                                            <label class="form-check-label" for="requisito[10]">
+                                                Renovación con Acta
+                                            </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" value="" id="requisito[11]">
+                                            <label class="form-check-label" for="requisito[11]">
+                                                Registro Civil
+                                            </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" value="" id="requisito[12]">
+                                            <label class="form-check-label" for="requisito[12]">
+                                                Fotos
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="col-4">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" value="" id="requisito[13]">
+                                            <label class="form-check-label" for="requisito[13]">
+                                                Carnet Vacuna
+                                            </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" value="" id="requisito[14]">
+                                            <label class="form-check-label" for="requisito[14]">
+                                                Default checkbox
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
                                 <hr/>
                                 <h2>Datos del Acudiente:</h2>
                                 <div class="form-group">
@@ -112,7 +207,9 @@
                                                 class="btn btn-secondary dropdown-toggle"
                                                 value="{{ old('parentesco') }}">
                                             <option class="dropdown-item" selected>Seleccione...</option>
-
+                                            @foreach($parentesco as $value)
+                                                <option class="dropdown-item" selected>{{$value->tipo_persona}}</option>
+                                            @endforeach
 
                                         </select>
                                     </div>
@@ -187,22 +284,6 @@
                                     <input type="text" class="form-control" name="religion" id="religion"
                                            placeholder="Catolico"
                                            value="{{ old('religion') }}">
-                                </div>
-
-                                nombre_tutor
-
-                                <div class="form-group">
-                                    <label for="tipo_est">Documento de Identificación:</label>
-                                    <div class="dropdown">
-                                        <select id="tipo_est" name="tipo_est"
-                                                class="btn btn-secondary dropdown-toggle"
-                                                value="{{ old('tipo_est') }}">
-                                            <option class="dropdown-item" selected>Seleccione...</option>
-                                            <option class="dropdown-item">Nuevo</option>
-                                            <option class="dropdown-item">Antigüo</option>
-
-                                        </select>
-                                    </div>
                                 </div>
 
                                 <hr/>

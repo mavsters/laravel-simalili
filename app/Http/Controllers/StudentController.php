@@ -12,6 +12,7 @@ class StudentController extends Controller
         $student = Estudiante::all();
         $typeUser = self::getDataBasic()['typeUser'];
         $nameView = self::getDataBasic()['name'] . ".student";
+
         return
             view($nameView,
                 compact('title', 'student', 'typeUser'));
