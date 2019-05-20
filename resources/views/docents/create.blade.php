@@ -81,7 +81,7 @@
                                 </div>
 
                                 <div class="form-group">
-                                    <label for="tipo_documento">Título Profesional:</label>
+                                    <label for="tipo_documento">Tipo de Documento:</label>
                                     <div class="dropdown">
                                         <select id="tipo_documento" name="tipo_documento"
                                                 class="btn btn-secondary dropdown-toggle"
@@ -104,8 +104,7 @@
 
                                 <hr/>
                                 <div class="text-center">
-                                    <a href="{{ url('/docents') }}" class="btn btn-danger btn-lg">Regresar al listado de
-                                        usuarios</a>
+                                    <a href="{{ url('/docents') }}" class="btn btn-danger btn-lg">Regresar</a>
                                     <button type="submit" class="btn btn-success btn-lg">Crear usuario</button>
                                 </div>
                             </div>

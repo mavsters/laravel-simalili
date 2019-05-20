@@ -1,6 +1,6 @@
 @extends('layouts.layout')
 
-@section('title', "Buscar Docente")
+@section('title', "Buscar Estudiante")
 
 @section('content')
     <div class="container">
@@ -9,8 +9,8 @@
                 <div class="row justify-content-center">
                     <div class="col-lg-3 order-lg-2">
                         <div class="card-profile-image">
-                            <a href="{{ url('/docents') }}">
-                                <img class="rounded-circle" src="{{asset('img/icons/Docente.png')}}">
+                            <a href="{{ url('/students') }}">
+                                <img class="rounded-circle" src="{{asset('img/icons/Estudiante.png')}}">
                             </a>
                         </div>
                     </div>
@@ -24,14 +24,14 @@
                     </div>
                 </div>
                 <div class="text-center mt-5">
-                    <h1>Docente</h1>
+                    <h1>Estudiante</h1>
                     <div class="h6 font-weight-300"><i class="ni location_pin mr-2"></i></div>
                 </div>
-                <form method="POST" action="{{ url('docents') }}">
+                <form method="POST" action="{{ url('students') }}">
                     <div class="mt-3 py-5 border-top text-center">
                         <div class="row justify-content-center">
                             <div class="col-lg-12">
-                                @if ($docents->isNotEmpty())
+                                @if ($students->isNotEmpty())
                                     <table class="table">
                                         <thead>
                                         <tr>
@@ -41,19 +41,19 @@
                                         </tr>
                                         </thead>
                                         <tbody>
-                                        @foreach($docents as $docent)
+                                        @foreach($students as $student)
                                             <tr>
-                                                <th scope="row">{{ $docent->id }}</th>
-                                                <td>{{ $docent->nombre_completo }}</td>
+                                                <th scope="row">{{ $student->id }}</th>
+                                                <td>{{ $student->nombre }}</td>
                                                 <td>
-                                                    <form action="{{ route('docents.destroy', $docent) }}"
+                                                    <form action="{{ route('students.destroy', $student) }}"
                                                           method="POST">
                                                         {{ csrf_field() }}
                                                         {{ method_field('DELETE') }}
-                                                        <a href="{{ route('docents.show', $docent) }}"
+                                                        <a href="{{ route('students.show', $student) }}"
                                                            class="btn btn-link"><span
                                                                 class="fa fa-eye"></span></a>
-                                                        <a href="{{ route('docents.edit', $docent) }}"
+                                                        <a href="{{ route('students.edit', $student) }}"
                                                            class="btn btn-link"><span
                                                                 class="fa fa-edit"></span></a>
                                                         <button type="submit" class="btn btn-link"><span
@@ -69,7 +69,7 @@
                                     <p>No hay usuarios registrados.</p>
                                 @endif
                                 <hr/>
-                                <a href="{{ url('/docents') }}" class="btn btn-danger btn-lg">Regresar</a>
+                                <a href="{{ url('/students') }}" class="btn btn-danger btn-lg">Regresar</a>
                             </div>
                         </div>
                     </div>

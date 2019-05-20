@@ -10,7 +10,7 @@
                                         <img height="100" src="{{asset('img/icons/Matricula.png')}}">
                                     </div>
                                     <br/>
-                                    <a class="btn btn-primary mt-3" href="{{ url('/secretary/enrollment') }}"
+                                    <a class="btn btn-primary mt-3" href="{{ url('/enrollments') }}"
                                        style="right: 11px;">Matrícula</a>
                                 </div>
                             </div>
@@ -22,7 +22,7 @@
                                         <img height="100" src="{{asset('img/icons/Estudiantes.png')}}">
                                     </div>
                                     <br/>
-                                    <a class="btn btn-success mt-3" href="{{ url('/secretary/enrollment') }}"
+                                    <a class="btn btn-success mt-3" href="{{ url('/students') }}"
                                        style="right: 11px;">Estudiante</a>
                                 </div>
                             </div>
@@ -34,7 +34,7 @@
                                         <img height="100" src="{{asset('img/icons/Listas.png')}}">
                                     </div>
                                     <br/>
-                                    <a class="btn btn-warning mt-4" href="{{ url('/secretary/enrollment') }}"
+                                    <a class="btn btn-warning mt-4" href="{{ url('/lists') }}"
                                        style="right: 5px;">Listas</a>
                                 </div>
                             </div>

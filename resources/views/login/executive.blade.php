@@ -31,7 +31,7 @@
                         <div class="icon icon-shape icon-shape-info rounded-circle m-4">
                             <img height="100" src="{{asset('img/icons/Grado.png')}}">
                         </div>
-                        <a class="btn btn-info mt-4" href="{{url('grades')}}"
+                        <a class="btn btn-info mt-4" href="{{url('/grades')}}"
                            style="right: 5px;">Grado</a>
                     </div>
                 </div>
@@ -60,7 +60,7 @@
                         <div class="icon icon-shape icon-shape-primary rounded-circle m-4">
                             <img height="100" src="{{asset('img/icons/Docente.png')}}">
                         </div>
-                        <a class="btn btn-primary mt-3" href="{{url('/docent')}}"
+                        <a class="btn btn-primary mt-3" href="{{url('/docents')}}"
                            style="right: 11px;">Docente</a>
                     </div>
                 </div>

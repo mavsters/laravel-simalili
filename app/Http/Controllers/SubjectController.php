@@ -175,6 +175,7 @@ class SubjectController extends Controller
             'estado' => 1
         ]);
 
+        /** TODO: Update Subject */
 
         return redirect()->route('subjects.show', ['subject' => $subject]);
     }

@@ -112,8 +112,7 @@
 
                                 <hr/>
                                 <div class="text-center">
-                                    <a href="{{ url('/docents') }}" class="btn btn-danger btn-lg">Regresar al listado de
-                                        usuarios</a>
+                                    <a href="{{ url('/docents') }}" class="btn btn-danger btn-lg">Regresar</a>
                                     <button type="submit" class="btn btn-primary btn-lg">Actualizar Datos</button>
                                 </div>
                             </div>

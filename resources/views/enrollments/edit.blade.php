@@ -1,16 +1,18 @@
 @extends('layouts.layout')
 
-@section('title', "Docente {$docent->id}")
+@section('title', "Editar Matricula")
 
 @section('content')
+
+
     <div class="container">
         <div class="card card-profile shadow mt--300">
             <div class="px-4">
                 <div class="row justify-content-center">
                     <div class="col-lg-3 order-lg-2">
                         <div class="card-profile-image">
-                            <a href="{{ url('/docents') }}">
-                                <img class="rounded-circle" src="{{asset('img/icons/Docente.png')}}">
+                            <a href="{{ url('/enrollments') }}">
+                                <img class="rounded-circle" src="{{asset('img/icons/Matricula.png')}}">
                             </a>
                         </div>
                     </div>
@@ -36,24 +38,35 @@
                     </div>
                 </div>
                 <div class="text-center mt-5">
-
-                    <h1>Docente #{{ $docent->id }}</h1>
+                    <h1>Editar Matricula</h1>
                     <div class="h6 font-weight-300"><i class="ni location_pin mr-2"></i></div>
                 </div>
-                <form method="POST" action="{{ url('docents') }}">
-                    <div class="mt-3 py-5 border-top text-center">
+                <form method="POST" action="{{ url("enrollments/{$enrollment->id}") }}">
+                    <div class="mt-3 py-5 border-top text-left">
                         <div class="row justify-content-center">
                             <div class="col-lg-12">
-                                <h2>Datos del Docente:</h2>
-                                <p>Nombre del usuario: {{ $docent->nombre_completo }}</p>
-                                <p>Lugar de nacimiento: {{ $docent->lugar_nac }}</p>
-                                <p>Edad: {{ $docent->edad }}</p>
-                                <p>Religión: {{ $docent->religion }}</p>
-                                <p>Título Profesional: {{ $docent->titulo_prof }}</p>
-                                <p>Tipo de Identificación: {{ $docent->tipo_documento }}</p>
-                                <p>Número de Identificación: {{ $docent->number_id }}</p>
+                                {{ method_field('PUT') }}
+                                {{ csrf_field() }}
+                                <h2>Datos del Matricula:</h2>
+
+                                @if(isset($enrollment))
+                                    <div class="form-group">
+                                        <label for="name">Nombre:</label>
+                                        <input type="text" class="form-control" name="nombre" id="nombre"
+                                               placeholder="Primaria.."
+                                               value="{{ old('name', $enrollment->nombre) }}">
+                                    </div>
+                                @else
+                                    <b>No existe un enrollment para este usuario</b> Por favor cree este usuario con el
+                                    mismo <b>Nombre</b> y <b>Correo</b>
+                                    <a href="{{ url('/enrollments/new') }}" class="btn btn-warning btn-lg">Crear</a>
+                                @endif
+
                                 <hr/>
-                                <a href="{{ url('/docents') }}" class="btn btn-danger btn-lg">Regresar</a>
+                                <div class="text-center">
+                                    <a href="{{ url('/enrollments') }}" class="btn btn-danger btn-lg">Regresar</a>
+                                    <button type="submit" class="btn btn-primary btn-lg">Actualizar Datos</button>
+                                </div>
                             </div>
                         </div>
                     </div>

@@ -117,37 +117,44 @@ Route::post('/subjects', 'subjectController@store');
 
 # Enrollment
 // Index
-Route::get('/enrollment', 'EnrollmentController@enrollment')->name('enrollment.enrollment');
+Route::get('/enrollments', 'EnrollmentController@enrollments')->name('enrollments.enrollments');
 
 // New
-Route::get('/enrollment/new', 'EnrollmentController@create')->name('enrollment.create');
-Route::post('/enrollment', 'EnrollmentController@store');
+Route::get('/enrollments/new', 'EnrollmentController@create')->name('enrollments.create');
+Route::post('/enrollments', 'EnrollmentController@store');
 
 // Search
-Route::get('/enrollment/search', 'EnrollmentController@search')->name('enrollment.search');
-// Show
-Route::get('/enrollment/{docent}', 'EnrollmentController@show')
+Route::get('/enrollments/search', 'EnrollmentController@search')->name('enrollments.search');
+// Show enrollment
+Route::get('/enrollments/{enrollment}', 'EnrollmentController@show')
     ->where('enrollment', '[0-9]+')
-    ->name('enrollment.show');
+    ->name('enrollments.show');
 
 // Edit
-Route::get('/enrollment/{enrollment}/edit', 'EnrollmentController@edit')->name('enrollment.edit');
-Route::put('/enrollment/{enrollment}', 'EnrollmentController@update');
+Route::get('/enrollments/{enrollment}/edit', 'EnrollmentController@edit')->name('enrollments.edit');
+Route::put('/enrollments/{enrollment}', 'EnrollmentController@update');
 
 // Delete
-Route::delete('/enrollment/{enrollment}', 'EnrollmentController@destroy')->name('enrollment.destroy');
-Route::post('/enrollment', 'EnrollmentController@store');
+Route::delete('/enrollments/{enrollment}', 'EnrollmentController@destroy')->name('enrollments.destroy');
+Route::post('/enrollments', 'EnrollmentController@store');
 
+
+# Student
+// Index
+Route::get('/students', 'StudentController@students')->name('students.students');
+
+// Search
+Route::get('/students/search', 'StudentController@search')->name('students.search');
+// Show subject
+Route::get('/students/{student}', 'StudentController@show')
+    ->where('student', '[0-9]+')
+    ->name('student.show');
 
 
 
 
 /*
-# Secretary
-Route::get('/secretary/new', 'SecretaryController@new');
-Route::get('/secretary/modify', 'SecretaryController@modify');
-Route::get('/secretary/delete', 'SecretaryController@delete');
-Route::get('/secretary/search', 'SecretaryController@search');
+ *
 
 # List
 Route::get('/list/academic', 'EnrollmentController@new');
