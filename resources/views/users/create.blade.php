@@ -106,6 +106,20 @@
 
                                 <h2>Datos del usuario:</h2>
                                 <div class="form-group">
+                                    <label for="tipo_usiaro">Tipo de Usuario:</label>
+                                    <div class="dropdown">
+                                        <select id="tipo_usiaro" name="tipo_usiaro"
+                                                class="btn btn-secondary dropdown-toggle"
+                                                value="{{ old('tipo_usiaro') }}">
+                                            <option class="dropdown-item" selected>Seleccione...</option>
+                                            <option class="dropdown-item">Directivo</option>
+                                            <option class="dropdown-item">Secretaría</option>
+                                            <option class="dropdown-item">Normal</option>
+
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="form-group">
                                     <label for="email">Correo electrónico:</label>
                                     <input type="email" class="form-control" name="email" id="email" autocomplete="on"
                                            placeholder="pedro@example.com"
@@ -120,8 +134,7 @@
 
                                 <hr/>
                                 <div class="text-center">
-                                    <a href="{{ url('/users') }}" class="btn btn-danger btn-lg">Regresar al listado de
-                                        usuarios</a>
+                                    <a href="{{ url('/users') }}" class="btn btn-danger btn-lg">Regresarusuarios</a>
                                     <button type="submit" class="btn btn-success btn-lg">Crear usuario</button>
                                 </div>
                             </div>

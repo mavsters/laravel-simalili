@@ -98,13 +98,30 @@ class UserController extends Controller
             'name' => 'required',
             'email' => ['required', 'email', 'unique:users,email'],
             'password' => 'required',
+            'tipo_usiaro' => 'required',
         ], [
-            'name.required' => 'El campo nombre es obligatorio'
+            'name.required' => 'El campo nombre es obligatorio',
+            'tipo_usiaro.required' => 'Tipo de usuario Requerido'
         ]);
+
+        $tipo_usuario = 0;
+        switch ($data['tipo_usiaro']) {
+            case 'Directivo':
+                $tipo_usuario = 1;
+                break;
+            case 'Secretaría':
+                $tipo_usuario = 2;
+                break;
+            default:
+                $tipo_usuario = 3;
+                break;
+        }
+
         User::create([
             'name' => $data['name'],
             'email' => $data['email'],
-            'password' => bcrypt($data['password'])
+            'password' => bcrypt($data['password']),
+            'id_tipousuario' => $tipo_usuario
         ]);
         return redirect()->back();
     }
@@ -166,13 +183,33 @@ class UserController extends Controller
             'name' => 'required',
             'email' => ['required', 'email', Rule::unique('users')->ignore($user->id)],
             'password' => '',
+            'tipo_usiaro' => 'required',
+        ], [
+            'name.required' => 'El campo nombre es obligatorio',
+            'tipo_usiaro.required' => 'Tipo de usuario Requerido'
         ]);
+
+        $tipo_usuario = 0;
+        switch ($data['tipo_usiaro']) {
+            case 'Directivo':
+                $tipo_usuario = 1;
+                break;
+            case 'Secretaría':
+                $tipo_usuario = 2;
+                break;
+            default:
+                $tipo_usuario = 3;
+                break;
+        }
 
         if ($data['password'] != null) {
             $data['password'] = bcrypt($data['password']);
         } else {
             unset($data['password']);
         }
+
+        $data['id_tipousuario'] = $tipo_usuario;
+        $user['id_tipousuario'] = $tipo_usuario;
 
         $user->update($data);
 

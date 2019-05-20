@@ -20,7 +20,7 @@
                         <div class="icon icon-shape icon-shape-warning rounded-circle m-4">
                             <img height="100" src="{{asset('img/icons/Matricula.png')}}">
                         </div>
-                        <a class="btn btn-warning mt-3" href="{{url('/enrollment')}}"
+                        <a class="btn btn-warning mt-3" href="{{url('/enrollments')}}"
                            style="right: 11px;">Matrícula</a>
                     </div>
                 </div>
