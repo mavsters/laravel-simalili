@@ -53,6 +53,10 @@
                                 <p>Tipo de Identificación: {{ $docent->tipo_documento }}</p>
                                 <p>Número de Identificación: {{ $docent->number_id }}</p>
                                 <h2>Datos del usuario</h2>
+                                <p>Nombre: {{
+                                ($user->id_tipousuario == 1)?'Directivo':(($user->id_tipousuario == 2)?'Secretaría':'Normal')
+                                }}
+                                </p>
                                 <p>Nombre: {{$user->name}}</p>
                                 <p>Correo electrónico: {{ $user->email }}</p>
                                 <hr/>
