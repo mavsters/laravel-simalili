@@ -93,7 +93,7 @@
                                 <div class="form-group">
                                     <label for="cedula">Cedula:</label>
                                     <input type="text" class="form-control" name="cedula" id="cedula"
-                                           placeholder="Apellido..."
+                                           placeholder="Cedula..."
                                            value="{{ old('cedula') }}">
                                 </div>
 
