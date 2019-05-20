@@ -125,8 +125,6 @@ class UserController extends Controller
             'id_tipousuario' => $tipo_usuario
         ]);
 
-        dd($user);
-
         return redirect()->back();
     }
 
