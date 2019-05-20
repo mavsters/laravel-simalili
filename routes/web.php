@@ -90,6 +90,31 @@ Route::delete('/docents/{docent}', 'DocentController@destroy')->name('docents.de
 Route::post('/docents', 'DocentController@store');
 
 
+# Subjects
+// Index
+Route::get('/subjects', 'SubjectController@subjects')->name('subjects.subjects');
+
+// New
+Route::get('/subjects/new', 'SubjectController@create')->name('subjects.create');
+Route::post('/subjects', 'SubjectController@store');
+
+// Search
+Route::get('/subjects/search', 'SubjectController@search')->name('subjects.search');
+// Show subject
+Route::get('/subjects/{subject}', 'SubjectController@show')
+    ->where('subject', '[0-9]+')
+    ->name('subjects.show');
+
+// Edit
+Route::get('/subjects/{subject}/edit', 'SubjectController@edit')->name('subjects.edit');
+Route::put('/subjects/{subject}', 'SubjectController@update');
+
+// Delete
+Route::delete('/subjects/{subject}', 'SubjectController@destroy')->name('subjects.destroy');
+Route::post('/subjects', 'subjectController@store');
+
+
+
 # Enrollment
 // Index
 Route::get('/enrollment', 'EnrollmentController@enrollment')->name('enrollment.enrollment');
@@ -114,29 +139,6 @@ Route::delete('/enrollment/{enrollment}', 'EnrollmentController@destroy')->name(
 Route::post('/enrollment', 'EnrollmentController@store');
 
 
-
-# Subject
-// Index
-Route::get('/subject', 'SubjectController@subject')->name('subject.subject');
-
-// New
-Route::get('/subject/new', 'SubjectController@create')->name('subject.create');
-Route::post('/subject', 'SubjectController@store');
-
-// Search
-Route::get('/subject/search', 'SubjectController@search')->name('subject.search');
-// Show
-Route::get('/subject/{docent}', 'SubjectController@show')
-    ->where('subject', '[0-9]+')
-    ->name('subject.show');
-
-// Edit
-Route::get('/subject/{subject}/edit', 'SubjectController@edit')->name('subject.edit');
-Route::put('/subject/{subject}', 'SubjectController@update');
-
-// Delete
-Route::delete('/subject/{subject}', 'SubjectController@destroy')->name('subject.destroy');
-Route::post('/subject', 'SubjectController@store');
 
 
 

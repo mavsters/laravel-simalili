@@ -23,8 +23,8 @@
             <div class="mt-3 py-5 border-top text-center">
                 <div class="row justify-content-center">
                     <div class="col-lg-12">
-                        <a class="btn btn-outline-default" href="{{url('/subject/new')}}">Nueva Asignatura</a>
-                        <a class="btn btn-outline-default" href="{{url('/subject/search')}}">Buscar Asignatura</a>
+                        <a class="btn btn-outline-default" href="{{url('/subjects/new')}}">Nueva Asignatura</a>
+                        <a class="btn btn-outline-default" href="{{url('/subjects/search')}}">Buscar Asignatura</a>
                     </div>
                 </div>
             </div>

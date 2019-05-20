@@ -49,7 +49,7 @@
                         <div class="icon icon-shape icon-shape-success rounded-circle m-4">
                             <img height="100" src="{{asset('img/icons/Asignatura.png')}}">
                         </div>
-                        <a class="btn btn-success mt-3" href="{{url('/subject')}}"
+                        <a class="btn btn-success mt-3" href="{{url('/subjects')}}"
                            style="right: 11px;">Asignatura</a>
                     </div>
                 </div>
