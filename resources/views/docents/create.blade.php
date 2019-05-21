@@ -110,6 +110,43 @@
                             </div>
                         </div>
                     </div>
+                    @if ($docents->isNotEmpty())
+                        <table class="table">
+                            <thead>
+                            <tr>
+                                <th scope="col">#</th>
+                                <th scope="col">Nombre</th>
+                                <th scope="col">Acciones</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            @foreach($docents as $docent)
+                                <tr>
+                                    <th scope="row">{{ $docent->id }}</th>
+                                    <td>{{ $docent->nombre_completo }}</td>
+                                    <td>
+                                        <form action="{{ route('docents.destroy', $docent) }}"
+                                              method="POST">
+                                            {{ csrf_field() }}
+                                            {{ method_field('DELETE') }}
+                                            <a href="{{ route('docents.show', $docent) }}"
+                                               class="btn btn-link"><span
+                                                    class="fa fa-eye"></span></a>
+                                            <a href="{{ route('docents.edit', $docent) }}"
+                                               class="btn btn-link"><span
+                                                    class="fa fa-edit"></span></a>
+                                            <button type="submit" class="btn btn-link"><span
+                                                    class="fa fa-trash"></span>
+                                            </button>
+                                        </form>
+                                    </td>
+                                </tr>
+                            @endforeach
+                            </tbody>
+                        </table>
+                    @else
+                        <p>No hay usuarios registrados.</p>
+                    @endif
                 </form>
             </div>
         </div>

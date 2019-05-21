@@ -60,8 +60,7 @@
                                 <p>Nombre: {{$user->name}}</p>
                                 <p>Correo electrónico: {{ $user->email }}</p>
                                 <hr/>
-                                <a href="{{ url('/users') }}" class="btn btn-danger btn-lg">Regresar al listado de
-                                    usuarios</a>
+                                <a href="{{ url('/users') }}" class="btn btn-danger btn-lg">Regresar</a>
                             </div>
                         </div>
                     </div>

@@ -19,15 +19,13 @@ Route::get('/', 'UserController@index')->middleware('auth');
 Route::get('/home', 'UserController@index')->name('home');
 
 # User
-// Index
-Route::get('/users', 'UserController@users')->name('users.users');
+// Index Route::get('/users', 'UserController@users')->name('users.users');
 
 // New User
-Route::get('/users/new', 'UserController@create')->name('users.create');
+Route::get('/users', 'UserController@create')->name('users.create');
 Route::post('/users', 'UserController@store');
 
-// Search User
-Route::get('/users/search', 'UserController@search')->name('users.search');
+// Search User Route::get('/users/search', 'UserController@search')->name('users.search');
 // Show User
 Route::get('/users/{user}', 'UserController@show')
     ->where('user', '[0-9]+')
@@ -43,15 +41,13 @@ Route::post('/users', 'UserController@store');
 
 
 # Grade
-// Index
-Route::get('/grades', 'GradeController@grades')->name('grades.grades');
+// Index Route::get('/grades', 'GradeController@grades')->name('grades.grades');
 
 // New
 Route::get('/grades/new', 'GradeController@create')->name('grades.create');
 Route::post('/grades', 'GradeController@store');
 
-// Search
-Route::get('/grades/search', 'GradeController@search')->name('grades.search');
+// Search Route::get('/grades/search', 'GradeController@search')->name('grades.search');
 // Show grade
 Route::get('/grades/{grade}', 'GradeController@show')
     ->where('grade', '[0-9]+')
@@ -67,15 +63,13 @@ Route::post('/grades', 'GradeController@store');
 
 
 # Docent
-// Index
-Route::get('/docents', 'DocentController@docents')->name('docents.docents');
+// Index Route::get('/docents', 'DocentController@docents')->name('docents.docents');
 
 // New
 Route::get('/docents/new', 'DocentController@create')->name('docents.create');
 Route::post('/docents', 'DocentController@store');
 
-// Search
-Route::get('/docents/search', 'DocentController@search')->name('docents.search');
+// Search Route::get('/docents/search', 'DocentController@search')->name('docents.search');
 // Show docent
 Route::get('/docents/{docent}', 'DocentController@show')
     ->where('docent', '[0-9]+')
@@ -91,15 +85,13 @@ Route::post('/docents', 'DocentController@store');
 
 
 # Subjects
-// Index
-Route::get('/subjects', 'SubjectController@subjects')->name('subjects.subjects');
+// Index Route::get('/subjects', 'SubjectController@subjects')->name('subjects.subjects');
 
 // New
 Route::get('/subjects/new', 'SubjectController@create')->name('subjects.create');
 Route::post('/subjects', 'SubjectController@store');
 
-// Search
-Route::get('/subjects/search', 'SubjectController@search')->name('subjects.search');
+// Search Route::get('/subjects/search', 'SubjectController@search')->name('subjects.search');
 // Show subject
 Route::get('/subjects/{subject}', 'SubjectController@show')
     ->where('subject', '[0-9]+')
@@ -116,15 +108,13 @@ Route::post('/subjects', 'subjectController@store');
 
 
 # Enrollment
-// Index
-Route::get('/enrollments', 'EnrollmentController@enrollments')->name('enrollments.enrollments');
+// Index Route::get('/enrollments', 'EnrollmentController@enrollments')->name('enrollments.enrollments');
 
 // New
-Route::get('/enrollments/new', 'EnrollmentController@create')->name('enrollments.create');
+Route::get('/enrollments', 'EnrollmentController@create')->name('enrollments.create');
 Route::post('/enrollments', 'EnrollmentController@store');
 
-// Search
-Route::get('/enrollments/search', 'EnrollmentController@search')->name('enrollments.search');
+// Search Route::get('/enrollments/search', 'EnrollmentController@search')->name('enrollments.search');
 // Show enrollment
 Route::get('/enrollments/{enrollment}', 'EnrollmentController@show')
     ->where('enrollment', '[0-9]+')
@@ -140,11 +130,9 @@ Route::post('/enrollments', 'EnrollmentController@store');
 
 
 # Student
-// Index
-Route::get('/students', 'StudentController@students')->name('students.students');
+// Index Route::get('/students', 'StudentController@students')->name('students.students');
 
-// Search
-Route::get('/students/search', 'StudentController@search')->name('students.search');
+// Search Route::get('/students/search', 'StudentController@search')->name('students.search');
 // Show subject
 Route::get('/students/{student}', 'StudentController@show')
     ->where('student', '[0-9]+')

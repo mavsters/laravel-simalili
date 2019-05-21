@@ -134,14 +134,56 @@
 
                                 <hr/>
                                 <div class="text-center">
-                                    <a href="{{ url('/users') }}" class="btn btn-danger btn-lg">Regresarusuarios</a>
+                                    <a href="{{ url('/users') }}" class="btn btn-danger btn-lg">Regresar</a>
                                     <button type="submit" class="btn btn-success btn-lg">Crear usuario</button>
                                 </div>
                             </div>
                         </div>
                     </div>
+                    <hr/>
+                    @if ($users->isNotEmpty())
+                        <table class="table">
+                            <thead>
+                            <tr>
+                                <th scope="col">#</th>
+                                <th scope="col">Nombre</th>
+                                <th scope="col">Correo</th>
+                                <th scope="col">Tipo Usuario</th>
+                                <th scope="col">Acciones</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            @foreach($users as $user)
+                                <tr>
+                                    <th scope="row">{{ $user->id }}</th>
+                                    <td>{{ $user->name }}</td>
+                                    <td>{{ $user->email }}</td>
+                                    <td>{{ ($user->id_tipousuario == 1)?'Directivo':(($user->id_tipousuario == 2)?'Secretaría':'Normal') }}</td>
+
+                                    <td>
+                                        <form action="{{ route('users.destroy', $user) }}" method="POST">
+                                            {{ csrf_field() }}
+                                            {{ method_field('DELETE') }}
+                                            <a href="{{ route('users.show', $user) }}" class="btn btn-link"><span
+                                                    class="fa fa-eye"></span></a>
+                                            <a href="{{ route('users.edit', $user) }}" class="btn btn-link"><span
+                                                    class="fa fa-edit"></span></a>
+                                            <button type="submit" class="btn btn-link"><span
+                                                    class="fa fa-trash"></span>
+                                            </button>
+                                        </form>
+                                    </td>
+                                </tr>
+                            @endforeach
+                            </tbody>
+                        </table>
+                    @else
+                        <p>No hay usuarios registrados.</p>
+                    @endif
                 </form>
             </div>
+
         </div>
+
     </div>
 @endsection

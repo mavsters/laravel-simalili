@@ -47,8 +47,7 @@
                                 <h2>Datos del Estudiante:</h2>
                                 <p>Nombre del usuario: {{ $student->nombre }}</p>
                                 <hr/>
-                                <a href="{{ url('/students') }}" class="btn btn-danger btn-lg">Regresar al listado de
-                                    usuarios</a>
+                                <a href="{{ url('/students') }}" class="btn btn-danger btn-lg">Regresar</a>
                             </div>
                         </div>
                     </div>
