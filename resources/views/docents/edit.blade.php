@@ -51,7 +51,7 @@
                                 <div class="form-group">
                                     <label for="name">Nombre Completo:</label>
                                     <input type="text" class="form-control" name="name" id="name"
-                                           placeholder="Pedro Perez"
+
                                            value="{{ old('name', $docent->nombre_completo) }}">
                                 </div>
 
@@ -59,27 +59,27 @@
                                     <div class="form-group">
                                         <label for="lugar_nac">Lugar de nacimiento:</label>
                                         <input type="text" class="form-control" name="lugar_nac" id="lugar_nac"
-                                               placeholder="Tunja"
+
                                                value="{{ old('lugar_nac', $docent->lugar_nac) }}">
                                     </div>
 
                                     <div class="form-group">
                                         <label for="edad">Edad:</label>
-                                        <input type="text" class="form-control" name="edad" id="edad" placeholder="20"
+                                        <input type="text" class="form-control" name="edad" id="edad"
                                                value="{{ old('edad', $docent->edad) }}">
                                     </div>
 
                                     <div class="form-group">
                                         <label for="religion">Religión:</label>
                                         <input type="text" class="form-control" name="religion" id="religion"
-                                               placeholder="Catolico"
+
                                                value="{{ old('religion', $docent->religion) }}">
                                     </div>
 
                                     <div class="form-group">
                                         <label for="titulo_prof">Título Profesional:</label>
                                         <input type="text" class="form-control" name="titulo_prof" id="titulo_prof"
-                                               placeholder="Ing..."
+
                                                value="{{ old('titulo_prof', $docent->titulo_prof) }}">
                                     </div>
 
@@ -101,7 +101,7 @@
                                     <div class="form-group">
                                         <label for="number_id">Número de Identificación:</label>
                                         <input type="text" class="form-control" name="number_id" id="number_id"
-                                               placeholder="10...." autocomplete="off"
+
                                                value="{{ old('number_id', $docent->number_id) }}">
                                     </div>
                                 @else

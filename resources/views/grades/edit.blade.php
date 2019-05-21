@@ -53,7 +53,7 @@
                                     <div class="form-group">
                                         <label for="name">Nombre:</label>
                                         <input type="text" class="form-control" name="nombre" id="nombre"
-                                               placeholder="Primaria.."
+
                                                value="{{ old('name', $grade->nombre) }}">
                                     </div>
                                 @else

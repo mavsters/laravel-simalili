@@ -174,28 +174,28 @@
                                 <div class="form-group">
                                     <label for="nombre">Nombre:</label>
                                     <input type="text" class="form-control" name="nombre" id="nombre"
-                                           placeholder="Nombre..."
+
                                            value="{{ old('nombre') }}">
                                 </div>
 
                                 <div class="form-group">
                                     <label for="apellido">Apellido:</label>
                                     <input type="text" class="form-control" name="apellido" id="apellido"
-                                           placeholder="Apellido..."
+
                                            value="{{ old('apellido') }}">
                                 </div>
 
                                 <div class="form-group">
                                     <label for="cedula">Cedula:</label>
                                     <input type="text" class="form-control" name="cedula" id="cedula"
-                                           placeholder="Cedula..."
+
                                            value="{{ old('cedula') }}">
                                 </div>
 
                                 <div class="form-group">
                                     <label for="telefono">Télefono:</label>
                                     <input type="text" class="form-control" name="telefono" id="telefono"
-                                           placeholder="Télefono..."
+
                                            value="{{ old('telefono') }}">
                                 </div>
 
@@ -220,13 +220,13 @@
                                 <div class="form-group">
                                     <label for="nombre_est">Nombre:</label>
                                     <input type="text" class="form-control" name="nombre_est" id="nombre_est"
-                                           placeholder="Nombre..."
+
                                            value="{{ old('nombre_est') }}">
                                 </div>
                                 <div class="form-group">
                                     <label for="apellido_est">Apellido:</label>
                                     <input type="text" class="form-control" name="apellido_est" id="apellido_est"
-                                           placeholder="Apellido..."
+
                                            value="{{ old('apellido_est') }}">
                                 </div>
 
@@ -248,14 +248,14 @@
                                 <div class="form-group">
                                     <label for="num_id">Número de Identificación:</label>
                                     <input type="text" class="form-control" name="num_id" id="num_id"
-                                           placeholder="Apellido..."
+
                                            value="{{ old('num_id') }}">
                                 </div>
 
                                 <div class="form-group">
                                     <label for="lugar_nac">Lugar de Nacimiento:</label>
                                     <input type="text" class="form-control" name="lugar_nac" id="lugar_nac"
-                                           placeholder="Lugar de Nacimiento..."
+
                                            value="{{ old('lugar_nac') }}">
                                 </div>
 
@@ -267,7 +267,7 @@
                                                                         class="ni ni-calendar-grid-58"></i></span>
                                         </div>
                                         <input id="fecha_nac" name="fecha_nac" class="form-control datepicker"
-                                               placeholder="Select date"
+
                                                type="text" value="{{date('m/d/Y')}}">
                                     </div>
                                 </div>
@@ -275,14 +275,14 @@
 
                                 <div class="form-group">
                                     <label for="edad">Edad:</label>
-                                    <input type="text" class="form-control" name="edad" id="edad" placeholder="20"
+                                    <input type="text" class="form-control" name="edad" id="edad"
                                            value="{{ old('edad') }}">
                                 </div>
 
                                 <div class="form-group">
                                     <label for="religion">Religión:</label>
                                     <input type="text" class="form-control" name="religion" id="religion"
-                                           placeholder="Catolico"
+
                                            value="{{ old('religion') }}">
                                 </div>
 

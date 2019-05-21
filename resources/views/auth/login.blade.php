@@ -27,7 +27,7 @@
                                             <input id="email" type="email"
                                                    class="form-control @error('email') is-invalid @enderror"
                                                    name="email"
-                                                   placeholder="{{ __('E-Mail Address') }}"
+
                                                    value="{{ old('email') }}" required autocomplete="email" autofocus>
 
                                             @error('email')
@@ -47,7 +47,7 @@
                                             <input id="password" type="password"
                                                    class="form-control @error('password') is-invalid @enderror"
                                                    name="password"
-                                                   placeholder="{{ __('Password') }}"
+
                                                    required autocomplete="current-password">
                                             @error('password')
                                             <span class="invalid-feedback" role="alert">
@@ -61,7 +61,7 @@
                                         <div class="col-md-12 offset-md-12">
                                             <button type="submit" class="btn btn-success btn-lg"
                                                     style="width: -webkit-fill-available;">
-                                                {{ __('Login') }}
+                                                {{ __('Ingresar') }}
                                             </button>
                                         </div>
                                     </div>
@@ -72,7 +72,7 @@
                                 @if (Route::has('password.request'))
                                     <div class="col-6">
                                         <a class="btn btn-link" href="{{ route('password.request') }}">
-                                            {{ __('Forgot Your Password?') }}
+                                            {{ __('¿Olvido la contraseña?') }}
                                         </a>
                                     </div>
                                 @endif
@@ -82,7 +82,7 @@
                                                id="remember" {{ old('remember') ? 'checked' : '' }}>
 
                                         <label class="form-check-label" for="remember">
-                                            {{ __('Remember Me') }}
+                                            {{ __('Recordarme') }}
                                         </label>
                                     </div>
                                 </div>

@@ -54,7 +54,7 @@
                                         <label for="nombre_asignatura">Nombre de la Asignatura:</label>
                                         <input type="text" class="form-control" name="nombre_asignatura"
                                                id="nombre_asignatura"
-                                               placeholder="Nombre..."
+
                                                value="{{ old('nombre_asignatura', $subject->nombre_asignatura) }}">
                                     </div>
 
