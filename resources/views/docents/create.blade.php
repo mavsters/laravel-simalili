@@ -39,7 +39,7 @@
                     <h1>Docente</h1>
                     <div class="h6 font-weight-300"><i class="ni location_pin mr-2"></i></div>
                 </div>
-                <form method="POST" action="{{ url('docents') }}">
+                <form method="POST" action="{{ url('docents/new') }}">
                     <div class="mt-3 py-5 border-top text-left">
                         <div class="row justify-content-center">
                             <div class="col-lg-12">
@@ -110,6 +110,7 @@
                             </div>
                         </div>
                     </div>
+                </form>
                     @if ($docents->isNotEmpty())
                         <table class="table">
                             <thead>
@@ -147,7 +148,6 @@
                     @else
                         <p>No hay usuarios registrados.</p>
                     @endif
-                </form>
             </div>
         </div>
     </div>
