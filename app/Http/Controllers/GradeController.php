@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Curso;
 use App\Models\Grado;
 
 class GradeController extends Controller
@@ -30,13 +31,26 @@ class GradeController extends Controller
     {
         $data = request()->validate([
             'nombre' => 'required',
+            'countCourses' => 'required|max:4'
         ], [
-            'nombre.required' => 'El campo nombre es obligatorio'
+            'nombre.required' => 'El campo nombre es obligatorio',
+            'countCourses.required' => 'Digite un número menor de 4'
         ]);
-        Grado::create([
-            'nombre' => $data['nombre'],
-        ]);
-        return redirect()->back();
+        if (is_numeric($data['countCourses'])) {
+            $grade = Grado::create([
+                'nombre' => $data['nombre'],
+            ]);
+
+            $letter = ['A', 'B', 'C', 'D'];
+            for ($i = 0; $i < $data['countCourses']; $i++) {
+                $curso = Curso::create([
+                    'nombre_curso' => "$letter[$i]",
+                    'id_grado' => $grade->id
+                ]);
+            }
+            return redirect()->back();
+        }
+
     }
 
     public function edit(Grado $grade)

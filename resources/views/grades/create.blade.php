@@ -39,7 +39,7 @@
                     <h1>Grado</h1>
                     <div class="h6 font-weight-300"><i class="ni location_pin mr-2"></i></div>
                 </div>
-                <form method="POST" action="{{ url('grades') }}">
+                <form method="POST" action="{{ url('grades/new') }}">
                     <div class="mt-3 py-5 border-top text-left">
                         <div class="row justify-content-center">
                             <div class="col-lg-12">
@@ -54,7 +54,7 @@
                                 </div>
                                 <h2>Cantidad de cursos:</h2>
                                 <div class="form-group">
-                                    <label for="countCourses">Nombre:</label>
+                                    <label for="countCourses">Número:</label>
                                     <input type="text" class="form-control" name="countCourses" id="countCourses"
 
                                            value="{{ old('countCourses') }}">
@@ -68,6 +68,7 @@
                             </div>
                         </div>
                     </div>
+                </form>
                     @if ($grades->isNotEmpty())
                         <table class="table">
                             <thead>
@@ -105,7 +106,7 @@
                     @else
                         <p>No hay usuarios registrados.</p>
                     @endif
-                </form>
+
             </div>
         </div>
     </div>

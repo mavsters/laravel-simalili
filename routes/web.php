@@ -45,7 +45,7 @@ Route::post('/users', 'UserController@store');
 
 // New
 Route::get('/grades', 'GradeController@create')->name('grades.create');
-Route::post('/grades', 'GradeController@store');
+Route::post('/grades/new', 'GradeController@store');
 
 // Search Route::get('/grades/search', 'GradeController@search')->name('grades.search');
 // Show grade
@@ -67,7 +67,7 @@ Route::post('/grades', 'GradeController@store');
 
 // New
 Route::get('/docents', 'DocentController@create')->name('docents.create');
-Route::post('/docents', 'DocentController@store');
+Route::post('/docents/new', 'DocentController@store');
 
 // Search Route::get('/docents/search', 'DocentController@search')->name('docents.search');
 // Show docent
@@ -89,7 +89,7 @@ Route::post('/docents', 'DocentController@store');
 
 // New
 Route::get('/subjects', 'SubjectController@create')->name('subjects.create');
-Route::post('/subjects', 'SubjectController@store');
+Route::post('/subjects/new', 'SubjectController@store');
 
 // Search Route::get('/subjects/search', 'SubjectController@search')->name('subjects.search');
 // Show subject
@@ -112,7 +112,7 @@ Route::post('/subjects', 'subjectController@store');
 
 // New
 Route::get('/enrollments', 'EnrollmentController@create')->name('enrollments.create');
-Route::post('/enrollments', 'EnrollmentController@store');
+Route::post('/enrollments/new', 'EnrollmentController@store');
 
 // Search Route::get('/enrollments/search', 'EnrollmentController@search')->name('enrollments.search');
 // Show enrollment
