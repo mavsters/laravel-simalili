@@ -44,7 +44,7 @@ Route::post('/users', 'UserController@store');
 // Index Route::get('/grades', 'GradeController@grades')->name('grades.grades');
 
 // New
-Route::get('/grades/new', 'GradeController@create')->name('grades.create');
+Route::get('/grades', 'GradeController@create')->name('grades.create');
 Route::post('/grades', 'GradeController@store');
 
 // Search Route::get('/grades/search', 'GradeController@search')->name('grades.search');
@@ -66,7 +66,7 @@ Route::post('/grades', 'GradeController@store');
 // Index Route::get('/docents', 'DocentController@docents')->name('docents.docents');
 
 // New
-Route::get('/docents/new', 'DocentController@create')->name('docents.create');
+Route::get('/docents', 'DocentController@create')->name('docents.create');
 Route::post('/docents', 'DocentController@store');
 
 // Search Route::get('/docents/search', 'DocentController@search')->name('docents.search');
@@ -88,7 +88,7 @@ Route::post('/docents', 'DocentController@store');
 // Index Route::get('/subjects', 'SubjectController@subjects')->name('subjects.subjects');
 
 // New
-Route::get('/subjects/new', 'SubjectController@create')->name('subjects.create');
+Route::get('/subjects', 'SubjectController@create')->name('subjects.create');
 Route::post('/subjects', 'SubjectController@store');
 
 // Search Route::get('/subjects/search', 'SubjectController@search')->name('subjects.search');

@@ -21,8 +21,9 @@ class GradeController extends Controller
     function create()
     {
         $crud = true;
+        $grades = Grado::all();
         return
-            view('grades.create', compact('crud'));
+            view('grades.create', compact('crud', 'grades'));
     }
 
     public function store()

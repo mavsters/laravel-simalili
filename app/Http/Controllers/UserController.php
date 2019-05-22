@@ -143,7 +143,9 @@ class UserController extends Controller
         $docent = Docente::where(
             'nombre_completo', 'like', '%' . ($user->name) . '%'
         )->first();
-        return view('users.show', compact('crud', 'user', 'docent'));
+
+        $users = User::all();
+        return view('users.show', compact('crud', 'users', 'user', 'docent'));
     }
 
     public function search()

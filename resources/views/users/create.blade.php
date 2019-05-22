@@ -152,6 +152,7 @@
                                 <th scope="col">Acciones</th>
                             </tr>
                             </thead>
+
                             <tbody>
                             @foreach($users as $user)
                                 <tr>

@@ -52,16 +52,59 @@
 
                                            value="{{ old('nombre') }}">
                                 </div>
+                                <h2>Cantidad de cursos:</h2>
+                                <div class="form-group">
+                                    <label for="countCourses">Nombre:</label>
+                                    <input type="text" class="form-control" name="countCourses" id="countCourses"
+
+                                           value="{{ old('countCourses') }}">
+                                </div>
+
                                 <hr/>
                                 <div class="text-center">
-                                    <a href="{{ url('/grades') }}" class="btn btn-danger btn-lg">Regresar al listado de
-                                        los
-                                        grados</a>
+                                    <a href="{{ url('/grades') }}" class="btn btn-danger btn-lg">Regresar</a>
                                     <button type="submit" class="btn btn-success btn-lg">Crear Grado</button>
                                 </div>
                             </div>
                         </div>
                     </div>
+                    @if ($grades->isNotEmpty())
+                        <table class="table">
+                            <thead>
+                            <tr>
+                                <th scope="col">#</th>
+                                <th scope="col">Nombre</th>
+                                <th scope="col">Acciones</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            @foreach($grades as $grade)
+                                <tr>
+                                    <th scope="row">{{ $grade->id }}</th>
+                                    <td>{{ $grade->nombre }}</td>
+                                    <td>
+                                        <form action="{{ route('grades.destroy', $grade) }}"
+                                              method="POST">
+                                            {{ csrf_field() }}
+                                            {{ method_field('DELETE') }}
+                                            <a href="{{ route('grades.show', $grade) }}"
+                                               class="btn btn-link"><span
+                                                    class="fa fa-eye"></span></a>
+                                            <a href="{{ route('grades.edit', $grade) }}"
+                                               class="btn btn-link"><span
+                                                    class="fa fa-edit"></span></a>
+                                            <button type="submit" class="btn btn-link"><span
+                                                    class="fa fa-trash"></span>
+                                            </button>
+                                        </form>
+                                    </td>
+                                </tr>
+                            @endforeach
+                            </tbody>
+                        </table>
+                    @else
+                        <p>No hay usuarios registrados.</p>
+                    @endif
                 </form>
             </div>
         </div>
