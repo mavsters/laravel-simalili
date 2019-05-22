@@ -39,7 +39,7 @@
                     <h1>Usuario</h1>
                     <div class="h6 font-weight-300"><i class="ni location_pin mr-2"></i></div>
                 </div>
-                <form method="POST" action="{{ url('users') }}">
+                <form method="POST" action="{{ url('users/new') }}">
                     <div class="mt-3 py-5 border-top text-left">
                         <div class="row justify-content-center">
                             <div class="col-lg-12">
@@ -47,59 +47,18 @@
                                 {{ csrf_field() }}
                                 <h2>Datos del Docente:</h2>
                                 <div class="form-group">
-                                    <label for="name">Nombre Completo:</label>
-                                    <input type="text" class="form-control" name="name" id="name"
-
-                                           value="{{ old('name') }}">
-                                </div>
-
-                                <div class="form-group">
-                                    <label for="lugar_nac">Lugar de nacimiento:</label>
-                                    <input type="text" class="form-control" name="lugar_nac" id="lugar_nac"
-
-                                           value="{{ old('lugar_nac') }}">
-                                </div>
-
-                                <div class="form-group">
-                                    <label for="edad">Edad:</label>
-                                    <input type="text" class="form-control" name="edad" id="edad"
-                                           value="{{ old('edad') }}">
-                                </div>
-
-                                <div class="form-group">
-                                    <label for="religion">Religión:</label>
-                                    <input type="text" class="form-control" name="religion" id="religion"
-
-                                           value="{{ old('religion') }}">
-                                </div>
-
-                                <div class="form-group">
-                                    <label for="titulo_prof">Título Profesional:</label>
-                                    <input type="text" class="form-control" name="titulo_prof" id="titulo_prof"
-
-                                           value="{{ old('titulo_prof') }}">
-                                </div>
-
-                                <div class="form-group">
-                                    <label for="tipo_documento">Título Profesional:</label>
+                                    <label for="docente">Docente:</label>
                                     <div class="dropdown">
-                                        <select id="tipo_documento" name="tipo_documento"
+                                        <select id="docente" name="docente"
                                                 class="btn btn-secondary dropdown-toggle"
-                                                value="{{ old('tipo_documento') }}">
+                                                value="{{ old('docente') }}">
                                             <option class="dropdown-item" selected>Seleccione...</option>
-                                            <option class="dropdown-item">Cedula de Ciudadania</option>
-                                            <option class="dropdown-item">Pasaporte</option>
-                                            <option class="dropdown-item">Cedula Extranjera</option>
-
+                                            @foreach($docente as $values)
+                                                <option class="dropdown-item"
+                                                        selected>{{$values->nombre_completo}}</option>
+                                            @endforeach
                                         </select>
                                     </div>
-                                </div>
-
-                                <div class="form-group">
-                                    <label for="number_id">Número de Identificación:</label>
-                                    <input type="text" class="form-control" name="number_id" id="number_id"
-
-                                           value="{{ old('number_id') }}">
                                 </div>
 
                                 <hr/>
@@ -140,6 +99,8 @@
                             </div>
                         </div>
                     </div>
+
+                </form>
                     <hr/>
                     @if ($users->isNotEmpty())
                         <table class="table">
@@ -181,7 +142,6 @@
                     @else
                         <p>No hay usuarios registrados.</p>
                     @endif
-                </form>
             </div>
 
         </div>

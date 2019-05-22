@@ -23,7 +23,7 @@ Route::get('/home', 'UserController@index')->name('home');
 
 // New User
 Route::get('/users', 'UserController@create')->name('users.create');
-Route::post('/users', 'UserController@store');
+Route::post('/users/new', 'UserController@store');
 
 // Search User Route::get('/users/search', 'UserController@search')->name('users.search');
 // Show User
