@@ -23,9 +23,10 @@ class EnrollmentController extends Controller
     {
         $crud = true;
         $parentesco = TipoPersona::all();
-        $grades = Grado::all();
+
+        $grade = Grado::all();
         return
-            view('enrollments.create', compact('crud', 'grades', 'parentesco'));
+            view('enrollments.create', compact('crud', 'grade', 'parentesco'));
     }
 
     public function store()

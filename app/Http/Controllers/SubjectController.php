@@ -25,10 +25,11 @@ class SubjectController extends Controller
     function create()
     {
         $crud = true;
+        $subjects = Asignatura::all();
         $docent = Docente::all();
         $grade = Grado::all();
         return
-            view('subjects.create', compact('crud', 'docent', 'grade'));
+            view('subjects.create', compact('crud', 'subjects', 'docent', 'grade'));
     }
 
 

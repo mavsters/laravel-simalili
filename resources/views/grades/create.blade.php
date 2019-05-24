@@ -45,7 +45,7 @@
                             <div class="col-lg-12">
 
                                 {{ csrf_field() }}
-                                <h2>Datos del Grado:</h2>
+                                <h2>Grado:</h2>
                                 <div class="form-group">
                                     <label for="name">Nombre:</label>
                                     <input type="text" class="form-control" name="nombre" id="nombre"

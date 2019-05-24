@@ -47,7 +47,7 @@
                             <div class="col-lg-12">
                                 {{ method_field('PUT') }}
                                 {{ csrf_field() }}
-                                <h2>Datos del Docente:</h2>
+                                <h2>Docente:</h2>
                                 <div class="form-group">
                                     <label for="name">Nombre Completo:</label>
                                     <input type="text" class="form-control" name="name" id="name"
@@ -111,7 +111,7 @@
                                 @endif
                                 <hr/>
 
-                                <h2>Datos del usuario:</h2>
+                                <h2>usuario:</h2>
                                 <div class="form-group">
                                     <label for="tipo_usiaro">Tipo de Usuario:</label>
                                     <div class="dropdown">

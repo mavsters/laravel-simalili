@@ -45,7 +45,7 @@
                             <div class="col-lg-12">
 
                                 {{ csrf_field() }}
-                                <h2>Datos del Docente:</h2>
+                                <h2>Docente:</h2>
                                 <div class="form-group">
                                     <label for="docente">Docente:</label>
                                     <div class="dropdown">
@@ -63,7 +63,7 @@
 
                                 <hr/>
 
-                                <h2>Datos del usuario:</h2>
+                                <h2>usuario:</h2>
                                 <div class="form-group">
                                     <label for="tipo_usiaro">Tipo de Usuario:</label>
                                     <div class="dropdown">
@@ -73,7 +73,6 @@
                                             <option class="dropdown-item" selected>Seleccione...</option>
                                             <option class="dropdown-item">Directivo</option>
                                             <option class="dropdown-item">Secretaría</option>
-                                            <option class="dropdown-item">Normal</option>
 
                                         </select>
                                     </div>
@@ -115,9 +114,10 @@
                             </thead>
 
                             <tbody>
+                            {{$count = 1}}
                             @foreach($users as $user)
                                 <tr>
-                                    <th scope="row">{{ $user->id }}</th>
+                                    <th scope="row">{{ $count++ }}</th>
                                     <td>{{ $user->name }}</td>
                                     <td>{{ $user->email }}</td>
                                     <td>{{ ($user->id_tipousuario == 1)?'Directivo':(($user->id_tipousuario == 2)?'Secretaría':'Normal') }}</td>

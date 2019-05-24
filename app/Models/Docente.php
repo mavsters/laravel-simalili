@@ -16,7 +16,8 @@ class Docente extends Model
         "religion",
         "titulo_prof",
         "tipo_documento",
-        "number_id"
+        "number_id",
+        "genero"
     ]; //only the field names inside the array can be mass-assign
 
 }

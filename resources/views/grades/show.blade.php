@@ -44,7 +44,7 @@
                     <div class="mt-3 py-5 border-top text-center">
                         <div class="row justify-content-center">
                             <div class="col-lg-12">
-                                <h2>Datos del Grado:</h2>
+                                <h2>Grado:</h2>
                                 <p>Nombre del usuario: {{ $grade->nombre }}</p>
                                 <hr/>
                                 <a href="{{ url('/grades') }}" class="btn btn-danger btn-lg">Regresar</a>

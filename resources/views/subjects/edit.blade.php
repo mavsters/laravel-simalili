@@ -47,7 +47,7 @@
                             <div class="col-lg-12">
                                 {{ method_field('PUT') }}
                                 {{ csrf_field() }}
-                                <h2>Datos de la Asignatura:</h2>
+                                <h2>Asignatura:</h2>
 
                                 @if(isset($subject))
                                     <div class="form-group">

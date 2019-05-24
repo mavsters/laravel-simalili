@@ -176,6 +176,7 @@
 <script src="{{asset('js/argon.js?v=1.0.1')}}"></script>
 <!-- Optional JS -->
 <script src="{{asset('vendor/bootstrap-datepicker/js/bootstrap-datepicker.min.js')}}"></script>
+<script src="{{asset('js/simalili.js')}}"></script>
 </body>
 <!-- /BODY -->
 </html>

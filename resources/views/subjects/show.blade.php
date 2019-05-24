@@ -44,7 +44,7 @@
                     <div class="mt-3 py-5 border-top text-center">
                         <div class="row justify-content-center">
                             <div class="col-lg-12">
-                                <h2>Datos de la Asignatura:</h2>
+                                <h2>Asignatura:</h2>
                                 <p>Nombre Asignatura: {{ $subject->nombre_asignatura }}</p>
                                 <p>Nombre Curso: {{ $course->nombre_curso }}</p>
                                 <p>Docente asignado: {{ $docent->nombre_completo }}</p>

@@ -45,7 +45,7 @@
                             <div class="col-lg-12">
 
                                 {{ csrf_field() }}
-                                <h2>Datos del Matricula:</h2>
+                                <h2>Matricula:</h2>
                                 <div class="form-group">
                                     <label for="tipo_matricula">Tipo de Matricula:</label>
                                     <div class="dropdown">
@@ -68,10 +68,11 @@
                                                 class="btn btn-secondary dropdown-toggle"
                                                 value="{{ old('id_grado') }}">
                                             <option class="dropdown-item" selected>Seleccione...</option>
-                                            @foreach($grade as $value)
-                                                <option class="dropdown-item">{{$value->nombre}}</option>
-                                            @endforeach
-
+                                            @if(isset($grade))
+                                                @foreach($grade as $value)
+                                                    <option class="dropdown-item">{{$value->nombre}}</option>
+                                                @endforeach
+                                            @endif
                                         </select>
                                     </div>
                                 </div>
@@ -161,62 +162,190 @@
                                                 Carnet Vacuna
                                             </label>
                                         </div>
-                                        <div class="form-check">
-                                            <input class="form-check-input" type="checkbox" value="" id="requisito[14]">
-                                            <label class="form-check-label" for="requisito[14]">
-                                                Default checkbox
-                                            </label>
+
+                                    </div>
+                                </div>
+                                <hr/>
+
+                                <h2>Familliares del Estudiante:</h2>
+                                <div class="nav-wrapper">
+                                    <ul class="nav nav-pills nav-fill flex-column flex-md-row" id="tabs-icons-text"
+                                        role="tablist">
+                                        <li class="nav-item">
+                                            <a class="nav-link mb-sm-3 mb-md-0 active" id="tabs-icons-text-1-tab"
+                                               data-toggle="tab" href="#tabs-icons-text-1" role="tab"
+                                               aria-controls="tabs-icons-text-1" aria-selected="true"><i
+                                                    class="ni ni-cloud-upload-96 mr-2"></i>Madre</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link mb-sm-3 mb-md-0" id="tabs-icons-text-2-tab"
+                                               data-toggle="tab" href="#tabs-icons-text-2" role="tab"
+                                               aria-controls="tabs-icons-text-2" aria-selected="false"><i
+                                                    class="ni ni-bell-55 mr-2"></i>Padre</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link mb-sm-3 mb-md-0" id="tabs-icons-text-3-tab"
+                                               data-toggle="tab" href="#tabs-icons-text-3" role="tab"
+                                               aria-controls="tabs-icons-text-3" aria-selected="false"><i
+                                                    class="ni ni-calendar-grid-58 mr-2"></i>Acudiente</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="card">
+                                    <div class="card-body">
+                                        <div class="tab-content" id="myTabContent">
+                                            <div class="tab-pane fade show active" id="tabs-icons-text-1"
+                                                 role="tabpanel" aria-labelledby="tabs-icons-text-1-tab">
+                                                <!-- Hidden Element -->
+                                                <input type="hidden" class="form-control" name="parentesco"
+                                                       id="parentesco" value="MADRE"/>
+                                                <!--/ Hidden Element -->
+                                                <div class="form-group">
+                                                    <label for="madre_nombre">Nombre:</label>
+                                                    <input type="text" class="form-control" name="madre_nombre"
+                                                           id="madre_nombre"
+
+                                                           value="{{ old('madre_nombre') }}">
+                                                </div>
+
+                                                <div class="form-group">
+                                                    <label for="madre_apellido">Apellido:</label>
+                                                    <input type="text" class="form-control" name="madre_apellido"
+                                                           id="madre_apellido"
+
+                                                           value="{{ old('madre_apellido') }}">
+                                                </div>
+
+                                                <div class="form-group">
+                                                    <label for="madre_cedula">Cedula:</label>
+                                                    <input type="text" class="form-control" name="madre_cedula"
+                                                           id="madre_cedula"
+                                                           value="{{ old('madre_cedula') }}">
+                                                </div>
+
+                                                <div class="form-group">
+                                                    <label for="madre_telefono">Télefono:</label>
+                                                    <input type="text" class="form-control" name="madre_telefono"
+                                                           id="madre_telefono"
+
+                                                           value="{{ old('madre_telefono') }}">
+                                                </div>
+
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="checkbox" value=""
+                                                           id="madre_acudiente">
+                                                    <label class="form-check-label" for="madre_acudiente">
+                                                        ¿Es Acudiente?
+                                                    </label>
+                                                </div>
+                                            </div>
+                                            <div class="tab-pane fade" id="tabs-icons-text-2" role="tabpanel"
+                                                 aria-labelledby="tabs-icons-text-2-tab">
+                                                <!-- Hidden Element -->
+                                                <input type="hidden" class="form-control" name="parentesco"
+                                                       id="parentesco" value="PADRE"/>
+                                                <!--/ Hidden Element -->
+                                                <div class="form-group">
+                                                    <label for="padre_nombre">Nombre:</label>
+                                                    <input type="text" class="form-control" name="padre_nombre"
+                                                           id="padre_nombre"
+
+                                                           value="{{ old('padre_nombre') }}">
+                                                </div>
+
+                                                <div class="form-group">
+                                                    <label for="padre_apellido">Apellido:</label>
+                                                    <input type="text" class="form-control" name="padre_apellido"
+                                                           id="padre_apellido"
+
+                                                           value="{{ old('padre_apellido') }}">
+                                                </div>
+
+                                                <div class="form-group">
+                                                    <label for="padre_cedula">Cedula:</label>
+                                                    <input type="text" class="form-control" name="padre_cedula"
+                                                           id="padre_cedula"
+                                                           value="{{ old('padre_cedula') }}">
+                                                </div>
+
+                                                <div class="form-group">
+                                                    <label for="padre_telefono">Télefono:</label>
+                                                    <input type="text" class="form-control" name="padre_telefono"
+                                                           id="padre_telefono"
+
+                                                           value="{{ old('padre_telefono') }}">
+                                                </div>
+
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="checkbox" value=""
+                                                           id="padre_acudiente">
+                                                    <label class="form-check-label" for="padre_acudiente">
+                                                        ¿Es Acudiente?
+                                                    </label>
+                                                </div>
+                                            </div>
+                                            <div class="tab-pane fade" id="tabs-icons-text-3" role="tabpanel"
+                                                 aria-labelledby="tabs-icons-text-3-tab">
+                                                <!-- Hidden Element -->
+                                                <input type="hidden" class="form-control" name="parentesco"
+                                                       id="parentesco" value="ACUDIENTE"/>
+                                                <!--/ Hidden Element -->
+                                                <div class="form-group">
+                                                    <label for="acudiente_nombre">Nombre:</label>
+                                                    <input type="text" class="form-control" name="acudiente_nombre"
+                                                           id="acudiente_nombre"
+
+                                                           value="{{ old('acudiente_nombre') }}">
+                                                </div>
+
+                                                <div class="form-group">
+                                                    <label for="acudiente_apellido">Apellido:</label>
+                                                    <input type="text" class="form-control" name="acudiente_apellido"
+                                                           id="acudiente_apellido"
+
+                                                           value="{{ old('acudiente_apellido') }}">
+                                                </div>
+
+                                                <div class="form-group">
+                                                    <label for="acudiente_cedula">Cedula:</label>
+                                                    <input type="text" class="form-control" name="acudiente_cedula"
+                                                           id="acudiente_cedula"
+                                                           value="{{ old('acudiente_cedula') }}">
+                                                </div>
+
+                                                <div class="form-group">
+                                                    <label for="acudiente_telefono">Télefono:</label>
+                                                    <input type="text" class="form-control" name="acudiente_telefono"
+                                                           id="acudiente_telefono"
+
+                                                           value="{{ old('acudiente_telefono') }}">
+                                                </div>
+
+                                                <div class="form-group">
+                                                    <label for="parentesco">Parentesco:</label>
+                                                    <div class="dropdown">
+                                                        <select id="parentesco" name="parentesco"
+                                                                class="btn btn-secondary dropdown-toggle"
+                                                                value="{{ old('parentesco') }}">
+                                                            <option class="dropdown-item" selected>Seleccione...
+                                                            </option>
+                                                            @foreach($parentesco as $value)
+                                                                <option
+                                                                    class="dropdown-item">{{$value->tipo_persona}}</option>
+                                                            @endforeach
+
+                                                        </select>
+                                                    </div>
+                                                </div>
+
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
-                                <hr/>
-                                <h2>Datos del Acudiente:</h2>
-                                <div class="form-group">
-                                    <label for="nombre">Nombre:</label>
-                                    <input type="text" class="form-control" name="nombre" id="nombre"
 
-                                           value="{{ old('nombre') }}">
-                                </div>
-
-                                <div class="form-group">
-                                    <label for="apellido">Apellido:</label>
-                                    <input type="text" class="form-control" name="apellido" id="apellido"
-
-                                           value="{{ old('apellido') }}">
-                                </div>
-
-                                <div class="form-group">
-                                    <label for="cedula">Cedula:</label>
-                                    <input type="text" class="form-control" name="cedula" id="cedula"
-
-                                           value="{{ old('cedula') }}">
-                                </div>
-
-                                <div class="form-group">
-                                    <label for="telefono">Télefono:</label>
-                                    <input type="text" class="form-control" name="telefono" id="telefono"
-
-                                           value="{{ old('telefono') }}">
-                                </div>
-
-
-                                <div class="form-group">
-                                    <label for="parentesco">Parentesco:</label>
-                                    <div class="dropdown">
-                                        <select id="parentesco" name="parentesco"
-                                                class="btn btn-secondary dropdown-toggle"
-                                                value="{{ old('parentesco') }}">
-                                            <option class="dropdown-item" selected>Seleccione...</option>
-                                            @foreach($parentesco as $value)
-                                                <option class="dropdown-item" selected>{{$value->tipo_persona}}</option>
-                                            @endforeach
-
-                                        </select>
-                                    </div>
-                                </div>
 
                                 <hr/>
-                                <h2>Datos del Estudiante:</h2>
+                                <h2>Estudiante:</h2>
                                 <div class="form-group">
                                     <label for="nombre_est">Nombre:</label>
                                     <input type="text" class="form-control" name="nombre_est" id="nombre_est"
@@ -228,6 +357,20 @@
                                     <input type="text" class="form-control" name="apellido_est" id="apellido_est"
 
                                            value="{{ old('apellido_est') }}">
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="genero">Genero:</label>
+                                    <div class="dropdown">
+                                        <select id="genero" name="genero"
+                                                class="btn btn-secondary dropdown-toggle"
+                                                value="{{ old('genero') }}">
+                                            <option class="dropdown-item" selected>Seleccione...</option>
+                                            <option class="dropdown-item">Hombre</option>
+                                            <option class="dropdown-item">Mujer</option>
+
+                                        </select>
+                                    </div>
                                 </div>
 
                                 <div class="form-group">
@@ -294,7 +437,7 @@
                             </div>
                         </div>
                     </div>
-                    @if ($grades->isNotEmpty())
+                    @if ($grade->isNotEmpty())
                         <table class="table">
                             <thead>
                             <tr>
@@ -304,19 +447,19 @@
                             </tr>
                             </thead>
                             <tbody>
-                            @foreach($grades as $grade)
+                            @foreach($grade as $value)
                                 <tr>
-                                    <th scope="row">{{ $grade->id }}</th>
-                                    <td>{{ $grade->nombre }}</td>
+                                    <th scope="row">{{ $value->id }}</th>
+                                    <td>{{ $value->nombre }}</td>
                                     <td>
-                                        <form action="{{ route('grades.destroy', $grade) }}"
+                                        <form action="{{ route('grades.destroy', $value) }}"
                                               method="POST">
                                             {{ csrf_field() }}
                                             {{ method_field('DELETE') }}
-                                            <a href="{{ route('grades.show', $grade) }}"
+                                            <a href="{{ route('grades.show', $value) }}"
                                                class="btn btn-link"><span
                                                     class="fa fa-eye"></span></a>
-                                            <a href="{{ route('grades.edit', $grade) }}"
+                                            <a href="{{ route('grades.edit', $value) }}"
                                                class="btn btn-link"><span
                                                     class="fa fa-edit"></span></a>
                                             <button type="submit" class="btn btn-link"><span

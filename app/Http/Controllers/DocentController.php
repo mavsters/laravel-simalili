@@ -36,6 +36,7 @@ class DocentController extends Controller
             'titulo_prof' => 'required',
             'tipo_documento' => 'required',
             'number_id' => 'required',
+            'genero' => 'required'
         ], [
             'name.required' => 'El campo nombre es obligatorio',
             'lugar_nac.required' => 'El Lugar de Nacimiento es Obligatorio',
@@ -44,6 +45,7 @@ class DocentController extends Controller
             'titulo_prof.required' => 'El titulo de profesión es Obligatorio',
             'tipo_documento.required' => 'El tipo de documento es Obligatorio',
             'number_id.required' => 'El número de Identificación es Obligatorio',
+            'genero' => 'Debe seleccionar un genero'
         ]);
         Docente::create([
             'nombre_completo' => $data['name'],
@@ -52,7 +54,8 @@ class DocentController extends Controller
             'religion' => $data['religion'],
             'titulo_prof' => $data['titulo_prof'],
             'tipo_documento' => $data['tipo_documento'],
-            'number_id' => $data['number_id']
+            'number_id' => $data['number_id'],
+            'genero' => $data['genero']
         ]);
 
         return redirect()->back();
@@ -88,6 +91,7 @@ class DocentController extends Controller
             'titulo_prof' => 'required',
             'tipo_documento' => 'required',
             'number_id' => 'required',
+            'genero' => 'required'
         ], [
             'name.required' => 'El campo nombre es obligatorio',
             'lugar_nac.required' => 'El Lugar de Nacimiento es Obligatorio',
@@ -96,6 +100,7 @@ class DocentController extends Controller
             'titulo_prof.required' => 'El titulo de profesión es Obligatorio',
             'tipo_documento.required' => 'El tipo de documento es Obligatorio',
             'number_id.required' => 'El número de Identificación es Obligatorio',
+            'genero' => 'Debe seleccionar un genero'
         ]);
         $docent->update($data);
 

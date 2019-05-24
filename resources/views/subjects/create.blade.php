@@ -45,7 +45,7 @@
                             <div class="col-lg-12">
 
                                 {{ csrf_field() }}
-                                <h2>Datos de la Asignatura:</h2>
+                                <h2>Asignatura:</h2>
                                 <div class="form-group">
                                     <label for="nombre_asignatura">Nombre de la Asignatura:</label>
                                     <input type="text" class="form-control" name="nombre_asignatura"
@@ -53,7 +53,22 @@
 
                                            value="{{ old('nombre_asignatura') }}">
                                 </div>
-
+                                <hr/>
+                                <h2>Grado asignado</h2>
+                                <div class="form-group">
+                                    <label for="grado_name">Grado:</label>
+                                    <div class="dropdown">
+                                        <select id="grado_name" name="grado_name"
+                                                class="btn btn-secondary dropdown-toggle"
+                                                value="{{ old('grado_name') }}">
+                                            <option class="dropdown-item" selected>Seleccione...</option>
+                                            @foreach($grade as $value)
+                                                <option class="dropdown-item">{{$value->nombre}}</option>
+                                            @endforeach
+                                        </select>
+                                    </div>
+                                </div>
+                                <!-- Seleccionar elementos a partir de los objetos -->
                                 <div class="form-group">
                                     <label for="nombre_curso">Nombre Curso:</label>
                                     <div class="dropdown">
@@ -84,21 +99,7 @@
                                         </select>
                                     </div>
                                 </div>
-                                <hr/>
-                                <h2>Grado asignado</h2>
-                                <div class="form-group">
-                                    <label for="grado_name">Grado:</label>
-                                    <div class="dropdown">
-                                        <select id="grado_name" name="grado_name"
-                                                class="btn btn-secondary dropdown-toggle"
-                                                value="{{ old('grado_name') }}">
-                                            <option class="dropdown-item" selected>Seleccione...</option>
-                                            @foreach($grade as $value)
-                                                <option class="dropdown-item">{{$value->nombre}}</option>
-                                            @endforeach
-                                        </select>
-                                    </div>
-                                </div>
+
                                 <hr/>
                                 <div class="text-center">
                                     <a href="{{ url('/subjects') }}" class="btn btn-danger btn-lg">Regresar</a>

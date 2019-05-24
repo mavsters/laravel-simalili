@@ -2,9 +2,33 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="520cf98c-9f3b-4801-a6f8-8d26eb5c8579" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/public/js/simalili.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/DocentController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/DocentController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/EnrollmentController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/EnrollmentController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/StudentController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/StudentController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/SubjectController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/SubjectController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Docente.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Docente.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/docents/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/docents/create.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/docents/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/docents/edit.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/docents/show.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/docents/show.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/enrollments/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/enrollments/create.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/enrollments/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/enrollments/edit.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/enrollments/show.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/enrollments/show.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/grades/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/grades/create.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/grades/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/grades/edit.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/grades/show.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/grades/show.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layouts/layout.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/layout.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/students/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/students/edit.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/students/search.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/students/search.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/students/show.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/students/show.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/subjects/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/subjects/create.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/subjects/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/subjects/edit.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/subjects/show.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/subjects/show.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/users/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/users/create.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/users/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/users/edit.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/users/show.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/users/show.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -21,10 +45,10 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/views/users/create.blade.php">
+        <entry file="file://$PROJECT_DIR$/resources/views/docents/create.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1391">
-              <caret line="121" column="63" lean-forward="true" selection-start-line="121" selection-start-column="63" selection-end-line="121" selection-end-column="63" />
+            <state relative-caret-position="1649">
+              <caret line="97" selection-start-line="97" selection-end-line="109" selection-end-column="38" />
             </state>
           </provider>
         </entry>
@@ -32,50 +56,40 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/routes/web.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="578">
-              <caret line="136" column="52" selection-start-line="136" selection-start-column="35" selection-end-line="136" selection-end-column="52" />
+            <state relative-caret-position="2108">
+              <caret line="133" column="67" selection-start-line="133" selection-start-column="59" selection-end-line="133" selection-end-column="67" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/views/grades/create.blade.php">
+        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/StudentController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="357">
-              <caret line="57" column="94" selection-start-line="57" selection-start-column="82" selection-end-line="57" selection-end-column="94" />
+            <state relative-caret-position="1224">
+              <caret line="72" column="36" selection-start-line="72" selection-start-column="30" selection-end-line="72" selection-end-column="36" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Controller.php">
+        <entry file="file://$PROJECT_DIR$/resources/views/students/edit.blade.php">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/resources/views/students/search.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="102">
-              <caret line="11" column="6" selection-start-line="11" selection-start-column="6" selection-end-line="11" selection-end-column="6" />
+            <state relative-caret-position="204">
+              <caret line="12" column="95" selection-start-line="12" selection-start-column="95" selection-end-line="12" selection-end-column="95" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/UserController.php">
+        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/SubjectController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="388">
-              <caret line="86" lean-forward="true" selection-start-line="86" selection-end-line="86" />
-              <folding>
-                <element signature="e#40#63#0#PHP" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/EnrollmentController.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="173">
-              <caret line="27" column="62" selection-start-line="27" selection-start-column="62" selection-end-line="27" selection-end-column="62" />
-              <folding>
-                <element signature="e#40#61#0#PHP" expanded="true" />
-              </folding>
+            <state relative-caret-position="459">
+              <caret line="31" column="52" selection-start-line="31" selection-start-column="52" selection-end-line="31" selection-end-column="52" />
             </state>
           </provider>
         </entry>
@@ -83,8 +97,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/GradeController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="31">
-              <caret line="48" column="19" selection-start-line="48" selection-start-column="19" selection-end-line="48" selection-end-column="19" />
+            <state relative-caret-position="323">
+              <caret line="20" selection-start-line="20" selection-end-line="94" />
               <folding>
                 <element signature="e#40#61#0#PHP" expanded="true" />
               </folding>
@@ -93,45 +107,48 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/views/docents/create.blade.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="133">
-              <caret line="111" column="26" selection-start-line="111" selection-start-column="26" selection-end-line="112" selection-end-column="23" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/resources/views/subjects/create.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="102">
-              <caret line="107" column="30" lean-forward="true" selection-start-line="107" selection-start-column="30" selection-end-line="107" selection-end-column="30" />
+            <state relative-caret-position="1190">
+              <caret line="70" column="86" selection-start-line="70" selection-start-column="86" selection-end-line="70" selection-end-column="86" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Models/Curso.php">
+        <entry file="file://$PROJECT_DIR$/resources/views/enrollments/create.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="102">
-              <caret line="6" column="25" selection-start-line="6" selection-start-column="20" selection-end-line="6" selection-end-column="25" />
+            <state relative-caret-position="5831">
+              <caret line="343" column="38" selection-start-line="343" selection-start-column="38" selection-end-line="343" selection-end-column="38" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/public/js/simalili.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="323">
+              <caret line="20" selection-start-line="20" selection-end-line="20" />
+              <folding>
+                <element signature="n#!!doc" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
     </leaf>
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JavaScript File" />
+      </list>
+    </option>
+  </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>editar</find>
-      <find>sxz</find>
-      <find>fillable</find>
-      <find>create</find>
-      <find>$users</find>
-      <find>tipo_documento</find>
       <find>update</find>
       <find>POST</find>
-      <find>grades</find>
       <find>show</find>
       <find>users</find>
       <find>Docent:</find>
@@ -141,7 +158,6 @@
       <find>s</find>
       <find>gradee</find>
       <find>docent</find>
-      <find>$grade</find>
       <find>id_g</find>
       <find>grade</find>
       <find>Grado</find>
@@ -153,6 +169,14 @@
       <find>/new</find>
       <find>Regresar .*\n.*\n.*&lt;/a&gt;</find>
       <find>$grades</find>
+      <find>Datos de la</find>
+      <find>Datos del</find>
+      <find>Datos</find>
+      <find>grado</find>
+      <find>madre</find>
+      <find>requisit</find>
+      <find>$grade</find>
+      <find>grades</find>
     </findStrings>
     <replaceStrings>
       <replace>{{asset('')}}</replace>
@@ -173,9 +197,13 @@
       <replace>student</replace>
       <replace>Estudiante</replace>
       <replace>Matricula</replace>
-      <replace />
       <replace>Regresar&lt;</replace>
       <replace>Regresar&lt;/a&gt;</replace>
+      <replace />
+      <replace>padre</replace>
+      <replace>acudiente</replace>
+      <replace>$student</replace>
+      <replace>students</replace>
     </replaceStrings>
     <dirStrings>
       <dir>D:\Softwares\Developer\Projects\Simalili\database\migrations</dir>
@@ -194,10 +222,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/resources/views/executive/docent.blade.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/DocentController.php" />
-        <option value="$PROJECT_DIR$/app/Models/Grado.php" />
-        <option value="$PROJECT_DIR$/resources/views/grades/edit.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/grades/show.blade.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/GradesController.php" />
         <option value="$PROJECT_DIR$/resources/views/executive/subject.blade.php" />
@@ -210,12 +234,9 @@
         <option value="$PROJECT_DIR$/app/Models/Asignatura.php" />
         <option value="$PROJECT_DIR$/resources/views/subjects/edit.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/subjects/show.blade.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/SubjectController.php" />
         <option value="$PROJECT_DIR$/resources/views/docents/edit.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/docents/show.blade.php" />
         <option value="$PROJECT_DIR$/app/Models/Estudiante.php" />
         <option value="$PROJECT_DIR$/resources/views/secretary/student.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/students/search.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/students/show.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/login/secretary.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/enrollments/edit.blade.php" />
@@ -223,28 +244,35 @@
         <option value="$PROJECT_DIR$/resources/views/executive/enrollment.blade.php" />
         <option value="$PROJECT_DIR$/app/Models/Matricula.php" />
         <option value="$PROJECT_DIR$/.gitignore" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/StudentController.php" />
         <option value="$PROJECT_DIR$/resources/views/login/executive.blade.php" />
         <option value="$PROJECT_DIR$/app/Models/User.php" />
         <option value="$PROJECT_DIR$/resources/views/users/show.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/users/edit.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/auth/login.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/layouts/layout.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/users/search.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/subjects/search.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/enrollments/search.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/docents/search.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/grades/search.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/enrollments/create.blade.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/EnrollmentController.php" />
-        <option value="$PROJECT_DIR$/resources/views/users/create.blade.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/UserController.php" />
-        <option value="$PROJECT_DIR$/routes/web.php" />
         <option value="$PROJECT_DIR$/resources/views/grades/create.blade.php" />
         <option value="$PROJECT_DIR$/app/Models/Curso.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/GradeController.php" />
+        <option value="$PROJECT_DIR$/resources/views/users/create.blade.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/SubjectController.php" />
+        <option value="$PROJECT_DIR$/resources/js/simalili.js" />
+        <option value="$PROJECT_DIR$/resources/views/layouts/layout.blade.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/DocentController.php" />
+        <option value="$PROJECT_DIR$/app/Models/Docente.php" />
         <option value="$PROJECT_DIR$/resources/views/docents/create.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/docents/show.blade.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/EnrollmentController.php" />
+        <option value="$PROJECT_DIR$/public/js/simalili.js" />
+        <option value="$PROJECT_DIR$/resources/views/enrollments/create.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/subjects/create.blade.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/StudentController.php" />
+        <option value="$PROJECT_DIR$/routes/web.php" />
+        <option value="$PROJECT_DIR$/resources/views/students/search.blade.php" />
       </list>
     </option>
   </component>
@@ -332,8 +360,8 @@
       <path value="$PROJECT_DIR$/vendor/beyondcode/laravel-dump-server" />
     </include_path>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-7" />
+  <component name="ProjectFrameBounds">
+    <option name="x" value="953" />
     <option name="width" value="974" />
     <option name="height" value="1087" />
   </component>
@@ -345,7 +373,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -380,6 +407,22 @@
             <path>
               <item name="Simalili" type="b2602c69:ProjectViewProjectNode" />
               <item name="Simalili" type="462c0819:PsiDirectoryNode" />
+              <item name="database" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Simalili" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Simalili" type="462c0819:PsiDirectoryNode" />
+              <item name="public" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Simalili" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Simalili" type="462c0819:PsiDirectoryNode" />
+              <item name="public" type="462c0819:PsiDirectoryNode" />
+              <item name="js" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Simalili" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Simalili" type="462c0819:PsiDirectoryNode" />
               <item name="resources" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -400,6 +443,27 @@
               <item name="Simalili" type="462c0819:PsiDirectoryNode" />
               <item name="resources" type="462c0819:PsiDirectoryNode" />
               <item name="views" type="462c0819:PsiDirectoryNode" />
+              <item name="enrollments" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Simalili" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Simalili" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="views" type="462c0819:PsiDirectoryNode" />
+              <item name="login" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Simalili" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Simalili" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="views" type="462c0819:PsiDirectoryNode" />
+              <item name="secretary" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Simalili" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Simalili" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="views" type="462c0819:PsiDirectoryNode" />
               <item name="students" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -412,19 +476,13 @@
             <path>
               <item name="Simalili" type="b2602c69:ProjectViewProjectNode" />
               <item name="Simalili" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="views" type="462c0819:PsiDirectoryNode" />
-              <item name="users" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Simalili" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Simalili" type="462c0819:PsiDirectoryNode" />
               <item name="routes" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -442,19 +500,19 @@
     <property name="settings.editor.selected.configurable" value="php.test.frameworks.configurable" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\Softwares\Developer\Projects\Simalili\public\js" />
+      <recent name="D:\Softwares\Developer\Projects\Simalili\resources\views\docents" />
+      <recent name="D:\Softwares\Developer\Projects\Simalili\resources\views\users" />
+      <recent name="D:\Softwares\Developer\Projects\Simalili\app\Models" />
+      <recent name="D:\Softwares\Developer\Projects\Simalili\resources\views\login" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\Softwares\Developer\Projects\Simalili\resources\views" />
       <recent name="D:\Softwares\Developer\Projects\Simalili\resources\views\secretary" />
       <recent name="D:\Softwares\Developer\Projects\Simalili\resources\views\grades" />
       <recent name="D:\Softwares\Developer\Projects\Simalili\resources\views\grade" />
       <recent name="D:\Softwares\Developer\Projects\Simalili\resources\views\user" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="D:\Softwares\Developer\Projects\Simalili\resources\views\docents" />
-      <recent name="D:\Softwares\Developer\Projects\Simalili\resources\views\users" />
-      <recent name="D:\Softwares\Developer\Projects\Simalili\app\Models" />
-      <recent name="D:\Softwares\Developer\Projects\Simalili\resources\views\login" />
-      <recent name="D:\Softwares\Developer\Projects\Simalili\resources\views\layouts" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -518,7 +576,11 @@
       <workItem from="1558363869085" duration="1002000" />
       <workItem from="1558422249750" duration="5245000" />
       <workItem from="1558455188628" duration="188000" />
-      <workItem from="1558527094332" duration="2212000" />
+      <workItem from="1558527094332" duration="2708000" />
+      <workItem from="1558536166656" duration="2404000" />
+      <workItem from="1558570670627" duration="5799000" />
+      <workItem from="1558650782148" duration="25000" />
+      <workItem from="1558667218110" duration="600000" />
     </task>
     <task id="LOCAL-00001" summary=".">
       <created>1558125037653</created>
@@ -744,7 +806,14 @@
       <option name="project" value="LOCAL" />
       <updated>1558529172344</updated>
     </task>
-    <option name="localTasksCounter" value="33" />
+    <task id="LOCAL-00033" summary="[Fix] Cambios">
+      <created>1558529321019</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1558529321019</updated>
+    </task>
+    <option name="localTasksCounter" value="34" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -780,7 +849,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="119150000" />
+    <option name="totallyTimeSpent" value="128474000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -792,15 +861,15 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1096" extended-state="6" />
+    <frame x="953" y="0" width="974" height="1087" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.4984375" visible="true" weight="0.141258" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4984375" visible="true" weight="0.15098469" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="npm" order="2" sideWeight="0.5015625" side_tool="true" weight="0.24945295" />
       <window_info id="Favorites" order="3" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" visible="true" weight="0.32914045" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32914045" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.32809225" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39937106" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
@@ -809,7 +878,7 @@
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" order="8" />
       <window_info anchor="bottom" id="PHP-CGI Server" order="9" weight="0.32914045" />
-      <window_info anchor="bottom" id="Command Line Tools Console" order="10" show_stripe_button="false" weight="0.32914045" />
+      <window_info anchor="bottom" id="Command Line Tools Console" order="10" weight="0.3281412" />
       <window_info anchor="bottom" id="Terminal" order="11" weight="0.3312369" />
       <window_info anchor="bottom" id="Event Log" order="12" side_tool="true" />
       <window_info anchor="bottom" id="Version Control" order="13" weight="0.3259958" />
@@ -874,58 +943,28 @@
     <MESSAGE value="Mas cambios............" />
     <MESSAGE value="[Fix] Docente" />
     <MESSAGE value="[Fix] Cambios Grade" />
-    <option name="LAST_COMMIT_MESSAGE" value="[Fix] Cambios Grade" />
+    <MESSAGE value="[Fix] Cambios" />
+    <option name="LAST_COMMIT_MESSAGE" value="[Fix] Cambios" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" log-message="true" suspend="NONE" type="javascript">
+          <url>file://$PROJECT_DIR$/public/js/simalili.js</url>
+          <line>4</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/Simalili$UsersModule_it_creates_a_new_user.xml" NAME="UsersModule.it_creates_a_new_user Coverage Results" MODIFIED="1558277742257" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="PhpCoverage" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/resources/views/auth/login.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1428">
-          <caret line="84" column="61" selection-start-line="84" selection-start-column="61" selection-end-line="84" selection-end-column="61" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/users/search.blade.php" />
-    <entry file="file://$PROJECT_DIR$/resources/views/users/edit.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="97">
-          <caret line="122" column="144" lean-forward="true" selection-start-line="122" selection-start-column="51" selection-end-line="122" selection-end-column="144" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/users/show.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="454">
-          <caret line="55" column="43" selection-start-line="55" selection-start-column="43" selection-end-line="57" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/subjects/search.blade.php" />
-    <entry file="file://$PROJECT_DIR$/resources/views/enrollments/search.blade.php" />
-    <entry file="file://$PROJECT_DIR$/resources/views/docents/search.blade.php" />
-    <entry file="file://$PROJECT_DIR$/resources/views/grades/show.blade.php">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/grades/search.blade.php" />
-    <entry file="file://$PROJECT_DIR$/resources/views/enrollments/create.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="296" column="32" selection-start-line="296" selection-start-column="25" selection-end-line="296" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/layouts/layout.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="165" column="29" lean-forward="true" selection-start-line="165" selection-start-column="29" selection-end-line="165" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/login/executive.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-493">
@@ -1043,13 +1082,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Models/Docente.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="17" column="23" selection-start-line="17" selection-start-column="9" selection-end-line="17" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/database/migrations/2019_05_17_064336_create_requisito_table.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
@@ -1099,30 +1131,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/DocentController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="6" selection-start-line="6" selection-start-column="6" selection-end-line="6" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/users/create.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1391">
-          <caret line="121" column="63" lean-forward="true" selection-start-line="121" selection-start-column="63" selection-end-line="121" selection-end-column="63" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/routes/web.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="578">
-          <caret line="136" column="52" selection-start-line="136" selection-start-column="35" selection-end-line="136" selection-end-column="52" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/grades/create.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
+        <state relative-caret-position="969">
           <caret line="57" column="94" selection-start-line="57" selection-start-column="82" selection-end-line="57" selection-end-column="94" />
         </state>
       </provider>
@@ -1136,20 +1147,10 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/UserController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="388">
-          <caret line="86" lean-forward="true" selection-start-line="86" selection-end-line="86" />
+        <state relative-caret-position="1411">
+          <caret line="86" selection-start-line="86" selection-end-line="86" />
           <folding>
             <element signature="e#40#63#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/EnrollmentController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="173">
-          <caret line="27" column="62" selection-start-line="27" selection-start-column="62" selection-end-line="27" selection-end-column="62" />
-          <folding>
-            <element signature="e#40#61#0#PHP" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1161,27 +1162,134 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/GradeController.php">
+    <entry file="file://$PROJECT_DIR$/resources/views/users/create.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="31">
-          <caret line="48" column="19" selection-start-line="48" selection-start-column="19" selection-end-line="48" selection-end-column="19" />
+        <state relative-caret-position="388">
+          <caret line="74" column="93" selection-start-line="74" selection-start-column="93" selection-end-line="74" selection-end-column="93" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/layouts/layout.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="711">
+          <caret line="175" column="23" selection-start-line="175" selection-start-column="23" selection-end-line="175" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Models/Docente.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="19" column="16" lean-forward="true" selection-start-line="19" selection-start-column="16" selection-end-line="19" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/docents/show.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="643">
+          <caret line="54" column="60" selection-start-line="54" selection-start-column="60" selection-end-line="54" selection-end-column="60" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/EnrollmentController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="425">
+          <caret line="28" column="61" lean-forward="true" selection-start-line="28" selection-start-column="61" selection-end-line="28" selection-end-column="61" />
           <folding>
             <element signature="e#40#61#0#PHP" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/DocentController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="609">
+          <caret line="102" column="12" selection-start-line="102" selection-start-column="12" selection-end-line="103" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Models/Estudiante.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="10" column="1" lean-forward="true" selection-start-line="10" selection-start-column="1" selection-end-line="10" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/secretary/student.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="21" column="18" lean-forward="true" selection-start-line="21" selection-start-column="18" selection-end-line="21" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/docents/create.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="133">
-          <caret line="111" column="26" selection-start-line="111" selection-start-column="26" selection-end-line="112" selection-end-column="23" />
+        <state relative-caret-position="1649">
+          <caret line="97" selection-start-line="97" selection-end-line="109" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routes/web.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2108">
+          <caret line="133" column="67" selection-start-line="133" selection-start-column="59" selection-end-line="133" selection-end-column="67" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/StudentController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1224">
+          <caret line="72" column="36" selection-start-line="72" selection-start-column="30" selection-end-line="72" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/students/edit.blade.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/SubjectController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="459">
+          <caret line="31" column="52" selection-start-line="31" selection-start-column="52" selection-end-line="31" selection-end-column="52" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/GradeController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="20" selection-start-line="20" selection-end-line="94" />
+          <folding>
+            <element signature="e#40#61#0#PHP" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/subjects/create.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="107" column="30" lean-forward="true" selection-start-line="107" selection-start-column="30" selection-end-line="107" selection-end-column="30" />
+        <state relative-caret-position="1190">
+          <caret line="70" column="86" selection-start-line="70" selection-start-column="86" selection-end-line="70" selection-end-column="86" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/enrollments/create.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="5831">
+          <caret line="343" column="38" selection-start-line="343" selection-start-column="38" selection-end-line="343" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/js/simalili.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="20" selection-start-line="20" selection-end-line="20" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/students/search.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="12" column="95" selection-start-line="12" selection-start-column="95" selection-end-line="12" selection-end-column="95" />
         </state>
       </provider>
     </entry>

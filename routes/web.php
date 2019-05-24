@@ -130,13 +130,20 @@ Route::post('/enrollments', 'EnrollmentController@store');
 
 
 # Student
-// Index Route::get('/students', 'StudentController@students')->name('students.students');
-
-// Search Route::get('/students/search', 'StudentController@search')->name('students.search');
-// Show subject
+//Search
+Route::get('/students', 'StudentController@search')->name('students.search');
+// Show enrollment
 Route::get('/students/{student}', 'StudentController@show')
-    ->where('student', '[0-9]+')
-    ->name('student.show');
+    ->where('students', '[0-9]+')
+    ->name('students.show');
+
+// Edit
+Route::get('/students/{student}/edit', 'StudentController@edit')->name('students.edit');
+Route::put('/students/{student}', 'StudentController@update');
+
+// Delete
+Route::delete('/students/{student}', 'StudentController@destroy')->name('students.destroy');
+Route::post('/students', 'StudentController@store');
 
 
 

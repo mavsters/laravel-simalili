@@ -10,7 +10,7 @@
                     <div class="col-lg-3 order-lg-2">
                         <div class="card-profile-image">
                             <a href="{{ url('/students') }}">
-                                <img class="rounded-circle" src="{{asset('img/icons/Estudiante.png')}}">
+                                <img class="rounded-circle" src="{{asset('img/icons/Estudiantes.png')}}">
                             </a>
                         </div>
                     </div>
@@ -35,8 +35,11 @@
                                     <table class="table">
                                         <thead>
                                         <tr>
+                                            <!-- Auto Complementar LARAVEL PLUGIN-->
                                             <th scope="col">#</th>
                                             <th scope="col">Nombre</th>
+                                            <th scope="col">Apellido</th>
+                                            <th scope="col">Grado</th>
                                             <th scope="col">Acciones</th>
                                         </tr>
                                         </thead>
@@ -44,7 +47,7 @@
                                         @foreach($students as $student)
                                             <tr>
                                                 <th scope="row">{{ $student->id }}</th>
-                                                <td>{{ $student->nombre }}</td>
+                                                <td>{{ $student->nombre_est }}</td>
                                                 <td>
                                                     <form action="{{ route('students.destroy', $student) }}"
                                                           method="POST">
@@ -68,8 +71,6 @@
                                 @else
                                     <p>No hay usuarios registrados.</p>
                                 @endif
-                                <hr/>
-                                <a href="{{ url('/students') }}" class="btn btn-danger btn-lg">Regresar</a>
                             </div>
                         </div>
                     </div>

@@ -45,7 +45,7 @@
                             <div class="col-lg-12">
 
                                 {{ csrf_field() }}
-                                <h2>Datos del Docente:</h2>
+                                <h2>Docente:</h2>
                                 <div class="form-group">
                                     <label for="name">Nombre Completo:</label>
                                     <input type="text" class="form-control" name="name" id="name"
@@ -90,6 +90,20 @@
                                             <option class="dropdown-item">Cedula de Ciudadania</option>
                                             <option class="dropdown-item">Pasaporte</option>
                                             <option class="dropdown-item">Cedula Extranjera</option>
+
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="genero">Genero:</label>
+                                    <div class="dropdown">
+                                        <select id="genero" name="genero"
+                                                class="btn btn-secondary dropdown-toggle"
+                                                value="{{ old('genero') }}">
+                                            <option class="dropdown-item" selected>Seleccione...</option>
+                                            <option class="dropdown-item">Hombre</option>
+                                            <option class="dropdown-item">Mujer</option>
 
                                         </select>
                                     </div>
