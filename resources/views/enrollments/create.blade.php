@@ -447,9 +447,10 @@
                             </tr>
                             </thead>
                             <tbody>
+                            {{$count = 1}}
                             @foreach($grade as $value)
                                 <tr>
-                                    <th scope="row">{{ $value->id }}</th>
+                                    <th scope="row">{{ $count++ }}</th>
                                     <td>{{ $value->nombre }}</td>
                                     <td>
                                         <form action="{{ route('grades.destroy', $value) }}"

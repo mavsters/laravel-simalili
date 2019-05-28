@@ -135,9 +135,10 @@
                             </tr>
                             </thead>
                             <tbody>
+                            {{$count = 1}}
                             @foreach($docents as $docent)
                                 <tr>
-                                    <th scope="row">{{ $docent->id }}</th>
+                                    <th scope="row">{{ $count++ }}</th>
                                     <td>{{ $docent->nombre_completo }}</td>
                                     <td>
                                         <form action="{{ route('docents.destroy', $docent) }}"
