@@ -63,7 +63,7 @@ class StudentController extends Controller
     public function show(Estudiante $student)
     {
         $crud = true;
-        return view('students.show', compact('crud', 'grade'));
+        return view('students.show', compact('crud', 'student'));
     }
 
     public function search()

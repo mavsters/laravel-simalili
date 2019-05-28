@@ -10,7 +10,7 @@
                     <div class="col-lg-3 order-lg-2">
                         <div class="card-profile-image">
                             <a href="{{ url('/students') }}">
-                                <img class="rounded-circle" src="{{asset('img/icons/Estudiante.png')}}">
+                                <img class="rounded-circle" src="{{asset('img/icons/Estudiantes.png')}}">
                             </a>
                         </div>
                     </div>
@@ -38,6 +38,7 @@
                 <div class="text-center mt-5">
 
                     <h1>Estudiante #{{ $student->id }}</h1>
+
                     <div class="h6 font-weight-300"><i class="ni location_pin mr-2"></i></div>
                 </div>
                 <form method="POST" action="{{ url('students') }}">
@@ -45,7 +46,17 @@
                         <div class="row justify-content-center">
                             <div class="col-lg-12">
                                 <h2>Estudiante:</h2>
-                                <p>Nombre del usuario: {{ $student->nombre }}</p>
+                                <p>Nombre del usuario: {{ $student->nombre_est }}</p>
+                                <p>Apellido del usuario: {{ $student->apellido_est }}</p>
+                                <p>Documento: {{ $student->doc_id }}</p>
+                                <p>Número Doc: {{ $student->num_id }}</p>
+                                <p>Lugar de nacimiento: {{ $student->lugar_nac }}</p>
+                                <p>Fecha de Nacimiento: {{ $student->fecha_nac }}</p>
+                                <p>Edad: {{ $student->edad }}</p>
+                                <p>Religion: {{ $student->religion }}</p>
+                                <p>Nombre del Tutor: {{ $student->nombre_tutor }}</p>
+                                <p>Tipo de estudiante: {{ $student->tipo_est }}</p>
+                                <p>Genero: {{ $student->genero }}</p>
                                 <hr/>
                                 <a href="{{ url('/students') }}" class="btn btn-danger btn-lg">Regresar</a>
                             </div>
