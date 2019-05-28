@@ -53,14 +53,15 @@
                                 <p>Tipo de Identificación: {{ $docent->tipo_documento }}</p>
                                 <p>Número de Identificación: {{ $docent->number_id }}</p>
                                 <h2>usuario</h2>
-                                <p>Nombre: {{
+                                <p>Tipo de Usuario: {{
                                 ($user->id_tipousuario == 1)?'Directivo':(($user->id_tipousuario == 2)?'Secretaría':'Normal')
                                 }}
                                 </p>
                                 <p>Nombre: {{$user->name}}</p>
+                                <p>Usuario: {{$user->username}}</p>
                                 <p>Correo electrónico: {{ $user->email }}</p>
                                 <hr/>
-                                <a href="{{ url('/users') }}" class="btn btn-danger btn-lg">Regresar</a>
+                                <a href="{{ url('/') }}" class="btn btn-danger btn-lg">Regresar</a>
                             </div>
                         </div>
                     </div>

@@ -5,7 +5,6 @@ namespace App\Http\Controllers;
 use App\Models\Docente;
 use App\User;
 use Illuminate\Contracts\Support\Renderable;
-use Illuminate\Validation\Rule;
 
 
 class UserController extends Controller
@@ -77,11 +76,13 @@ class UserController extends Controller
 
 
         $data = request()->validate([
+            'username' => ['required', 'unique:users,username'],
             'email' => ['required', 'email', 'unique:users,email'],
             'password' => 'required',
             'tipo_usiaro' => 'required',
         ], [
-            'tipo_usiaro.required' => 'Tipo de usuario Requerido'
+            'tipo_usiaro.required' => 'Tipo de usuario Requerido',
+            'username.required' => 'Usuario Requerido'
         ]);
 
 
@@ -99,6 +100,7 @@ class UserController extends Controller
         }
 
         $user = User::create([
+            'username' => $data['username'],
             'name' => $docente['nombre_completo'],
             'email' => $data['email'],
             'password' => bcrypt($data['password']),
@@ -144,33 +146,21 @@ class UserController extends Controller
         if (isset($docent)) {
             // Docent
             $data = request()->validate([
-                'name' => 'required',
-                'lugar_nac' => 'required',
-                'edad' => 'required',
-                'religion' => 'required',
-                'titulo_prof' => 'required',
-                'tipo_documento' => 'required',
-                'number_id' => 'required',
+                'docente' => 'required',
             ], [
-                'name.required' => 'El campo nombre es obligatorio',
-                'lugar_nac.required' => 'El Lugar de Nacimiento es Obligatorio',
-                'edad.required' => 'La edad es Obligatorio',
-                'religion.required' => 'La Religión es Obligatoria',
-                'titulo_prof.required' => 'El titulo de profesión es Obligatorio',
-                'tipo_documento.required' => 'El tipo de documento es Obligatorio',
-                'number_id.required' => 'El número de Identificación es Obligatorio',
+                'docente' => 'Seleccione Docente',
             ]);
             $docent->update($data);
         }
         // User
         $data = request()->validate([
-            'name' => 'required',
-            'email' => ['required', 'email', Rule::unique('users')->ignore($user->id)],
-            'password' => '',
+            'username' => ['required', 'unique:users,username'],
+            'email' => ['required', 'email', 'unique:users,email'],
+            'password' => 'required',
             'tipo_usiaro' => 'required',
         ], [
-            'name.required' => 'El campo nombre es obligatorio',
-            'tipo_usiaro.required' => 'Tipo de usuario Requerido'
+            'tipo_usiaro.required' => 'Tipo de usuario Requerido',
+            'username.required' => 'Usuario Requerido'
         ]);
 
         $tipo_usuario = 0;
@@ -194,7 +184,6 @@ class UserController extends Controller
         }
 
         $data['id_tipousuario'] = $tipo_usuario;
-        $user['id_tipousuario'] = $tipo_usuario;
 
         $user->update($data);
 

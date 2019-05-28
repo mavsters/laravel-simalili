@@ -62,7 +62,7 @@
 
                                 <hr/>
                                 <div class="text-center">
-                                    <a href="{{ url('/grades') }}" class="btn btn-danger btn-lg">Regresar</a>
+                                    <a href="{{ url('/') }}" class="btn btn-danger btn-lg">Regresar</a>
                                     <button type="submit" class="btn btn-success btn-lg">Crear Grado</button>
                                 </div>
                             </div>

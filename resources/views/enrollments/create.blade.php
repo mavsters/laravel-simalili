@@ -431,7 +431,7 @@
 
                                 <hr/>
                                 <div css="text-center">
-                                    <a href="{{ url('/enrollments') }}" class="btn btn-danger btn-lg">Regresar</a>
+                                    <a href="{{ url('/') }}" class="btn btn-danger btn-lg">Regresar</a>
                                     <button type="submit" class="btn btn-success btn-lg">Crear Matricula</button>
                                 </div>
                             </div>

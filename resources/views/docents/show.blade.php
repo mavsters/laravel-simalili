@@ -54,7 +54,7 @@
                                 <p>Número de Identificación: {{ $docent->number_id }}</p>
                                 <p>Genero: {{$docent->genero}}</p>
                                 <hr/>
-                                <a href="{{ url('/docents') }}" class="btn btn-danger btn-lg">Regresar</a>
+                                <a href="{{ url('/') }}" class="btn btn-danger btn-lg">Regresar</a>
                             </div>
                         </div>
                     </div>

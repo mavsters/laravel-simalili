@@ -131,6 +131,13 @@
                                     </div>
                                 </div>
                                 <div class="form-group">
+                                    <label for="username">Usuario:</label>
+                                    <input type="text" class="form-control" name="username" id="username"
+                                           autocomplete="on"
+
+                                           value="{{ old('username', $user->username) }}">
+                                </div>
+                                <div class="form-group">
                                     <label for="email">Correo electrónico:</label>
                                     <input type="email" class="form-control" name="email" id="email" autocomplete="on"
 
@@ -144,7 +151,7 @@
                                 </div>
                                 <hr/>
                                 <div class="text-center">
-                                    <a href="{{ url('/users') }}" class="btn btn-danger btn-lg">Regresar</a>
+                                    <a href="{{ url('/') }}" class="btn btn-danger btn-lg">Regresar</a>
                                     <button type="submit" class="btn btn-primary btn-lg">Actualizar Datos</button>
                                 </div>
                             </div>

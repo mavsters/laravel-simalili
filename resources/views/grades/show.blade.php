@@ -47,7 +47,7 @@
                                 <h2>Grado:</h2>
                                 <p>Nombre del usuario: {{ $grade->nombre }}</p>
                                 <hr/>
-                                <a href="{{ url('/grades') }}" class="btn btn-danger btn-lg">Regresar</a>
+                                <a href="{{ url('/') }}" class="btn btn-danger btn-lg">Regresar</a>
                             </div>
                         </div>
                     </div>

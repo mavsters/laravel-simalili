@@ -58,7 +58,7 @@
                                 <p>Tipo de estudiante: {{ $student->tipo_est }}</p>
                                 <p>Genero: {{ $student->genero }}</p>
                                 <hr/>
-                                <a href="{{ url('/students') }}" class="btn btn-danger btn-lg">Regresar</a>
+                                <a href="{{ url('/') }}" class="btn btn-danger btn-lg">Regresar</a>
                             </div>
                         </div>
                     </div>

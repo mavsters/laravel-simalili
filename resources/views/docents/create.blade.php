@@ -118,7 +118,7 @@
 
                                 <hr/>
                                 <div class="text-center">
-                                    <a href="{{ url('/docents') }}" class="btn btn-danger btn-lg">Regresar</a>
+                                    <a href="{{ url('/') }}" class="btn btn-danger btn-lg">Regresar</a>
                                     <button type="submit" class="btn btn-success btn-lg">Crear usuario</button>
                                 </div>
                             </div>
