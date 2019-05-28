@@ -31,29 +31,45 @@ class EnrollmentController extends Controller
 
     public function store()
     {
+        $data = request()->validate([
+            'tipo_matricula' => 'required',
+        ], [
+            'tipo_matricula.required' => 'Seleccione un tipo de matricula'
+        ]);
+        $enrollment = Matricula::create([
+            "tipo_matricula" => $data["tipo_matricula"]
+        ]);
 
-        /* array:16 [▼
-  "_token" => "EwC7mEYnYNKSS6l6iNRjYMoObRyBwlaDrJvS9A1U"
+
+        /*
+        array:25 [▼
+  "_token" => "tjBilFVBjWqEbnFlhPVjyIMW1RA8rFJQ2hCHgNLW"
   "tipo_matricula" => "Nuevo"
-
-  "id_grado" => "123123"
-
-  "nombre" => "1"
-  "apellido" => "2"
-  "cedula" => "3"
-  "telefono" => "4"
-  "parentesco" => "Acudiente"
-
-  "nombre_est" => "5"
-  "apellido_est" => "6"
-  "doc_id" => "Cedula de Ciudadania"
-  "num_id" => "7"
-  "lugar_nac" => "8"
-  "fecha_nac" => "05/20/2019"
-  "edad" => "9"
-  "religion" => "10"
-
-]*/
+  "id_grado" => "mavs"
+  "parentesco" => "Tio"
+  "madre_nombre" => "1"
+  "madre_apellido" => "2"
+  "madre_cedula" => "3"
+  "madre_telefono" => "4"
+  "padre_nombre" => "5"
+  "padre_apellido" => "6"
+  "padre_cedula" => "7"
+  "padre_telefono" => "88"
+  "acudiente_nombre" => "9"
+  "acudiente_apellido" => "10"
+  "acudiente_cedula" => "11"
+  "acudiente_telefono" => "12"
+  "nombre_est" => "13"
+  "apellido_est" => "14"
+  "genero" => "Hombre"
+  "doc_id" => "Pasaporte"
+  "num_id" => "15"
+  "lugar_nac" => "16"
+  "fecha_nac" => "05/28/2019"
+  "edad" => "17"
+  "religion" => "18"
+]
+        */
 
 
         $data = request()->validate([

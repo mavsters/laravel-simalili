@@ -437,6 +437,7 @@
                             </div>
                         </div>
                     </div>
+                </form>
                     @if ($grade->isNotEmpty())
                         <table class="table">
                             <thead>
@@ -475,7 +476,6 @@
                     @else
                         <p>No hay usuarios registrados.</p>
                     @endif
-                </form>
             </div>
         </div>
     </div>
