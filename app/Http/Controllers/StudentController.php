@@ -57,7 +57,7 @@ class StudentController extends Controller
     public function edit(Estudiante $student)
     {
         $crud = true;
-        return view('students.edit', ['grade' => $student], compact('crud'));
+        return view('students.edit', ['student' => $student], compact('crud'));
     }
 
     public function show(Estudiante $student)
