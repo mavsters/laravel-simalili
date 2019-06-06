@@ -36,6 +36,7 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" crossorigin="anonymous">
     <!-- Argon CSS -->
     <link type="text/css" href="{{asset('css/argon.css?v=1.0.1')}}" rel="stylesheet">
+    <link type="text/css" href="{{asset('css/simalili.css')}}" rel="stylesheet">
     <script src="{{asset('vendor/jquery/jquery.min.js')}}"></script>
 </head>
 <!-- BODY -->
@@ -62,14 +63,7 @@
                 <ul class="navbar-nav ml-auto">
                     <!-- Authentication Links -->
                     @guest
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{ route('login') }}">{{ __('Ingresar') }}</a>
-                        </li>
-                        @if (Route::has('register'))
-                            <li class="nav-item">
-                                <a class="nav-link" href="{{ route('register') }}">{{ __('Registrarse') }}</a>
-                            </li>
-                        @endif
+
                     @else
                         <li class="nav-item dropdown">
                             <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button"

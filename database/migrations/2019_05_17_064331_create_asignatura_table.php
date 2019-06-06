@@ -1,8 +1,8 @@
 <?php
 
-use Illuminate\Support\Facades\Schema;
-use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
 
 class CreateAsignaturaTable extends Migration
 {
@@ -15,8 +15,8 @@ class CreateAsignaturaTable extends Migration
     {
         Schema::create('asignatura', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('nombre_asignatura',15)->nullable();
-            $table->boolean('estado')->nullable();
+            $table->string('nombre_asignatura', 15);
+            $table->boolean('estado');
             $table->timestamps();
         });
     }

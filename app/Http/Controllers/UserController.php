@@ -76,13 +76,13 @@ class UserController extends Controller
 
 
         $data = request()->validate([
-            'username' => ['required', 'unique:users,username'],
             'email' => ['required', 'email', 'unique:users,email'],
             'password' => 'required',
             'tipo_usiaro' => 'required',
         ], [
             'tipo_usiaro.required' => 'Tipo de usuario Requerido',
-            'username.required' => 'Usuario Requerido'
+            'email.required' => 'Email Requerido',
+            'password.required' => 'Contraseña Requerido'
         ]);
 
 
@@ -100,8 +100,7 @@ class UserController extends Controller
         }
 
         $user = User::create([
-            'username' => $data['username'],
-            'name' => $docente['nombre_completo'],
+            'name' => "pepito",// $docente['nombre_completo'],
             'email' => $data['email'],
             'password' => bcrypt($data['password']),
             'id_tipousuario' => $tipo_usuario
@@ -154,13 +153,11 @@ class UserController extends Controller
         }
         // User
         $data = request()->validate([
-            'username' => ['required', 'unique:users,username'],
             'email' => ['required', 'email', 'unique:users,email'],
             'password' => 'required',
             'tipo_usiaro' => 'required',
         ], [
             'tipo_usiaro.required' => 'Tipo de usuario Requerido',
-            'username.required' => 'Usuario Requerido'
         ]);
 
         $tipo_usuario = 0;

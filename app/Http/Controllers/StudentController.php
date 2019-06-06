@@ -32,25 +32,24 @@ class StudentController extends Controller
     {
         $data = request()->validate([
             'nombre' => 'required',
-            'countCourses' => 'required|max:4'
-        ], [
-            'nombre.required' => 'El campo nombre es obligatorio',
-            'countCourses.required' => 'Digite un número menor de 4'
         ]);
-        if (is_numeric($data['countCourses'])) {
-            $student = Estudiante::create([
-                'nombre' => $data['nombre'],
-            ]);
 
-            $letter = ['A', 'B', 'C', 'D'];
-            for ($i = 0; $i < $data['countCourses']; $i++) {
-                $curso = Curso::create([
-                    'nombre_curso' => "$letter[$i]",
-                    'id_grado' => $student->id
-                ]);
-            }
+        $idStudent = Estudiante::create([
+            "nombre_est" => $data["nombre_est"],
+            "apellido_est" => $data["apellido_est"],
+            "doc_id" => $data["doc_id"],
+            "num_id" => $data["num_id"],
+            "lugar_nac" => $data["lugar_nac"],
+            "fecha_nac" => $data["fecha_nac"],
+            "edad" => $data["edad"],
+            "religion" => $data["religion"],
+            "genero" => $data["genero"],
+            "tipo_est" => $data["tipo_est"],
+            "nombre_tutor" => $data["madre_nombre"],
+
+        ]);
+
             return redirect()->back();
-        }
 
     }
 

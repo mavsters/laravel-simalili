@@ -58,8 +58,7 @@
                                 }}
                                 </p>
                                 <p>Nombre: {{$user->name}}</p>
-                                <p>Usuario: {{$user->username}}</p>
-                                <p>Correo electrónico: {{ $user->email }}</p>
+                                z <p>Correo electrónico: {{ $user->email }}</p>
                                 <hr/>
                                 <a href="{{ url('/') }}" class="btn btn-danger btn-lg">Regresar</a>
                             </div>

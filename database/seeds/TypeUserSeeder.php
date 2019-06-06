@@ -23,10 +23,5 @@ class TypeUserSeeder extends Seeder
                 'tipo_usuario' => 'Secretaría'
             ]
         );
-        Tipousuario::create(
-            [
-                'tipo_usuario' => 'Normal'
-            ]
-        );
     }
 }

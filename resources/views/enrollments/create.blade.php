@@ -81,37 +81,43 @@
                                 <div class="row">
                                     <div class="col-4">
                                         <div class="form-check">
-                                            <input class="form-check-input" type="checkbox" value="" id="requisito[0]">
+                                            <input class="form-check-input" type="checkbox" value="pago_inscripcion"
+                                                   name="requisito[0]">
                                             <label class="form-check-label" for="requisito[0]">
                                                 Pago inscripción
                                             </label>
                                         </div>
                                         <div class="form-check">
-                                            <input class="form-check-input" type="checkbox" value="" id="requisito[1]">
+                                            <input class="form-check-input" type="checkbox" value="paz_y_salvo"
+                                                   name="requisito[1]">
                                             <label class="form-check-label" for="requisito[1]">
                                                 Paz y Salvo
                                             </label>
                                         </div>
                                         <div class="form-check">
-                                            <input class="form-check-input" type="checkbox" value="" id="requisito[2]">
+                                            <input class="form-check-input" type="checkbox" value="simat"
+                                                   name="requisito[2]">
                                             <label class="form-check-label" for="requisito[2]">
                                                 SIMAT
                                             </label>
                                         </div>
                                         <div class="form-check">
-                                            <input class="form-check-input" type="checkbox" value="" id="requisito[3]">
+                                            <input class="form-check-input" type="checkbox" value="dil_form_inscrip"
+                                                   name="requisito[3]">
                                             <label class="form-check-label" for="requisito[3]">
                                                 Formulario de Inscripción
                                             </label>
                                         </div>
                                         <div class="form-check">
-                                            <input class="form-check-input" type="checkbox" value="" id="requisito[4]">
+                                            <input class="form-check-input" type="checkbox" value="aprob_entrevista"
+                                                   name="requisito[4]">
                                             <label class="form-check-label" for="requisito[4]">
                                                 Aprovación Entrevista
                                             </label>
                                         </div>
                                         <div class="form-check">
-                                            <input class="form-check-input" type="checkbox" value="" id="requisito[5]">
+                                            <input class="form-check-input" type="checkbox" value="eps"
+                                                   name="requisito[5]">
                                             <label class="form-check-label" for="requisito[5]">
                                                 EPS
                                             </label>
@@ -119,46 +125,61 @@
                                     </div>
                                     <div class="col-4">
                                         <div class="form-check">
-                                            <input class="form-check-input" type="checkbox" value="" id="requisito[7]">
+                                            <input class="form-check-input" type="checkbox" value="acta_matricula"
+                                                   name="requisito[7]">
                                             <label class="form-check-label" for="requisito[7]">
                                                 Acta Matricula
                                             </label>
                                         </div>
                                         <div class="form-check">
-                                            <input class="form-check-input" type="checkbox" value="" id="requisito[8]">
+                                            <input class="form-check-input" type="checkbox" value="contrato_matricula"
+                                                   name="requisito[8]">
                                             <label class="form-check-label" for="requisito[8]">
                                                 Contrato Matricula
                                             </label>
                                         </div>
                                         <div class="form-check">
-                                            <input class="form-check-input" type="checkbox" value="" id="requisito[9]">
+                                            <input class="form-check-input" type="checkbox" value="reg_not_ano_ante"
+                                                   name="requisito[9]">
                                             <label class="form-check-label" for="requisito[9]">
                                                 Notas (Año pasado)
                                             </label>
                                         </div>
                                         <div class="form-check">
-                                            <input class="form-check-input" type="checkbox" value="" id="requisito[10]">
+                                            <input class="form-check-input" type="checkbox" value="renov_con_acta"
+                                                   name="requisito[10]">
                                             <label class="form-check-label" for="requisito[10]">
                                                 Renovación con Acta
                                             </label>
                                         </div>
                                         <div class="form-check">
-                                            <input class="form-check-input" type="checkbox" value="" id="requisito[11]">
+                                            <input class="form-check-input" type="checkbox" value="pago_matricula"
+                                                   name="requisito[11]">
                                             <label class="form-check-label" for="requisito[11]">
                                                 Registro Civil
                                             </label>
                                         </div>
                                         <div class="form-check">
-                                            <input class="form-check-input" type="checkbox" value="" id="requisito[12]">
-                                            <label class="form-check-label" for="requisito[12]">
-                                                Fotos
+                                            <input class="form-check-input" type="checkbox" value="reg_civil"
+                                                   name="requisito[12]">
+                                            <label class="form-check-label" for="requisito[13]">
+                                                Registro Civil
                                             </label>
                                         </div>
+
                                     </div>
                                     <div class="col-4">
                                         <div class="form-check">
-                                            <input class="form-check-input" type="checkbox" value="" id="requisito[13]">
+                                            <input class="form-check-input" type="checkbox" value="fotos"
+                                                   name="requisito[13]">
                                             <label class="form-check-label" for="requisito[13]">
+                                                Fotos
+                                            </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" value="carnet_vacuna"
+                                                   name="requisito[14]">
+                                            <label class="form-check-label" for="requisito[14]">
                                                 Carnet Vacuna
                                             </label>
                                         </div>

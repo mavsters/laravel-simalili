@@ -45,9 +45,9 @@
                             <div class="col-lg-12">
 
                                 {{ csrf_field() }}
-                                <h2>Docente:</h2>
+
                                 <div class="form-group">
-                                    <label for="docente">Docente:</label>
+                                    <label for="docente"><h2>Docente </h2></label>
                                     <div class="dropdown">
                                         <select id="docente" name="docente"
                                                 class="btn btn-secondary dropdown-toggle"
@@ -62,9 +62,9 @@
 
                                 <hr/>
 
-                                <h2>usuario:</h2>
+
                                 <div class="form-group">
-                                    <label for="tipo_usiaro">Tipo de Usuario:</label>
+                                    <label for="tipo_usiaro"><h2>Usuario </h2></label>
                                     <div class="dropdown">
                                         <select id="tipo_usiaro" name="tipo_usiaro"
                                                 class="btn btn-secondary dropdown-toggle"
@@ -76,26 +76,23 @@
                                         </select>
                                     </div>
                                 </div>
-                                <div class="form-group">
-                                    <label for="username">Usuario:</label>
-                                    <input type="text" class="form-control" name="username" id="username"
-                                           autocomplete="on"
-
-                                           value="{{ old('username') }}">
-                                </div>
+                                <div class="row">
+                                    <div class="col-md-6">
                                 <div class="form-group">
                                     <label for="email">Correo electrónico:</label>
-                                    <input type="email" class="form-control" name="email" id="email" autocomplete="on"
+                                    <input type="email" class="form-control" name="email" id="email" autocomplete="off"
 
                                            value="{{ old('email') }}">
                                 </div>
-
+                                    </div>
+                                    <div class="col-md-6">
                                 <div class="form-group">
                                     <label for="password">Contraseña:</label>
                                     <input type="password" class="form-control" name="password" id="password"
                                     >
                                 </div>
-
+                                    </div>
+                                </div>
                                 <hr/>
                                 <div class="text-center">
                                     <a href="{{ url('/') }}" class="btn btn-danger btn-lg">Regresar</a>

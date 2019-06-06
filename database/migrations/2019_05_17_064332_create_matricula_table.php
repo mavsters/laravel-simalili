@@ -15,7 +15,7 @@ class CreateMatriculaTable extends Migration
     {
         Schema::create('matricula', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('tipo_matricula')->nullable();
+            $table->string('tipo_matricula');
 
             $table->unsignedInteger('id_grado');
             $table->unsignedInteger('id_requisito');
