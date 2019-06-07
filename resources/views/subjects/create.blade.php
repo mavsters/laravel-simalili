@@ -43,109 +43,117 @@
                     <div class="mt-3 py-5 border-top text-left">
                         <div class="row justify-content-center">
                             <div class="col-lg-12">
-
-                                {{ csrf_field() }}
-                                <h2>Asignatura:</h2>
-                                <div class="form-group">
-                                    <label for="nombre_asignatura">Nombre de la Asignatura:</label>
-                                    <input type="text" class="form-control" name="nombre_asignatura"
-                                           id="nombre_asignatura"
-
-                                           value="{{ old('nombre_asignatura') }}">
-                                </div>
-                                <hr/>
-                                <h2>Grado asignado</h2>
-                                <div class="form-group">
-                                    <label for="grado_name">Grado:</label>
-                                    <div class="dropdown">
-                                        <select id="grado_name" name="grado_name"
-                                                class="btn btn-secondary dropdown-toggle"
-                                                value="{{ old('grado_name') }}">
-                                            <option class="dropdown-item" selected>Seleccione...</option>
-                                            @foreach($grade as $value)
-                                                <option class="dropdown-item">{{$value->nombre}}</option>
-                                            @endforeach
-                                        </select>
+                                <center>
+                                    {{ csrf_field() }}
+                                    <h2>Asignatura:</h2>
+                                    <div class="form-group">
+                                        <label for="nombre_asignatura">Nombre de la Asignatura:</label>
+                                        <input type="text" class="form-control" name="nombre_asignatura"
+                                               id="nombre_asignatura"
+                                               style="width:350px"
+                                               value="{{ old('nombre_asignatura') }}">
                                     </div>
-                                </div>
-                                <!-- Seleccionar elementos a partir de los objetos -->
-                                <div class="form-group">
-                                    <label for="nombre_curso">Nombre Curso:</label>
-                                    <div class="dropdown">
-                                        <select id="nombre_curso" name="nombre_curso"
-                                                class="btn btn-secondary dropdown-toggle"
-                                                value="{{ old('nombre_curso') }}">
-                                            <option class="dropdown-item" selected>Seleccione...</option>
-                                            <option class="dropdown-item">A</option>
-                                            <option class="dropdown-item">B</option>
-                                            <option class="dropdown-item">C</option>
-                                            <option class="dropdown-item">D</option>
+                                    <hr/>
+                                    <div class="row">
+                                        <div class="col-md-4">
+                                            <h2>Grado asignado</h2>
+                                            <div class="form-group">
+                                                <label for="grado_name">Grado:</label>
+                                                <div class="dropdown">
+                                                    <select id="grado_name" name="grado_name"
+                                                            class="btn btn-secondary dropdown-toggle"
+                                                            value="{{ old('grado_name') }}">
+                                                        <option class="dropdown-item" selected>Seleccione...</option>
+                                                        @foreach($grade as $value)
+                                                            <option class="dropdown-item">{{$value->nombre}}</option>
+                                                        @endforeach
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <!-- Seleccionar elementos a partir de los objetos -->
+                                            <div class="form-group">
+                                                <h2>Nombre Curso:</h2>
+                                                <div class="dropdown">
+                                                    <select id="nombre_curso" name="nombre_curso"
+                                                            class="btn btn-secondary dropdown-toggle"
+                                                            value="{{ old('nombre_curso') }}">
+                                                        <option class="dropdown-item" selected>Seleccione...</option>
+                                                        <option class="dropdown-item">A</option>
+                                                        <option class="dropdown-item">B</option>
+                                                        <option class="dropdown-item">C</option>
+                                                        <option class="dropdown-item">D</option>
 
-                                        </select>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <h2>Docente asignado</h2>
+                                            <div class="form-group">
+                                                <label for="docente_name">Docente:</label>
+                                                <div class="dropdown">
+                                                    <select id="docente_name" name="docente_name"
+                                                            class="btn btn-secondary dropdown-toggle"
+                                                            value="{{ old('docente_name') }}">
+                                                        <option class="dropdown-item" selected>Seleccione...</option>
+                                                        @foreach($docent as $value)
+                                                            <option
+                                                                class="dropdown-item">{{$value->nombre_completo}}</option>
+                                                        @endforeach
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
-                                </div>
-                                <hr/>
-                                <h2>Docente asignado</h2>
-                                <div class="form-group">
-                                    <label for="docente_name">Docente:</label>
-                                    <div class="dropdown">
-                                        <select id="docente_name" name="docente_name"
-                                                class="btn btn-secondary dropdown-toggle"
-                                                value="{{ old('docente_name') }}">
-                                            <option class="dropdown-item" selected>Seleccione...</option>
-                                            @foreach($docent as $value)
-                                                <option class="dropdown-item">{{$value->nombre_completo}}</option>
-                                            @endforeach
-                                        </select>
+                                    <hr/>
+                                    <div class="text-center">
+                                        <a href="{{ url('/') }}" class="btn btn-danger btn-lg">Regresar</a>
+                                        <button type="submit" class="btn btn-success btn-lg">Crear Asignatura</button>
                                     </div>
-                                </div>
-
-                                <hr/>
-                                <div class="text-center">
-                                    <a href="{{ url('/') }}" class="btn btn-danger btn-lg">Regresar</a>
-                                    <button type="submit" class="btn btn-success btn-lg">Crear Asignatura</button>
-                                </div>
+                                </center>
                             </div>
                         </div>
                     </div>
                 </form>
-                    @if ($subjects->isNotEmpty())
-                        <table class="table">
-                            <thead>
+                @if ($subjects->isNotEmpty())
+                    <table class="table">
+                        <thead>
+                        <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">Nombre Asignatura</th>
+                            <th scope="col">Acciones</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        @foreach($subjects as $subject)
                             <tr>
-                                <th scope="col">#</th>
-                                <th scope="col">Nombre Asignatura</th>
-                                <th scope="col">Acciones</th>
+                                <th scope="row">{{ $subject->id }}</th>
+                                <td>{{ $subject->nombre_asignatura }}</td>
+                                <td>
+                                    <form action="{{ route('subjects.destroy', $subject) }}"
+                                          method="POST">
+                                        {{ csrf_field() }}
+                                        {{ method_field('DELETE') }}
+                                        <a href="{{ route('subjects.show', $subject) }}"
+                                           class="btn btn-link"><span
+                                                class="fa fa-eye"></span></a>
+                                        <a href="{{ route('subjects.edit', $subject) }}"
+                                           class="btn btn-link"><span
+                                                class="fa fa-edit"></span></a>
+                                        <button type="submit" class="btn btn-link"><span
+                                                class="fa fa-trash"></span>
+                                        </button>
+                                    </form>
+                                </td>
                             </tr>
-                            </thead>
-                            <tbody>
-                            @foreach($subjects as $subject)
-                                <tr>
-                                    <th scope="row">{{ $subject->id }}</th>
-                                    <td>{{ $subject->nombre_asignatura }}</td>
-                                    <td>
-                                        <form action="{{ route('subjects.destroy', $subject) }}"
-                                              method="POST">
-                                            {{ csrf_field() }}
-                                            {{ method_field('DELETE') }}
-                                            <a href="{{ route('subjects.show', $subject) }}"
-                                               class="btn btn-link"><span
-                                                    class="fa fa-eye"></span></a>
-                                            <a href="{{ route('subjects.edit', $subject) }}"
-                                               class="btn btn-link"><span
-                                                    class="fa fa-edit"></span></a>
-                                            <button type="submit" class="btn btn-link"><span
-                                                    class="fa fa-trash"></span>
-                                            </button>
-                                        </form>
-                                    </td>
-                                </tr>
-                            @endforeach
-                            </tbody>
-                        </table>
-                    @else
-                        <p>No hay usuarios registrados.</p>
-                    @endif
+                        @endforeach
+                        </tbody>
+                    </table>
+                @else
+                    <p>No hay usuarios registrados.</p>
+                @endif
             </div>
         </div>
     </div>

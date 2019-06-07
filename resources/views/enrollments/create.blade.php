@@ -68,8 +68,8 @@
                                                 class="btn btn-secondary dropdown-toggle"
                                                 value="{{ old('id_grado') }}">
                                             <option class="dropdown-item" selected>Seleccione...</option>
-                                            @if(isset($grade))
-                                                @foreach($grade as $value)
+                                            @if(isset($enrollment))
+                                                @foreach($enrollment as $value)
                                                     <option class="dropdown-item">{{$value->nombre}}</option>
                                                 @endforeach
                                             @endif
@@ -368,6 +368,19 @@
                                 <hr/>
                                 <h2>Estudiante:</h2>
                                 <div class="form-group">
+                                    <label for="tipo_est">Tipo de estudiante:</label>
+                                    <div class="dropdown">
+                                        <select id="tipo_est" name="tipo_est"
+                                                class="btn btn-secondary dropdown-toggle"
+                                                value="{{ old('doc_id') }}">
+                                            <option class="dropdown-item" selected>Seleccione...</option>
+                                            <option class="dropdown-item">Normal</option>
+                                            <option class="dropdown-item">Especial</option>
+
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="form-group">
                                     <label for="nombre_est">Nombre:</label>
                                     <input type="text" class="form-control" name="nombre_est" id="nombre_est"
 
@@ -381,16 +394,20 @@
                                 </div>
 
                                 <div class="form-group">
-                                    <label for="genero">Genero:</label>
-                                    <div class="dropdown">
-                                        <select id="genero" name="genero"
-                                                class="btn btn-secondary dropdown-toggle"
-                                                value="{{ old('genero') }}">
-                                            <option class="dropdown-item" selected>Seleccione...</option>
-                                            <option class="dropdown-item">Hombre</option>
-                                            <option class="dropdown-item">Mujer</option>
-
-                                        </select>
+                                    <h2>Genero:</h2>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" value="Hombre"
+                                               name="genero[0]">
+                                        <label class="form-check-label" for="genero[0]">
+                                            Hombre
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" value="Mujer"
+                                               name="genero[1]">
+                                        <label class="form-check-label" for="genero[1]">
+                                            Mujer
+                                        </label>
                                     </div>
                                 </div>
 
@@ -459,30 +476,30 @@
                         </div>
                     </div>
                 </form>
-                    @if ($grade->isNotEmpty())
+                @if ($enrollment->isNotEmpty())
                         <table class="table">
                             <thead>
                             <tr>
                                 <th scope="col">#</th>
-                                <th scope="col">Nombre</th>
+                                <th scope="col">ID Estudiante</th>
                                 <th scope="col">Acciones</th>
                             </tr>
                             </thead>
                             <tbody>
                             {{$count = 1}}
-                            @foreach($grade as $value)
+                            @foreach($enrollment as $value)
                                 <tr>
                                     <th scope="row">{{ $count++ }}</th>
-                                    <td>{{ $value->nombre }}</td>
+                                    <td>{{ $value->id_estudiante }}</td>
                                     <td>
-                                        <form action="{{ route('grades.destroy', $value) }}"
+                                        <form action="{{ route('enrollments.destroy', $value) }}"
                                               method="POST">
                                             {{ csrf_field() }}
                                             {{ method_field('DELETE') }}
-                                            <a href="{{ route('grades.show', $value) }}"
+                                            <a href="{{ route('enrollments.show', $value) }}"
                                                class="btn btn-link"><span
                                                     class="fa fa-eye"></span></a>
-                                            <a href="{{ route('grades.edit', $value) }}"
+                                            <a href="{{ route('enrollments.edit', $value) }}"
                                                class="btn btn-link"><span
                                                     class="fa fa-edit"></span></a>
                                             <button type="submit" class="btn btn-link"><span

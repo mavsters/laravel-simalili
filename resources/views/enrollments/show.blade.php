@@ -1,6 +1,6 @@
 @extends('layouts.layout')
 
-@section('title', "Estudiante {$student->id}")
+@section('title', "Matricula {$enrollment->id}")
 
 @section('content')
     <div class="container">
@@ -10,7 +10,7 @@
                     <div class="col-lg-3 order-lg-2">
                         <div class="card-profile-image">
                             <a href="{{ url('/students') }}">
-                                <img class="rounded-circle" src="{{asset('img/icons/Estudiantes.png')}}">
+                                <img class="rounded-circle" src="{{asset('img/icons/Matricula.png')}}">
                             </a>
                         </div>
                     </div>
@@ -37,25 +37,20 @@
                 </div>
                 <div class="text-center mt-5">
 
-                    <h1>Estudiante #{{ $student->id }}</h1>
+                    <h1>Matricula #{{ $enrollment->id }}</h1>
                     <div class="h6 font-weight-300"><i class="ni location_pin mr-2"></i></div>
                 </div>
                 <form method="POST" action="{{ url('students') }}">
                     <div class="mt-3 py-5 border-top text-center">
                         <div class="row justify-content-center">
                             <div class="col-lg-12">
-                                <h2>Estudiante:</h2>
-                                <p>Nombre del usuario: {{ $student->nombre_est }}</p>
-                                <p>Apellido del usuario: {{ $student->apellido_est }}</p>
-                                <p>Documento: {{ $student->doc_id }}</p>
-                                <p>Número Doc: {{ $student->num_id }}</p>
-                                <p>Lugar de nacimiento: {{ $student->lugar_nac }}</p>
-                                <p>Fecha de Nacimiento: {{ $student->fecha_nac }}</p>
-                                <p>Edad: {{ $student->edad }}</p>
-                                <p>Religion: {{ $student->religion }}</p>
-                                <p>Nombre del Tutor: {{ $student->nombre_tutor }}</p>
-                                <p>Tipo de estudiante: {{ $student->tipo_est }}</p>
-                                <p>Genero: {{ $student->genero }}</p>
+                                <h2>Matricula:</h2>
+
+                                <p>tipo_matricula: {{ $enrollment->tipo_matricula }}</p>
+                                <p>id grado: {{ $enrollment->id_grado }}</p>
+                                <p>id requisito: {{ $enrollment->id_requisito }}</p>
+                                <p>id estudiante: {{ $enrollment->id_estudiante }}</p>
+                                <p>id acudiente: {{ $enrollment->id_acudiente }}</p>
                                 <hr/>
                                 <a href="{{ url('/') }}" class="btn btn-danger btn-lg">Regresar</a>
                             </div>

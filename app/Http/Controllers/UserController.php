@@ -103,7 +103,7 @@ class UserController extends Controller
             'name' => "pepito",// $docente['nombre_completo'],
             'email' => $data['email'],
             'password' => bcrypt($data['password']),
-            'id_tipousuario' => $tipo_usuario
+            'id_tipousuario' => $tipo_usuario,
         ]);
 
         return redirect()->back();

@@ -43,70 +43,79 @@
                     <div class="mt-3 py-5 border-top text-left">
                         <div class="row justify-content-center">
                             <div class="col-lg-12">
+                                <center>
+                                    {{ csrf_field() }}
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <h2>Grado:</h2>
+                                            <div class="form-group">
+                                                <label for="name">Nombre:</label>
+                                                <input type="text" class="form-control" name="nombre" id="nombre"
 
-                                {{ csrf_field() }}
-                                <h2>Grado:</h2>
-                                <div class="form-group">
-                                    <label for="name">Nombre:</label>
-                                    <input type="text" class="form-control" name="nombre" id="nombre"
+                                                       value="{{ old('nombre') }}">
+                                            </div>
 
-                                           value="{{ old('nombre') }}">
-                                </div>
-                                <h2>Cantidad de cursos:</h2>
-                                <div class="form-group">
-                                    <label for="countCourses">Número:</label>
-                                    <input type="text" class="form-control" name="countCourses" id="countCourses"
+                                        </div>
+                                        <div class="col-md-6">
+                                            <h2>Cantidad de cursos:</h2>
+                                            <div class="form-group">
+                                                <label for="countCourses">Número:</label>
+                                                <input type="text" class="form-control" name="countCourses"
+                                                       id="countCourses"
 
-                                           value="{{ old('countCourses') }}">
-                                </div>
+                                                       value="{{ old('countCourses') }}">
+                                            </div>
+                                        </div>
+                                    </div>
 
-                                <hr/>
-                                <div class="text-center">
-                                    <a href="{{ url('/') }}" class="btn btn-danger btn-lg">Regresar</a>
-                                    <button type="submit" class="btn btn-success btn-lg">Crear Grado</button>
-                                </div>
+                                    <hr/>
+                                    <div class="text-center">
+                                        <a href="{{ url('/') }}" class="btn btn-danger btn-lg">Regresar</a>
+                                        <button type="submit" class="btn btn-success btn-lg">Crear Grado</button>
+                                    </div>
+                                </center>
                             </div>
                         </div>
                     </div>
                 </form>
-                    @if ($grades->isNotEmpty())
-                        <table class="table">
-                            <thead>
+                @if ($grades->isNotEmpty())
+                    <table class="table">
+                        <thead>
+                        <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">Nombre</th>
+                            <th scope="col">Acciones</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        {{$count = 1}}
+                        @foreach($grades as $grade)
                             <tr>
-                                <th scope="col">#</th>
-                                <th scope="col">Nombre</th>
-                                <th scope="col">Acciones</th>
+                                <th scope="row">{{ $count++ }}</th>
+                                <td>{{ $grade->nombre }}</td>
+                                <td>
+                                    <form action="{{ route('grades.destroy', $grade) }}"
+                                          method="POST">
+                                        {{ csrf_field() }}
+                                        {{ method_field('DELETE') }}
+                                        <a href="{{ route('grades.show', $grade) }}"
+                                           class="btn btn-link"><span
+                                                class="fa fa-eye"></span></a>
+                                        <a href="{{ route('grades.edit', $grade) }}"
+                                           class="btn btn-link"><span
+                                                class="fa fa-edit"></span></a>
+                                        <button type="submit" class="btn btn-link"><span
+                                                class="fa fa-trash"></span>
+                                        </button>
+                                    </form>
+                                </td>
                             </tr>
-                            </thead>
-                            <tbody>
-                            {{$count = 1}}
-                            @foreach($grades as $grade)
-                                <tr>
-                                    <th scope="row">{{ $count++ }}</th>
-                                    <td>{{ $grade->nombre }}</td>
-                                    <td>
-                                        <form action="{{ route('grades.destroy', $grade) }}"
-                                              method="POST">
-                                            {{ csrf_field() }}
-                                            {{ method_field('DELETE') }}
-                                            <a href="{{ route('grades.show', $grade) }}"
-                                               class="btn btn-link"><span
-                                                    class="fa fa-eye"></span></a>
-                                            <a href="{{ route('grades.edit', $grade) }}"
-                                               class="btn btn-link"><span
-                                                    class="fa fa-edit"></span></a>
-                                            <button type="submit" class="btn btn-link"><span
-                                                    class="fa fa-trash"></span>
-                                            </button>
-                                        </form>
-                                    </td>
-                                </tr>
-                            @endforeach
-                            </tbody>
-                        </table>
-                    @else
-                        <p>No hay usuarios registrados.</p>
-                    @endif
+                        @endforeach
+                        </tbody>
+                    </table>
+                @else
+                    <p>No hay usuarios registrados.</p>
+                @endif
 
             </div>
         </div>

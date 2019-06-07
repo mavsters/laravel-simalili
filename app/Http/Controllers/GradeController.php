@@ -31,10 +31,11 @@ class GradeController extends Controller
     {
         $data = request()->validate([
             'nombre' => 'required',
-            'countCourses' => 'required|max:4'
+            'countCourses' => 'required|numeric|min:1|max:4'
         ], [
             'nombre.required' => 'El campo nombre es obligatorio',
-            'countCourses.required' => 'Digite un número menor de 4'
+            'countCourses.required' => 'Digite un número menor de 4',
+            'countCourses.numeric' => 'El numero de grados bede ser un numero'
         ]);
         if (is_numeric($data['countCourses'])) {
             $grade = Grado::create([

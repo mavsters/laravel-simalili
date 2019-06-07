@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Estudiante;
 use App\Models\Grado;
 use App\Models\Matricula;
+use App\Models\Persona;
 use App\Models\Requisito;
 use App\Models\TipoPersona;
 
@@ -26,9 +27,9 @@ class EnrollmentController extends Controller
         $crud = true;
         $parentesco = TipoPersona::all();
 
-        $grade = Grado::all();
+        $enrollment = Matricula::all();
         return
-            view('enrollments.create', compact('crud', 'grade', 'parentesco'));
+            view('enrollments.create', compact('crud', 'enrollment', 'parentesco'));
     }
 
     public function store()
@@ -40,16 +41,17 @@ class EnrollmentController extends Controller
             "parentesco" => "required",
             "madre_nombre" => "required",
             "madre_apellido" => "required",
-            "madre_cedula" => "required",
+            "madre_cedula" => "required | numeric",
             "madre_telefono" => "required",
             "padre_nombre" => "required",
             "padre_apellido" => "required",
-            "padre_cedula" => "required",
+            "padre_cedula" => "required | numeric",
             "padre_telefono" => "required",
             "acudiente_nombre" => "required",
             "acudiente_apellido" => "required",
-            "acudiente_cedula" => "required",
+            "acudiente_cedula" => "required | numeric",
             "acudiente_telefono" => "required",
+            "tipo_est" => "required",
             "nombre_est" => "required",
             "apellido_est" => "required",
             "genero" => "required",
@@ -65,24 +67,26 @@ class EnrollmentController extends Controller
         $idGrado = Grado::where(
             'nombre', 'like', '%' . ($data['id_grado']) . '%'
         )->first()->id;
-
         $idRequisitos = Requisito::create([
             "tipo_requisito" => ($data["tipo_matricula"]),
-            "pago_incripcion" => array_key_exists(0, $data["requisito"]),
-            "paz_y_salvo" => array_key_exists(1, $data["requisito"]),
-            "simat" => array_key_exists(2, $data["requisito"]),
-            "dil_form_inscrip" => array_key_exists(3, $data["requisito"]),
-            "aprob_entrevista" => array_key_exists(4, $data["requisito"]),
-            "eps" => array_key_exists(5, $data["requisito"]),
-            "acta_matricula" => array_key_exists(6, $data["requisito"]),
-            "contrato_matricula" => array_key_exists(7, $data["requisito"]),
-            "reg_not_ano_ante" => array_key_exists(8, $data["requisito"]),
-            "renov_con_acta" => array_key_exists(9, $data["requisito"]),
-            "pago_matricula" => array_key_exists(10, $data["requisito"]),
-            "reg_civil" => array_key_exists(11, $data["requisito"]),
-            "fotos" => array_key_exists(12, $data["requisito"]),
-            "carnet_vacuna" => array_key_exists(13, $data["requisito"]),
+            "pago_inscripcion" => (int)isset($data["requisito"][0]),
+            "paz_y_salvo" => (int)isset($data["requisito"][1]),
+            "simat" => (int)isset($data["requisito"][2]),
+            "dil_form_inscrip" => (int)isset($data["requisito"][3]),
+            "aprob_entrevista" => (int)isset($data["requisito"][4]),
+            "eps" => (int)isset($data["requisito"][5]),
+            "acta_matricula" => (int)isset($data["requisito"][6]),
+            "contrato_matricula" => (int)isset($data["requisito"][7]),
+            "reg_not_ano_ante" => (int)isset($data["requisito"][8]),
+            "renov_con_acta" => (int)isset($data["requisito"][9]),
+            "pago_matricula" => (int)isset($data["requisito"][10]),
+            "reg_civil" => (int)isset($data["requisito"][11]),
+            "fotos" => (int)isset($data["requisito"][12]),
+            "carnet_vacuna" => (int)isset($data["requisito"][13]),
         ]);
+
+        $phpdate = strtotime($data["fecha_nac"]);
+        $mysqldate = date('Y-m-d H:i:s', $phpdate);
 
         $idStudent = Estudiante::create([
             "nombre_est" => $data["nombre_est"],
@@ -90,21 +94,47 @@ class EnrollmentController extends Controller
             "doc_id" => $data["doc_id"],
             "num_id" => $data["num_id"],
             "lugar_nac" => $data["lugar_nac"],
-            "fecha_nac" => $data["fecha_nac"],
+            "fecha_nac" => $mysqldate,
             "edad" => $data["edad"],
             "religion" => $data["religion"],
-            "genero" => $data["genero"],
+            "genero" => $data["genero"][0],
             "tipo_est" => $data["tipo_est"],
             "nombre_tutor" => $data["madre_nombre"],
 
         ]);
 
+        $personaMadre = Persona::create([
+            "nombre" => $data["madre_nombre"],
+            "apellido" => $data["madre_apellido"],
+            "cedula" => $data["madre_cedula"],
+            "telefono" => $data["madre_telefono"],
+            "parentesco" => "madre"
+        ]);
+        $personaPadre = Persona::create(
+            [
+                "nombre" => $data["padre_nombre"],
+                "apellido" => $data["padre_apellido"],
+                "cedula" => $data["padre_cedula"],
+                "telefono" => $data["padre_telefono"],
+                "parentesco" => "padre"
+            ]
+        );
+        $persona = Persona::create(
+            [
+                "nombre" => $data["acudiente_nombre"],
+                "apellido" => $data["acudiente_apellido"],
+                "cedula" => $data["acudiente_cedula"],
+                "telefono" => $data["acudiente_telefono"],
+                "parentesco" => $data["parentesco"]
+            ]
+        );
+
         $enrollment = Matricula::create([
             "tipo_matricula" => $data["tipo_matricula"],
             'id_grado' => $idGrado,
-            'id_requisito' => $idRequisitos,
-            'id_estudiante' => $idStudent,
-            'id_acudiente' => $idGrado,
+            'id_requisito' => $idRequisitos->id,
+            'id_estudiante' => $idStudent->id,
+            'id_acudiente' => $persona->id
         ]);
 
 
@@ -142,14 +172,6 @@ class EnrollmentController extends Controller
         */
 
 
-        $data = request()->validate([
-            'nombre' => 'required',
-        ], [
-            'nombre.required' => 'El campo nombre es obligatorio'
-        ]);
-        Grado::create([
-            'nombre' => $data['nombre'],
-        ]);
         return redirect()->back();
     }
 
@@ -157,6 +179,33 @@ class EnrollmentController extends Controller
     {
         $crud = true;
         return view('enrollments.edit', ['enrollment' => $enrollment], compact('crud'));
+    }
+
+    public function show(Matricula $enrollment)
+    {
+        $crud = true;
+        return view('enrollments.show', compact('crud', 'enrollment'));
+    }
+
+    public function search()
+    {
+        $crud = true;
+        $enrollments = Matricula::all();
+        return view('enrollments.search', compact('crud', 'enrollments'));
+    }
+
+    public function update(Matricula $enrollment)
+    {
+        // User
+
+        return redirect()->route('enrollments.show', ['enrollment' => $enrollment]);
+    }
+
+
+    function destroy(Matricula $enrollment)
+    {
+        $enrollment->delete();
+        return redirect()->back();
     }
 
 }

@@ -31,31 +31,39 @@ class DocentController extends Controller
         $data = request()->validate([
             'name' => 'required',
             'lugar_nac' => 'required',
-            'edad' => 'required',
+            'fecha_nac' => 'required',
+            'edad' => 'required | numeric|min:1 |max:100',
             'religion' => 'required',
             'titulo_prof' => 'required',
-            'tipo_documento' => 'required',
-            'number_id' => 'required',
+            'tipo_documento' => 'required|not_in:0',
+            'number_id' => 'required | numeric',
             'genero' => 'required'
         ], [
             'name.required' => 'El campo nombre es obligatorio',
             'lugar_nac.required' => 'El Lugar de Nacimiento es Obligatorio',
+            'fecha_nac.required' => 'La fecha de Nacimiento es Obligatorio',
             'edad.required' => 'La edad es Obligatorio',
+            'edad.numeric' => 'La edad debe ser un número',
+            'edad.min' => 'La edad minimo es 1',
+            'edad.max' => 'La edad maxima es 100',
             'religion.required' => 'La Religión es Obligatoria',
             'titulo_prof.required' => 'El titulo de profesión es Obligatorio',
             'tipo_documento.required' => 'El tipo de documento es Obligatorio',
+            'tipo_documento.not_in' => 'Debe elegir un tipo de documento',
             'number_id.required' => 'El número de Identificación es Obligatorio',
-            'genero' => 'Debe seleccionar un genero'
+            'number_id.numeric' => 'El numero de ID debe ser un número',
+            'genero.required' => 'Debe seleccionar un genero'
         ]);
         Docente::create([
             'nombre_completo' => $data['name'],
             'lugar_nac' => $data['lugar_nac'],
+            'fecha_nac' => $data['fecha_nac'],
             'edad' => $data['edad'],
             'religion' => $data['religion'],
             'titulo_prof' => $data['titulo_prof'],
             'tipo_documento' => $data['tipo_documento'],
             'number_id' => $data['number_id'],
-            'genero' => $data['genero']
+            'genero' => $data['genero'][0]
         ]);
 
         return redirect()->back();

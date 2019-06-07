@@ -22,6 +22,7 @@ class CreateDocenteTable extends Migration
             $table->string('religion', 15);
             $table->string('titulo_prof', 30);
             $table->string('tipo_documento', 30);
+            $table->string('genero', 30);
             $table->integer('number_id');
             $table->timestamps();
         });

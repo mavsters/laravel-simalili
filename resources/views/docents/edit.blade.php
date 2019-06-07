@@ -63,6 +63,19 @@
                                                value="{{ old('lugar_nac', $docent->lugar_nac) }}">
                                     </div>
 
+                                    <label for="fecha_nac"> Fecha de Nacimiento</label>
+                                    <div class="form-group">
+                                        <div class="input-group input-group-alternative">
+                                            <div class="input-group-prepend">
+                                                                <span class="input-group-text"><i
+                                                                        class="ni ni-calendar-grid-58"></i></span>
+                                            </div>
+                                            <input id="fecha_nac" name="fecha_nac" class="form-control datepicker"
+
+                                                   type="text" value="{{old('fecha_nac', $docent->fecha_nac)}}">
+                                        </div>
+                                    </div>
+
                                     <div class="form-group">
                                         <label for="edad">Edad:</label>
                                         <input type="text" class="form-control" name="edad" id="edad"

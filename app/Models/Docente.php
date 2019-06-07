@@ -12,6 +12,7 @@ class Docente extends Model
     protected $fillable = [
         'nombre_completo',
         "lugar_nac",
+        "fecha_nac",
         "edad",
         "religion",
         "titulo_prof",

@@ -46,6 +46,7 @@
                             <div class="col-lg-12">
                                 <h2>Docente:</h2>
                                 <p>Nombre del usuario: {{ $docent->nombre_completo }}</p>
+                                <p>Fecha de nacimiento: {{ $docent->fecha_nac }}</p>
                                 <p>Lugar de nacimiento: {{ $docent->lugar_nac }}</p>
                                 <p>Edad: {{ $docent->edad }}</p>
                                 <p>Religión: {{ $docent->religion }}</p>
