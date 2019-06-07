@@ -1,35 +1,15 @@
-<?php
-/**
- * <style type="text/css">
- * table.tableizer-table {
- * font-size: 12px;
- * border: 1px solid #CCC;
- * font-family: Arial, Helvetica, sans-serif;
- * }
- *
- * .tableizer-table td {
- * padding: 4px;
- * margin: 3px;
- * border: 1px solid #CCC;
- * }
- *
- * .tableizer-table th {
- * background-color: #104E8B;
- * color: #FFF;
- * font-weight: bold;
- * }
- * </style>
- */
-$section->appendInnerHTML('
+@extends('layouts.layout')
+
+@section('title', "Lista")
+
+@section('content')
         <div class="container">
             <div class="card card-profile shadow mt--300">
                 <div class="px-4">
                     <div class="row justify-content-center">
                         <div class="col-lg-3 order-lg-2">
                             <div class="card-profile-image">
-                                <a href="' . (!isset($_POST) ? getActualURL() : (URLWEB_FULL)) . '">
-                                    <img class="rounded-circle" src="'.AS_ASSETS.'img/icons/Listas.png">
-                                </a>
+                                <img class="rounded-circle" src="{{asset('img/icons/Listas.png')}}">
                             </div>
                         </div>
                         <div class="col-lg-4 order-lg-3 text-lg-right align-self-lg-center">
@@ -269,4 +249,5 @@ $section->appendInnerHTML('
                     </div>
                 </div>
             </div>
-        </div>');
+        </div>
+@endsection

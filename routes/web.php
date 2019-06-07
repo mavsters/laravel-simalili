@@ -146,16 +146,15 @@ Route::delete('/students/{student}', 'StudentController@destroy')->name('student
 Route::post('/students', 'StudentController@store');
 
 
-
-
+Route::get('/list/academic', 'ListController@academic');
+Route::get('/list/docent', 'ListController@docent');
+Route::get('/list/general', 'ListController@general');
+Route::get('/list/grades', 'ListController@grades');
 /*
  *
 
 # List
-Route::get('/list/academic', 'EnrollmentController@new');
-Route::get('/list/docent', 'EnrollmentController@modify');
-Route::get('/list/general', 'EnrollmentController@delete');
-Route::get('/list/grades', 'EnrollmentController@search');
+
 Route::get('/list/preschool', 'EnrollmentController@search');
 Route::get('/list/student-primary', 'EnrollmentController@search');
 
