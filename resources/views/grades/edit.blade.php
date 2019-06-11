@@ -49,16 +49,26 @@
                                 {{ csrf_field() }}
                                 <h2>Grado:</h2>
 
-                                @if(isset($grade))
+                                @if(isset($grade) && isset($course))
                                     <div class="form-group">
                                         <label for="name">Nombre:</label>
                                         <input type="text" class="form-control" name="nombre" id="nombre"
 
                                                value="{{ old('name', $grade->nombre) }}">
                                     </div>
+
+                                    <div class="col-md-6">
+                                        <h2>Cantidad de cursos:</h2>
+                                        <div class="form-group">
+                                            <label for="countCourses">Número:</label>
+                                            <input type="text" class="form-control" name="countCourses"
+                                                   id="countCourses"
+
+                                                   value="{{ old('countCourses',$course->nombre_curso) }}">
+                                        </div>
+                                    </div>
                                 @else
-                                    <b>No existe un grade para este usuario</b> Por favor cree este usuario con el
-                                    mismo <b>Nombre</b> y <b>Correo</b>
+                                    <b>No existen datos para este grado</b>
                                     <a href="{{ url('/grades/new') }}" class="btn btn-warning btn-lg">Crear</a>
                                 @endif
 

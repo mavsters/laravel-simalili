@@ -55,7 +55,7 @@
                                     </div>
                                     <hr/>
                                     <div class="row">
-                                        <div class="col-md-4">
+                                        <div class="col-md-6">
                                             <h2>Grado asignado</h2>
                                             <div class="form-group">
                                                 <label for="grado_name">Grado:</label>
@@ -63,33 +63,18 @@
                                                     <select id="grado_name" name="grado_name"
                                                             class="btn btn-secondary dropdown-toggle"
                                                             value="{{ old('grado_name') }}">
-                                                        <option class="dropdown-item" selected>Seleccione...</option>
+                                                        <option class="dropdown-item" value="" selected>Seleccione...
+                                                        </option>
                                                         @foreach($grade as $value)
-                                                            <option class="dropdown-item">{{$value->nombre}}</option>
+                                                            <option class="dropdown-item"
+                                                                    value="{{$value->nombre}}">{{$value->nombre}}</option>
                                                         @endforeach
                                                     </select>
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="col-md-4">
-                                            <!-- Seleccionar elementos a partir de los objetos -->
-                                            <div class="form-group">
-                                                <h2>Nombre Curso:</h2>
-                                                <div class="dropdown">
-                                                    <select id="nombre_curso" name="nombre_curso"
-                                                            class="btn btn-secondary dropdown-toggle"
-                                                            value="{{ old('nombre_curso') }}">
-                                                        <option class="dropdown-item" selected>Seleccione...</option>
-                                                        <option class="dropdown-item">A</option>
-                                                        <option class="dropdown-item">B</option>
-                                                        <option class="dropdown-item">C</option>
-                                                        <option class="dropdown-item">D</option>
 
-                                                    </select>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-4">
+                                        <div class="col-md-6">
                                             <h2>Docente asignado</h2>
                                             <div class="form-group">
                                                 <label for="docente_name">Docente:</label>
@@ -97,10 +82,12 @@
                                                     <select id="docente_name" name="docente_name"
                                                             class="btn btn-secondary dropdown-toggle"
                                                             value="{{ old('docente_name') }}">
-                                                        <option class="dropdown-item" selected>Seleccione...</option>
+                                                        <option class="dropdown-item" value="" selected>Seleccione...
+                                                        </option>
                                                         @foreach($docent as $value)
                                                             <option
-                                                                class="dropdown-item">{{$value->nombre_completo}}</option>
+                                                                class="dropdown-item"
+                                                                value="{{$value->nombre_completo}}">{{$value->nombre_completo}}</option>
                                                         @endforeach
                                                     </select>
                                                 </div>
@@ -122,8 +109,7 @@
                         <thead>
                         <tr>
                             <th scope="col">#</th>
-                            <th scope="col">Nombre Asignatura</th>
-                            <th scope="col">Acciones</th>
+                            <th scope="col">Nombre</th>
                         </tr>
                         </thead>
                         <tbody>
@@ -152,7 +138,7 @@
                         </tbody>
                     </table>
                 @else
-                    <p>No hay usuarios registrados.</p>
+                    <p>No hay asignaturas registradas.</p>
                 @endif
             </div>
         </div>

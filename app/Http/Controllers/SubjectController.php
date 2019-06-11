@@ -28,6 +28,8 @@ class SubjectController extends Controller
         $subjects = Asignatura::all();
         $docent = Docente::all();
         $grade = Grado::all();
+
+
         return
             view('subjects.create', compact('crud', 'subjects', 'docent', 'grade'));
     }
@@ -38,13 +40,13 @@ class SubjectController extends Controller
         $data = request()->validate([
             'grado_name' => 'required',
             'docente_name' => 'required',
-            "nombre_asignatura" => "required",
-            "nombre_curso" => "required"
+            "nombre_asignatura" => "required|regex:/^[a-zA-Z]+$/u|unique:asignatura,nombre_asignatura",
         ], [
             'grado_name.required' => 'El campo nombre es obligatorio',
             'docente_name.required' => 'El campo Docente es obligatorio',
             "nombre_asignatura.required" => "El campo nombre asignatura es obligatorio",
-            "nombre_curso.required" => "El campo nombre curso es obligatorio"
+            "nombre_asignatura.unique" => "El nombre de la asignatura ya existe.",
+            "nombre_asignatura.regex" => "Solo se aceptan letras en nombre asignatura"
         ]);
 
 
@@ -52,10 +54,7 @@ class SubjectController extends Controller
             'nombre', 'like', '%' . ($data['grado_name']) . '%'
         )->first()->id;
 
-        $curso = Curso::create([
-            'nombre_curso' => $data['nombre_curso'],
-            'id_grado' => $idGrado
-        ]);
+
 
 
         $idDocent = Docente::where(
@@ -70,12 +69,14 @@ class SubjectController extends Controller
         ]);
 
 
-        $asignaturaCurso = AsignaturaCurso::create([
-            'id_asignatura' => $subject->id,
-            'id_curso' => $curso->id
-        ]);
+        $curso = Curso::where(['id_grado' => $idGrado])->get();
+        foreach ($curso as $value) {
+            $asignaturaCurso = AsignaturaCurso::create([
+                'id_asignatura' => $subject->id,
+                'id_curso' => $value->id
+            ]);
 
-
+        }
         return redirect()->back();
     }
 
@@ -158,15 +159,14 @@ class SubjectController extends Controller
     {
         // User
         $data = request()->validate([
-            'grado_name' => 'required',
+
             'docente_name' => 'required',
-            "nombre_asignatura" => "required",
-            "nombre_curso" => "required"
+            "nombre_asignatura" => "required|regex:/^[a-zA-Z]+$/u",
         ], [
-            'grado_name.required' => 'El campo nombre es obligatorio',
+
             'docente_name.required' => 'El campo Docente es obligatorio',
             "nombre_asignatura.required" => "El campo nombre asignatura es obligatorio",
-            "nombre_curso.required" => "El campo nombre curso es obligatorio"
+            "nombre_asignatura.regex" => "Solo se aceptan letras en nombre asignatura"
         ]);
 
 

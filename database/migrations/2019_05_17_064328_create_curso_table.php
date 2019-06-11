@@ -15,9 +15,7 @@ class CreateCursoTable extends Migration
     {
         Schema::create('curso', function (Blueprint $table) {
             $table->increments('id');
-            $table->enum('nombre_curso', [
-                'A', 'B', 'C', 'D'
-            ]);
+            $table->integer('nombre_curso');
             $table->unsignedInteger('id_grado');
             $table->timestamps();
         });

@@ -58,7 +58,7 @@
                                                value="{{ old('nombre_asignatura', $subject->nombre_asignatura) }}">
                                     </div>
 
-                                    <div class="form-group">
+                                <!--<div class="form-group">
                                         <label for="nombre_curso">Nombre Curso:</label>
                                         <div class="dropdown">
                                             <select id="nombre_curso" name="nombre_curso"
@@ -72,7 +72,7 @@
 
                                             </select>
                                         </div>
-                                    </div>
+                                    </div>-->
                                     <hr/>
                                     <h2>Docente asignado</h2>
                                     <div class="form-group">
@@ -89,7 +89,7 @@
                                         </div>
                                     </div>
                                     <hr/>
-                                    <h2>Grado asignado</h2>
+                                <!--<h2>Grado asignado</h2>
                                     <div class="form-group">
                                         <label for="grado_name">Grado:</label>
                                         <div class="dropdown">
@@ -103,6 +103,7 @@
                                             </select>
                                         </div>
                                     </div>
+                                    -->
                                 @else
                                     <b>No existe una Asignatura con la información suministrada</b>
                                     <a href="{{ url('/subjects/new') }}" class="btn btn-warning btn-lg">Crear</a>

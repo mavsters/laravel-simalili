@@ -15,7 +15,7 @@ class CreateAsignaturaTable extends Migration
     {
         Schema::create('asignatura', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('nombre_asignatura', 15);
+            $table->string('nombre_asignatura', 15)->unique();
             $table->boolean('estado');
             $table->timestamps();
         });

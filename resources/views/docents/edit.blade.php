@@ -112,6 +112,20 @@
                                     </div>
 
                                     <div class="form-group">
+                                        <label for="genero">Genero:</label>
+                                        <div class="dropdown">
+                                            <select id="genero" name="genero"
+                                                    class="btn btn-secondary dropdown-toggle">
+                                                <option class="dropdown-item"
+                                                        selected>{{ old('genero', $docent->genero) }}</option>
+                                                <option class="dropdown-item">Masculino</option>
+                                                <option class="dropdown-item">Femenino</option>
+
+                                            </select>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
                                         <label for="number_id">Número de Identificación:</label>
                                         <input type="text" class="form-control" name="number_id" id="number_id"
 

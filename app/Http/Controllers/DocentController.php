@@ -28,18 +28,23 @@ class DocentController extends Controller
 
     public function store()
     {
+
         $data = request()->validate([
-            'name' => 'required',
-            'lugar_nac' => 'required',
+            'name' => 'required|regex:/^[a-zA-Z]+$/u',
+            'lugar_nac' => 'required|regex:/^[a-zA-Z]+$/u',
             'fecha_nac' => 'required',
             'edad' => 'required | numeric|min:1 |max:100',
-            'religion' => 'required',
-            'titulo_prof' => 'required',
+            'religion' => 'required|regex:/^[a-zA-Z]+$/u',
+            'titulo_prof' => 'required|regex:/^[a-zA-Z]+$/u',
             'tipo_documento' => 'required|not_in:0',
             'number_id' => 'required | numeric',
             'genero' => 'required'
         ], [
             'name.required' => 'El campo nombre es obligatorio',
+            "name.regex" => "Solo se aceptan letras en nombre",
+            "lugar_nac.regex" => "Solo se aceptan letras en Lugar de Nacimiento",
+            "religion.regex" => "Solo se aceptan letras en Religion",
+            "titulo_prof.regex" => "Solo se aceptan letras en Titulo Profesional",
             'lugar_nac.required' => 'El Lugar de Nacimiento es Obligatorio',
             'fecha_nac.required' => 'La fecha de Nacimiento es Obligatorio',
             'edad.required' => 'La edad es Obligatorio',

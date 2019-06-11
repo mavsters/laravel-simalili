@@ -37,7 +37,7 @@
                 </div>
                 <div class="text-center mt-5">
 
-                    <h1>Asignatura #{{ $subject->id }}</h1>
+                    <h1>Asignatura </h1>
                     <div class="h6 font-weight-300"><i class="ni location_pin mr-2"></i></div>
                 </div>
                 <form method="POST" action="{{ url('subjects') }}">
