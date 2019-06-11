@@ -61,7 +61,34 @@ class EnrollmentController extends Controller
             "fecha_nac" => "required",
             "edad" => "required",
             "religion" => "required"
-        ]);
+        ],
+            ["tipo_matricula.required" => "El tipo de matrícula es requerido",
+                "id_grado.required" => "El grado es requerido",
+                "requisito.required" => "Los requisitos son requeridos",
+                "parentesco.required" => "El parentesco es requerido",
+                "madre_nombre.required" => "El nombre de la madre es requerido",
+                "madre_apellido.required" => "El apellido de la madre es requerido",
+                "madre_cedula.required" => "La cédula de la madre es requerido",
+                "madre_telefono.required" => "El telefono de la madre es requerido",
+                "padre_nombre.required" => "El nombre del padre es requerido",
+                "padre_apellido.required" => "El apellido del padre es requerido",
+                "padre_cedula.required" => "La cédula del padre es requerida",
+                "padre_telefono.required" => "El telefono del padre es requerido",
+                "acudiente_nombre.required" => "El nombre del acudiente es requerido",
+                "acudiente_apellido.required" => "El apellido del acudiente es requerido",
+                "acudiente_cedula.required" => "La dédula del acudiente es requerida",
+                "acudiente_telefono.required" => "El telefono del acudiente es requerido",
+                "tipo_est.required" => "El tipo de estudiante es requerido",
+                "nombre_est.required" => "El nombre del estudante es requerido",
+                "apellido_est.required" => "El apellido del estudiante es requerido",
+                "genero.required" => "El género es requerido",
+                "doc_id.required" => "El tipo de documento de identidad es requerido",
+                "num_id.required" => "El número de identidad es requerido",
+                "lugar_nac.required" => "El lugar de nacimiento es requerido",
+                "fecha_nac.required" => "La fecha de nacimiento es requerida",
+                "edad.required" => "La edad es requerida",
+                "religion.required" => "La religión es requerida"
+            ]);
 
 
         $idGrado = Grado::where(

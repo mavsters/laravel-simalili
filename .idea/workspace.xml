@@ -1,18 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="520cf98c-9f3b-4801-a6f8-8d26eb5c8579" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/DocentController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/DocentController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/GradeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/GradeController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/SubjectController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/SubjectController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2019_05_17_064328_create_curso_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2019_05_17_064328_create_curso_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2019_05_17_064331_create_asignatura_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2019_05_17_064331_create_asignatura_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/css/argon.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/argon.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/docents/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/docents/edit.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/grades/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/grades/edit.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/subjects/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/subjects/create.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/subjects/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/subjects/edit.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/subjects/show.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/subjects/show.blade.php" afterDir="false" />
+    <list default="true" id="520cf98c-9f3b-4801-a6f8-8d26eb5c8579" name="Default Changelist" comment="[Fix] Users">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/EnrollmentController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/EnrollmentController.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -28,94 +19,14 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/UserController.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="223">
-              <caret line="95" column="64" selection-start-line="95" selection-start-column="46" selection-end-line="95" selection-end-column="64" />
-              <folding>
-                <element signature="e#40#63#0#PHP" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/GradeController.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret line="18" column="56" lean-forward="true" selection-start-line="18" selection-start-column="56" selection-end-line="18" selection-end-column="56" />
-              <folding>
-                <element signature="e#40#61#0#PHP" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/database/seeds/TypeUserSeeder.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret column="2" selection-start-column="2" selection-end-column="2" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/SubjectController.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="81">
-              <caret line="164" column="12" lean-forward="true" selection-start-line="164" selection-start-column="12" selection-end-line="169" selection-end-column="86" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/DocentController.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-922">
-              <caret line="39" column="46" selection-start-line="39" selection-start-column="39" selection-end-line="39" selection-end-column="46" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/views/docents/assign.blade.php">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/views/docents/create.blade.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="427">
-              <caret line="118" column="40" lean-forward="true" selection-start-line="118" selection-start-column="40" selection-end-line="136" selection-end-column="46" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/views/docents/edit.blade.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="340">
-              <caret line="119" column="97" selection-start-line="119" selection-start-column="91" selection-end-line="119" selection-end-column="97" />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/database/factories/DocenteFactory.php">
+        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/EnrollmentController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="17" column="31" selection-start-line="17" selection-start-column="31" selection-end-line="17" selection-end-column="31" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/views/subjects/edit.blade.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="60" column="40" selection-start-line="60" selection-start-column="40" selection-end-line="60" selection-end-column="40" />
+            <state relative-caret-position="478">
+              <caret line="89" column="61" selection-start-line="89" selection-start-column="61" selection-end-line="89" selection-end-column="61" />
+              <folding>
+                <element signature="e#40#66#0#PHP" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -232,7 +143,6 @@
         <option value="$PROJECT_DIR$/app/Models/Matricula.php" />
         <option value="$PROJECT_DIR$/app/Models/Persona.php" />
         <option value="$PROJECT_DIR$/resources/views/enrollments/create.blade.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/EnrollmentController.php" />
         <option value="$PROJECT_DIR$/resources/views/enrollments/show.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/list/academic.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/list/grade.blade.php" />
@@ -263,6 +173,7 @@
         <option value="$PROJECT_DIR$/app/Http/Controllers/DocentController.php" />
         <option value="$PROJECT_DIR$/resources/views/docents/edit.blade.php" />
         <option value="$PROJECT_DIR$/database/factories/DocenteFactory.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/EnrollmentController.php" />
       </list>
     </option>
   </component>
@@ -351,9 +262,10 @@
     </include_path>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="952" />
-    <option name="width" value="977" />
-    <option name="height" value="1088" />
+    <option name="x" value="-8" />
+    <option name="y" value="-8" />
+    <option name="width" value="1382" />
+    <option name="height" value="744" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
@@ -363,143 +275,36 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
             <path>
-              <item name="Simalili" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Simalili" type="462c0819:PsiDirectoryNode" />
+              <item name="sw" type="b2602c69:ProjectViewProjectNode" />
+              <item name="sw" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="Simalili" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Simalili" type="462c0819:PsiDirectoryNode" />
+              <item name="sw" type="b2602c69:ProjectViewProjectNode" />
+              <item name="sw" type="462c0819:PsiDirectoryNode" />
               <item name="app" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="Simalili" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Simalili" type="462c0819:PsiDirectoryNode" />
+              <item name="sw" type="b2602c69:ProjectViewProjectNode" />
+              <item name="sw" type="462c0819:PsiDirectoryNode" />
               <item name="app" type="462c0819:PsiDirectoryNode" />
               <item name="Http" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="Simalili" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Simalili" type="462c0819:PsiDirectoryNode" />
+              <item name="sw" type="b2602c69:ProjectViewProjectNode" />
+              <item name="sw" type="462c0819:PsiDirectoryNode" />
               <item name="app" type="462c0819:PsiDirectoryNode" />
               <item name="Http" type="462c0819:PsiDirectoryNode" />
               <item name="Controllers" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Simalili" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Simalili" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="Models" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Simalili" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Simalili" type="462c0819:PsiDirectoryNode" />
-              <item name="bootstrap" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Simalili" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Simalili" type="462c0819:PsiDirectoryNode" />
-              <item name="database" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Simalili" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Simalili" type="462c0819:PsiDirectoryNode" />
-              <item name="database" type="462c0819:PsiDirectoryNode" />
-              <item name="factories" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Simalili" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Simalili" type="462c0819:PsiDirectoryNode" />
-              <item name="database" type="462c0819:PsiDirectoryNode" />
-              <item name="migrations" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Simalili" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Simalili" type="462c0819:PsiDirectoryNode" />
-              <item name="database" type="462c0819:PsiDirectoryNode" />
-              <item name="seeds" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Simalili" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Simalili" type="462c0819:PsiDirectoryNode" />
-              <item name="public" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Simalili" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Simalili" type="462c0819:PsiDirectoryNode" />
-              <item name="public" type="462c0819:PsiDirectoryNode" />
-              <item name="css" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Simalili" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Simalili" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Simalili" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Simalili" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="views" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Simalili" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Simalili" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="views" type="462c0819:PsiDirectoryNode" />
-              <item name="docents" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Simalili" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Simalili" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="views" type="462c0819:PsiDirectoryNode" />
-              <item name="enrollments" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Simalili" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Simalili" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="views" type="462c0819:PsiDirectoryNode" />
-              <item name="grades" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Simalili" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Simalili" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="views" type="462c0819:PsiDirectoryNode" />
-              <item name="list" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Simalili" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Simalili" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="views" type="462c0819:PsiDirectoryNode" />
-              <item name="subjects" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Simalili" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Simalili" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="views" type="462c0819:PsiDirectoryNode" />
-              <item name="users" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Simalili" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Simalili" type="462c0819:PsiDirectoryNode" />
-              <item name="routes" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Simalili" type="b2602c69:ProjectViewProjectNode" />
-              <item name="External Libraries" type="bcb0276e:PhpExternalLibrariesNodePatcher$PatchedExternalLibrariesNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -953,7 +758,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="185873000" />
+    <option name="totallyTimeSpent" value="189136000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -965,10 +770,10 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="-7" width="1550" height="878" extended-state="6" />
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.4984375" visible="true" weight="0.19127516" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4984375" visible="true" weight="0.17549168" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="npm" order="2" sideWeight="0.5015625" side_tool="true" weight="0.24945295" />
       <window_info id="Favorites" order="3" side_tool="true" />
@@ -983,9 +788,9 @@
       <window_info anchor="bottom" id="Database Changes" order="8" />
       <window_info anchor="bottom" id="PHP-CGI Server" order="9" weight="0.32914045" />
       <window_info anchor="bottom" id="Command Line Tools Console" order="10" weight="0.3281412" />
-      <window_info anchor="bottom" id="Terminal" order="11" visible="true" weight="0.32573727" />
+      <window_info anchor="bottom" id="Terminal" order="11" weight="0.22749591" />
       <window_info anchor="bottom" id="Event Log" order="12" side_tool="true" />
-      <window_info anchor="bottom" id="Version Control" order="13" weight="0.3259958" />
+      <window_info anchor="bottom" id="Version Control" order="13" weight="0.32569557" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.24945295" />
@@ -1114,24 +919,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/list/academic.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="11" column="48" selection-start-line="11" selection-end-line="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/ListController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="442">
-          <caret line="27" column="53" selection-start-line="27" selection-start-column="53" selection-end-line="27" selection-end-column="53" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/routes/web.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="579">
-          <caret line="151" column="24" selection-start-line="151" selection-start-column="18" selection-end-line="151" selection-end-column="24" />
+        <state relative-caret-position="262">
+          <caret line="148" column="18" selection-start-line="148" selection-start-column="18" selection-end-line="148" selection-end-column="21" />
           <folding>
             <element signature="e#7#389#0#PHP" expanded="true" />
           </folding>
@@ -1177,16 +968,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
           <caret line="6" column="17" selection-start-line="6" selection-start-column="6" selection-end-line="6" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/EnrollmentController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="143">
-          <caret line="39" column="30" lean-forward="true" selection-start-line="39" selection-end-line="40" />
-          <folding>
-            <element signature="e#40#66#0#PHP" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1408,13 +1189,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/docents/create.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="427">
-          <caret line="118" column="40" lean-forward="true" selection-start-line="118" selection-start-column="40" selection-end-line="136" selection-end-column="46" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/docents/edit.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="340">
@@ -1426,6 +1200,40 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
           <caret line="17" column="31" selection-start-line="17" selection-start-column="31" selection-end-line="17" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/ListController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="28" column="5" selection-start-line="28" selection-start-column="5" selection-end-line="28" selection-end-column="5" />
+          <folding>
+            <element signature="e#40#63#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/docents/create.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="164" column="31" selection-start-line="164" selection-start-column="31" selection-end-line="165" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/list/academic.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="11" column="52" selection-start-line="11" selection-end-line="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/EnrollmentController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="478">
+          <caret line="89" column="61" selection-start-line="89" selection-start-column="61" selection-end-line="89" selection-end-column="61" />
+          <folding>
+            <element signature="e#40#66#0#PHP" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
