@@ -51,7 +51,7 @@
                                 <div class="form-group">
                                     <label for="name">Nombre Completo:</label>
                                     <input type="text" class="form-control" name="name" id="name"
-
+                                           disabled
                                            value="{{ old('name', $user->name) }}">
                                 </div>
 
@@ -59,19 +59,19 @@
                                 <div class="form-group">
                                     <label for="lugar_nac">Lugar de nacimiento:</label>
                                     <input type="text" class="form-control" name="lugar_nac" id="lugar_nac"
-
+                                           disabled
                                            value="{{ old('lugar_nac', $docent->lugar_nac) }}">
                                 </div>
 
                                 <div class="form-group">
                                     <label for="edad">Edad:</label>
-                                    <input type="text" class="form-control" name="edad" id="edad"
+                                    <input type="text" class="form-control" name="edad" id="edad" disabled
                                            value="{{ old('edad', $docent->edad) }}">
                                 </div>
 
                                 <div class="form-group">
                                     <label for="religion">Religión:</label>
-                                    <input type="text" class="form-control" name="religion" id="religion"
+                                    <input type="text" class="form-control" name="religion" id="religion" disabled
 
                                            value="{{ old('religion', $docent->religion) }}">
                                 </div>
@@ -79,14 +79,14 @@
                                 <div class="form-group">
                                     <label for="titulo_prof">Título Profesional:</label>
                                     <input type="text" class="form-control" name="titulo_prof" id="titulo_prof"
-
+                                           disabled
                                            value="{{ old('titulo_prof', $docent->titulo_prof) }}">
                                 </div>
 
                                 <div class="form-group">
                                     <label for="tipo_documento">Título Profesional:</label>
                                     <div class="dropdown">
-                                        <select id="tipo_documento" name="tipo_documento"
+                                        <select id="tipo_documento" name="tipo_documento" disabled
                                                 class="btn btn-secondary dropdown-toggle">
                                             <option class="dropdown-item"
                                                     selected>{{ old('tipo_documento', $docent->tipo_documento) }}</option>
@@ -101,7 +101,7 @@
                                 <div class="form-group">
                                     <label for="number_id">Número de Identificación:</label>
                                     <input type="text" class="form-control" name="number_id" id="number_id"
-
+                                           disabled
                                            value="{{ old('number_id', $docent->number_id) }}">
                                 </div>
                                 @else
@@ -117,26 +117,23 @@
                                     <div class="dropdown">
                                         <select id="tipo_usiaro" name="tipo_usiaro"
                                                 class="btn btn-secondary dropdown-toggle">
-                                            <option class="dropdown-item"
+                                            <option class="dropdown-item" value="{{
+                                 old('tipo_usiaro',($user->id_tipousuario == 1)?'Directivo':(($user->id_tipousuario == 2)?'Secretaría':'Normal'))
+                                }}"
                                                     selected>
                                                 {{
                                  old('tipo_usiaro',($user->id_tipousuario == 1)?'Directivo':(($user->id_tipousuario == 2)?'Secretaría':'Normal'))
                                 }}
                                             </option>
-                                            <option class="dropdown-item">Directivo</option>
-                                            <option class="dropdown-item">Secretaría</option>
-                                            <option class="dropdown-item">Normal</option>
+                                            @foreach($tipoUsuario as $values)
+                                                <option class="dropdown-item"
+                                                        value="{{$values->tipo_usuario}}">{{$values->tipo_usuario}}</option>
+                                            @endforeach
 
                                         </select>
                                     </div>
                                 </div>
-                                <div class="form-group">
-                                    <label for="username">Usuario:</label>
-                                    <input type="text" class="form-control" name="username" id="username"
-                                           autocomplete="on"
 
-                                           value="{{ old('username', $user->username) }}">
-                                </div>
                                 <div class="form-group">
                                     <label for="email">Correo electrónico:</label>
                                     <input type="email" class="form-control" name="email" id="email" autocomplete="on"

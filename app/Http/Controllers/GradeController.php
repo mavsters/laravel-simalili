@@ -35,7 +35,9 @@ class GradeController extends Controller
         ], [
             'nombre.required' => 'El campo nombre es obligatorio',
             'countCourses.required' => 'Digite un número menor de 4',
-            'countCourses.numeric' => 'El numero de grados bede ser un numero'
+            'countCourses.numeric' => 'El número de grados bede ser un número',
+            'countCourses.min' => 'El número de grados bede ser un número',
+            'countCourses.max' => 'El número de grados bede ser un número'
         ]);
         if (is_numeric($data['countCourses'])) {
             $grade = Grado::create([

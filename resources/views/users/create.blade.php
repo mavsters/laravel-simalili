@@ -53,10 +53,11 @@
                                                     <select id="docente" name="docente"
                                                             class="btn btn-secondary dropdown-toggle"
                                                             value="{{ old('docente') }}">
-                                                        <option class="dropdown-item" selected>Seleccione...</option>
+                                                        <option class="dropdown-item" value="" selected>Seleccione...
+                                                        </option>
                                                         @foreach($docente as $values)
-                                                            <option
-                                                                class="dropdown-item">{{$values->nombre_completo}}</option>
+                                                            <option class="dropdown-item"
+                                                                    value="{{$values->nombre_completo}}">{{$values->nombre_completo}}</option>
                                                         @endforeach
                                                     </select>
                                                 </div>
@@ -69,12 +70,14 @@
                                                 <label for="tipo_usiaro"><h2>Usuario </h2></label>
                                                 <div class="dropdown">
                                                     <select id="tipo_usiaro" name="tipo_usiaro"
-                                                            class="btn btn-secondary dropdown-toggle"
-                                                            value="{{ old('tipo_usiaro') }}">
-                                                        <option class="dropdown-item" selected>Seleccione...</option>
-                                                        <option class="dropdown-item">Directivo</option>
-                                                        <option class="dropdown-item">Secretaría</option>
-
+                                                            class="btn btn-secondary dropdown-toggle">
+                                                        <option class="dropdown-item" value="{{ old('tipo_usiaro')}}"
+                                                                selected>Seleccione...
+                                                        </option>
+                                                        @foreach($tipoUsuario as $values)
+                                                            <option class="dropdown-item"
+                                                                    value="{{$values->tipo_usuario}}">{{$values->tipo_usuario}}</option>
+                                                        @endforeach
                                                     </select>
                                                 </div>
                                             </div>

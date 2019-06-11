@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Docente;
+use App\Models\TipoUsuario;
 use App\User;
 use Illuminate\Contracts\Support\Renderable;
 
@@ -61,28 +62,46 @@ class UserController extends Controller
     {
         $crud = true;
         $users = User::all();
-        $docente = Docente::all();
-        return view('users.create', compact('crud', 'docente', 'users'));
+        $arrayTemp = [];
+        $userTemp = User::all();
+        foreach ($userTemp as $value) {
+            $arrayTemp = Docente::where('id', '!=', $value['id_docente'])->get();
+
+        }
+
+        $docente = $arrayTemp;
+
+        $tipoUsuario = TipoUsuario::all();
+        return view('users.create', compact('crud', 'docente', 'users', 'tipoUsuario'));
     }
 
     public function store()
     {
         $data = request()->validate([
-            'docente' => 'required',
-        ], [
-            'docente' => 'Seleccione Docente',
-        ]);
+            "tipo_usiaro" => "required",
+            "docente" => "required",
+
+        ],
+            [
+                "tipo_usiaro.required" => "El tipo de usuario es requerido.",
+                "docente.required" => "El Docente es requerido.",
+            ]
+        );
+
+
         $docente = Docente::where(['nombre_completo' => $data['docente']])->first();
 
 
         $data = request()->validate([
             'email' => ['required', 'email', 'unique:users,email'],
-            'password' => 'required',
+            'password' => 'required | max:9',
             'tipo_usiaro' => 'required',
         ], [
+            'email.unique' => "El correo electronico ya existe.",
             'tipo_usiaro.required' => 'Tipo de usuario Requerido',
-            'email.required' => 'Email Requerido',
-            'password.required' => 'Contraseña Requerido'
+            'email.required' => 'Email requerido',
+            'password.required' => 'Contraseña requerida',
+            'password.max' => "Solo se pueden maximo 9"
         ]);
 
 
@@ -104,6 +123,7 @@ class UserController extends Controller
             'email' => $data['email'],
             'password' => bcrypt($data['password']),
             'id_tipousuario' => $tipo_usuario,
+            'id_docente' => $docente->id,
         ]);
 
         return redirect()->back();
@@ -112,10 +132,13 @@ class UserController extends Controller
     public function edit(User $user)
     {
         $crud = true;
+        $tipoUsuario = TipoUsuario::all();
         $docent = Docente::where(
-            'nombre_completo', 'like', '%' . ($user->name) . '%'
+            'id', '=', $user->id_docente
         )->first();
-        return view('users.edit', ['user' => $user, 'docent' => $docent], compact('crud'));
+
+
+        return view('users.edit', ['user' => $user, 'docent' => $docent], compact('crud', 'tipoUsuario'));
     }
 
     public function show(User $user)
@@ -147,7 +170,7 @@ class UserController extends Controller
             $data = request()->validate([
                 'docente' => 'required',
             ], [
-                'docente' => 'Seleccione Docente',
+                'docente.required' => 'Seleccione Docente',
             ]);
             $docent->update($data);
         }

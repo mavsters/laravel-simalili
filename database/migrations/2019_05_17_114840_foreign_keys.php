@@ -14,6 +14,9 @@ class ForeignKeys extends Migration
     public function up()
     {
         Schema::table('users', function ($table) {
+            $table->unsignedInteger('id_docente')->default('3')->unique();
+            $table->foreign('id_docente')->references('id')->on('docente');
+            // User
             $table->unsignedInteger('id_tipousuario')->default('3');
             $table->foreign('id_tipousuario')->references('id')->on('tipousuario');
         });
@@ -66,6 +69,9 @@ class ForeignKeys extends Migration
     {
         //
         Schema::table('users', function (Blueprint $table) {
+            $table->dropForeign(['id_docente']);
+            $table->dropColumn('id_docente');
+            // Usuario
             $table->dropForeign(['id_tipousuario']);
             $table->dropColumn('id_tipousuario');
         });

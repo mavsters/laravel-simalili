@@ -26,7 +26,7 @@
                     <div class="text-center mt-5">
                         <h1>LISTA GENERAL DEL LICEO LIBRE
                         </h1>
-                        <div class="h6 font-weight-300"><i class="ni location_pin mr-2"></i></div>
+                        <div class="h6   font-weight-300"><i class="ni location_pin mr-2"></i></div>
                     </div>
                     <div class="mt-3 py-5 border-top text-center">
                         <div class="row justify-content-center">
