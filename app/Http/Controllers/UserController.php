@@ -113,9 +113,6 @@ class UserController extends Controller
             case 'Secretaría':
                 $tipo_usuario = 2;
                 break;
-            case 'Normal':
-                $tipo_usuario = 3;
-                break;
         }
 
         $user = User::create([
