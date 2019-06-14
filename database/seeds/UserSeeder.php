@@ -17,25 +17,13 @@ class UserSeeder extends Seeder
 
         DB::statement('SET FOREIGN_KEY_CHECKS = 0;');
 
-        factory(Docente::class, 100)->create();
+        factory(Docente::class, 1)->create();
 
         factory(User::class)->create([
             'email' => 'admin@admin.test',
             'id_tipousuario' => 1,
             'id_docente' => 1,
         ]);
-        // Secretaría
-        factory(User::class)->create([
-            'id_tipousuario' => 2,
-            'id_docente' => 2,
-
-        ]);
-        // Directivo
-        factory(User::class)->create([
-            'id_tipousuario' => 1,
-            'id_docente' => 3,
-        ]);
-
 
         DB::statement('SET FOREIGN_KEY_CHECKS = 1;');
     }

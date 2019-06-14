@@ -31,7 +31,7 @@ class GradeController extends Controller
     public function store()
     {
         $data = request()->validate([
-            'nombre' => 'required|regex:/^[a-zA-Z]+$/u|max:255|unique:grado,nombre',
+            'nombre' => 'required|regex:/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*(_|[^\w]))(?!\S*\s\S*\s).+$/|max:255|unique:grado,nombre',
             'countCourses' => 'required|numeric|min:1|max:4'
         ], [
             'nombre.required' => 'El campo nombre es obligatorio',
@@ -84,7 +84,7 @@ class GradeController extends Controller
     {
         // User
         $data = request()->validate([
-            'nombre' => 'required|regex:/^[a-zA-Z]+$/u|max:255|unique:grado,nombre',
+            'nombre' => 'required|regex:/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*(_|[^\w]))(?!\S*\s\S*\s).+$/|max:255|unique:grado,nombre',
             'countCourses' => 'required|numeric|min:1|max:4'
         ], [
             'nombre.required' => 'El campo nombre es obligatorio',

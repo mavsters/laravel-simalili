@@ -6,6 +6,8 @@ use App\Models\Docente;
 use App\Models\TipoUsuario;
 use App\User;
 use Illuminate\Contracts\Support\Renderable;
+use Illuminate\Database\QueryException;
+use Illuminate\Support\Facades\Redirect;
 
 
 class UserController extends Controller
@@ -94,14 +96,19 @@ class UserController extends Controller
 
         $data = request()->validate([
             'email' => ['required', 'email', 'unique:users,email'],
-            'password' => 'required | max:9',
+            'password' => 'required | max:9 | unique:users,password',
             'tipo_usiaro' => 'required',
+            'id_docente' => 'unique:users,id_docente | exists:docente,id_docente'
         ], [
             'email.unique' => "El correo electronico ya existe.",
+            'id_docente.unique' => "El docente ya existe.",
             'tipo_usiaro.required' => 'Tipo de usuario Requerido',
             'email.required' => 'Email requerido',
+            'password.unique' => "La contraseña ya existe.",
             'password.required' => 'Contraseña requerida',
-            'password.max' => "Solo se pueden maximo 9"
+            'password.max' => "Solo se pueden maximo 9",
+            'id_docente.exists' => 'Ya existe ese docente con un usuario.',
+
         ]);
 
 
@@ -115,14 +122,21 @@ class UserController extends Controller
                 break;
         }
 
-        $user = User::create([
-            'name' => "pepito",// $docente['nombre_completo'],
-            'email' => $data['email'],
-            'password' => bcrypt($data['password']),
-            'id_tipousuario' => $tipo_usuario,
-            'id_docente' => $docente->id,
-        ]);
 
+        try {
+            $user = User::create([
+                'name' => $docente['nombre_completo'],
+                'email' => $data['email'],
+                'password' => bcrypt($data['password']),
+                'id_tipousuario' => $tipo_usuario,
+                'id_docente' => $docente->id,
+            ]);
+        } catch (QueryException $e) {
+            $errorCode = $e->errorInfo[1];
+            if ($errorCode == '1062') {
+                return Redirect::back()->withErrors("Ya existe Usuario con dicho docente");
+            }
+        }
         return redirect()->back();
     }
 

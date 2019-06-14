@@ -30,12 +30,12 @@ class DocentController extends Controller
     {
 
         $data = request()->validate([
-            'name' => 'required|regex:/^[a-zA-Z]+$/u',
-            'lugar_nac' => 'required|regex:/^[a-zA-Z]+$/u',
+            'name' => 'required|regex:/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*(_|[^\w]))(?!\S*\s\S*\s).+$/',
+            'lugar_nac' => 'required|regex:/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*(_|[^\w]))(?!\S*\s\S*\s).+$/',
             'fecha_nac' => 'required',
             'edad' => 'required | numeric|min:1 |max:100',
-            'religion' => 'required|regex:/^[a-zA-Z]+$/u',
-            'titulo_prof' => 'required|regex:/^[a-zA-Z]+$/u',
+            'religion' => 'required|regex:/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*(_|[^\w]))(?!\S*\s\S*\s).+$/',
+            'titulo_prof' => 'required|regex:/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*(_|[^\w]))(?!\S*\s\S*\s).+$/',
             'tipo_documento' => 'required|not_in:0',
             'number_id' => 'required | numeric',
             'genero' => 'required'

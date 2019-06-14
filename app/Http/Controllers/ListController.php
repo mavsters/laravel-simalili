@@ -8,6 +8,12 @@ use App\Models\Estudiante;
 class ListController extends Controller
 {
     //
+    public function lists()
+    {
+        return
+            view('list.index', compact(''));
+    }
+
     public function academic()
     {
         return

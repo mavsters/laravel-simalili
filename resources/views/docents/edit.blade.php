@@ -111,17 +111,23 @@
                                         </div>
                                     </div>
 
-                                    <div class="form-group">
-                                        <label for="genero">Genero:</label>
-                                        <div class="dropdown">
-                                            <select id="genero" name="genero"
-                                                    class="btn btn-secondary dropdown-toggle">
-                                                <option class="dropdown-item"
-                                                        selected>{{ old('genero', $docent->genero) }}</option>
-                                                <option class="dropdown-item">Masculino</option>
-                                                <option class="dropdown-item">Femenino</option>
-
-                                            </select>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <h2>Genero:</h2>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" value="Hombre"
+                                                       name="genero[0]">
+                                                <label class="form-check-label" for="genero[0]">
+                                                    Hombre
+                                                </label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" value="Mujer"
+                                                       name="genero[1]">
+                                                <label class="form-check-label" for="genero[1]">
+                                                    Mujer
+                                                </label>
+                                            </div>
                                         </div>
                                     </div>
 

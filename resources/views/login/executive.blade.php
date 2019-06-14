@@ -71,7 +71,7 @@
                         <div class="icon icon-shape icon-shape-secondary rounded-circle m-4">
                             <img height="100" src="{{asset('img/icons/Listas.png')}}">
                         </div>
-                        <a class="btn btn-secondary mt-4" href="{{url('/lists')}}"
+                        <a class="btn btn-outline-warning mt-4" href="{{url('/lists')}}"
                            style="right: 5px;">Lista</a>
                     </div>
                 </div>

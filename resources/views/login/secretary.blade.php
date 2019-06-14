@@ -34,7 +34,7 @@
                                         <img height="100" src="{{asset('img/icons/Listas.png')}}">
                                     </div>
                                     <br/>
-                                    <a class="btn btn-warning mt-4" href="{{ url('/lists') }}"
+                                    <a class="btn btn-outline-warning mt-4" href="{{ url('/lists') }}"
                                        style="right: 5px;">Listas</a>
                                 </div>
                             </div>

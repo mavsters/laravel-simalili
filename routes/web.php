@@ -145,7 +145,7 @@ Route::put('/students/{student}', 'StudentController@update');
 Route::delete('/students/{student}', 'StudentController@destroy')->name('students.destroy');
 Route::post('/students', 'StudentController@store');
 
-
+Route::get('/lists', 'ListController@lists');
 Route::get('/list/academic', 'ListController@academic');
 Route::get('/list/docent', 'ListController@docent');
 Route::get('/list/general', 'ListController@general');

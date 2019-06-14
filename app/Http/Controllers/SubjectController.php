@@ -40,7 +40,7 @@ class SubjectController extends Controller
         $data = request()->validate([
             'grado_name' => 'required',
             'docente_name' => 'required',
-            "nombre_asignatura" => "required|regex:/^[a-zA-Z]+$/u|unique:asignatura,nombre_asignatura",
+            "nombre_asignatura" => "required|regex:/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*(_|[^\w]))(?!\S*\s\S*\s).+$/|unique:asignatura,nombre_asignatura",
         ], [
             'grado_name.required' => 'El campo nombre es obligatorio',
             'docente_name.required' => 'El campo Docente es obligatorio',
@@ -161,7 +161,7 @@ class SubjectController extends Controller
         $data = request()->validate([
 
             'docente_name' => 'required',
-            "nombre_asignatura" => "required|regex:/^[a-zA-Z]+$/u",
+            "nombre_asignatura" => "required|regex:/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*(_|[^\w]))(?!\S*\s\S*\s).+$/",
         ], [
 
             'docente_name.required' => 'El campo Docente es obligatorio',
